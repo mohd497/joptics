@@ -1,0 +1,13 @@
+<h1>Products</h1>
+<%= link_to 'Add a new product', new_product_path %>
+<% if @products.present? %>
+    <ul>
+    <% for product in @products %>
+
+        <li><%= link_to product.name + " " +  product.price.to_s + " " + product.description  + " " + product.status.to_s, product %></li>
+
+    <% end %>
+    </ul>
+<% else %>
+    <p>Sorry, no products listed yet</p>
+<% end %>
