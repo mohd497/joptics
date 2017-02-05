@@ -7,8 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">CrossOver</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if customer_signed_in? %>
+            <li><%= link_to 'Products', products_path %></li>
+            <li><%= link_to 'Add a new product', new_product_path %></li>
+            <li><%= link_to "#{ current_order.order_lines.size }  Cart", cart_path %></li>
+            <li><%= link_to('Logout', destroy_customer_session_path, :method => :delete) %></li>
+        <% else %>
+              <li><%= link_to('Login', new_customer_session_path)  %></li>
+              <li><%= link_to('Register', new_customer_registration_path)  %></li>
+         <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<% flash.each do |key, value| %>
+    <div class="message">
+      <div class="alert alert-<%= key %> fade in" role="alert">
+        <a class="close" href="#">&times</a>
+        <strong><%= value %></strong>
+      </div>
+    </div>
+<% end %>
 <%= yield %>
 
 </body>

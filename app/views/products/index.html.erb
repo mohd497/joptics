@@ -1,13 +1,37 @@
-<h1>Products</h1>
-<%= link_to 'Add a new product', new_product_path %>
-<% if @products.present? %>
-    <ul>
-    <% for product in @products %>
-
-        <li><%= link_to product.name + " " +  product.price.to_s + " " + product.description  + " " + product.status.to_s, product %></li>
-
+<div  class="wrapper-product-list">
+  <h1>Products</h1>
+  <div class="list-group">
+    <% if @products.present? %>
+        <% for product in @products %>
+            <div class="list-group-item">
+              <div class="media col-md-3">
+                <figure class="pull-left">
+                  <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
+                </figure>
+              </div>
+              <div class="col-md-6">
+                <h4 class="list-group-item-heading"><%= link_to product.name, product %></h4>
+                <p class="list-group-item-text"> <%= product.description %>
+                </p>
+              </div>
+              <%= form_for @order_line do |f| %>
+                  <div class="col-md-3 text-center">
+                    <h2><%= number_to_currency(product.price) %></h2>
+                    <%= f.submit "Add to Cart", class: "btn btn-primary btn-lg btn-block" %>
+                    <div class="col-md-6 text-left" >
+                      <label>Quantity:</label>
+                      <%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
+                    </div>
+                    <%= f.hidden_field :product_id, value: product.id %>
+                    <%= f.hidden_field :unit_price, value: product.price %>
+                  </div>
+                  <div class="text-right"><%= link_to 'Edit', edit_product_path(product) %></div>
+              <% end %>
+            </div>
+        <% end %>
+        <%= paginate @products %>
+        </div>
+    <% else %>
+        <p>Sorry, no products listed yet</p>
     <% end %>
-    </ul>
-<% else %>
-    <p>Sorry, no products listed yet</p>
-<% end %>
+    </div>
