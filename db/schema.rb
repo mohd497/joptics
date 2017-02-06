@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202200847) do
+ActiveRecord::Schema.define(version: 20170206125810) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20170202200847) do
     t.boolean  "status"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.string   "address",      limit: 255
+    t.string   "phone_number", limit: 255
+    t.integer  "customer_id",  limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

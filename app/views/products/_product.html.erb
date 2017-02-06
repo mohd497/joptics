@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="container-fliud">
+    <div class="wrapper row">
+      <div class="preview col-md-6">
+
+        <div class="preview-pic tab-content">
+          <div class="tab-pane active" id="pic-1"><img src="http://placehold.it/400x252" /></div>
+        </div>
+
+      </div>
+      <div class="details col-md-6">
+        <%= form_for @order_line do |f| %>
+            <h3 class="product-title"><%= @product.name %></h3>
+            <p class="product-description"><%= @product.description %></p>
+            <h4 class="price">current price: <span><%= number_to_currency(@product.price) %></span></h4>
+            <div class="action">
+              <%= f.submit "Add to Cart", class: "btn btn-primary btn-lg btn-block" %>
+              <label>Quantity:</label><%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= f.hidden_field :unit_price, value: @product.price %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
