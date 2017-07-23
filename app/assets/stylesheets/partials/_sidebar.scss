@@ -1,0 +1,53 @@
+.productSidebar {
+  h3 {
+    color: $primaryColor;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 25px;
+    font-family: $secondaryFont;
+    position: relative;
+    &:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      left: -25px;
+      top: 9px;
+      background: $coffee;
+    }
+  }
+  h4 {
+    text-align: right;
+    margin: 0;
+    border-bottom: 1px solid $alto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: $black;
+    span {
+      display: block;
+      text-decoration: line-through;
+      color: $silver;
+      font-size: 16px;
+    }
+  }
+  small {
+    display: block;
+    margin-bottom: 25px;
+    color: $silver + 10;
+  }
+  p {
+    color: $scorpian;
+    margin-bottom: 25px;
+  }
+  .ratingSocialWrap {
+    .socialWrap {
+      display: block;
+      a {
+        color: $alto - 5;
+        font-size: 25px;
+      }
+    }
+  }
+}

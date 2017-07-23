@@ -2,6 +2,10 @@
 
   <h1>Shopping Cart</h1>
 
-  <%= render 'carts/cart' %>
+  <% if @order.order_lines.empty? %>
+      <p>Sorry, There are no items in your shopping cart.</p>
+  <% else %>
+    <%= render 'carts/cart' %>
+  <% end %>
 
 </div>

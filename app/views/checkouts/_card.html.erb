@@ -1,0 +1,31 @@
+<fieldset>
+
+  <div class="col-lg-12 form-group margin50">
+    <%= label_tag :card_number, "credit card number", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= text_field_tag "card_number", nil, :maxlength => 12, :size => 12 %>
+    </div>
+  </div>
+
+  <div class="col-lg-12 form-group margin50">
+    <%= label_tag :cvv, "cvv", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= text_field_tag "cvv", nil, :maxlength => 3, :size => 3 %>
+    </div>
+  </div>
+
+  <div class="col-lg-12 form-group margin50">
+    <%= label_tag :card_month, "Card Expiration", class: "col-lg-2" %>
+    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15},
+                    {name: nil, id: "card_year"} %>
+  </div>
+
+  <div class="col-lg-12 form-group margin50">
+    <div class="col-lg-4">
+      <%= submit_tag "Submit", class:"btn btn-lg btn-primary btn-block custom-button" %>
+    </div>
+  </div>
+
+
+</fieldset>

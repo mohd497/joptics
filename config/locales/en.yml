@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  item_added: "Item added to cart"
+  item_removed: "Item is removed from cart"
+  product_created: "Product created successfully"
+  product_edit: "Product edited successfully"

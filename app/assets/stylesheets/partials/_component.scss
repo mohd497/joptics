@@ -1,0 +1,157 @@
+.btn {
+  border-radius: 4px;
+  font-size: 18px;
+  text-transform: capitalize;
+  border: 0;
+  text-shadow: none;
+  @include transition($transitionValue);
+  + .btn{
+    margin-left: 10px;
+  }
+  &.btn-default {
+    background: $doveGray;
+    color: $white;
+    &:hover {
+      background: $primaryColor - 10;
+    }
+  }
+  &.btn-primary {
+    background: $marron;
+    color: $white;
+    &:hover {
+      background: $marron - 10;
+    }
+  }
+  &.btn-info{
+    border: 1px solid $fountainBlue;
+    background: $fountainBlue + 15;
+    color: $white;
+  }
+}
+
+.rating {
+  border: none;
+  display: inline-block;
+  > input {
+    display: none;
+  }
+  > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    content: "\e006";
+  }
+  > .half:before {
+    content: "\e006";
+    position: absolute;
+  }
+  > label {
+    color: $alto - 25;
+    float: right;
+  }
+  > input:checked ~ label, &:not(:checked) > label:hover, &:not(:checked) > label:hover ~ label, > input:checked + label:hover, > input:checked ~ label:hover, > label:hover ~ input:checked ~ label, > input:checked ~ label:hover ~ label {
+    color: $primaryColor;
+  }
+}
+
+.titleWrapper, .stepsWrapper {
+  position: relative;
+  z-index: 1;
+  margin: 40px 0;
+  h3 {
+    color: $black;
+    font-size: 30px;
+    padding-right: 50px;
+    margin: 5px 0;
+    background: $white;
+    font-family: $secondaryFont;
+    line-height: 28px;
+  }
+  .border-bg {
+    border-bottom: 3px solid $alto;
+    width: 100%;
+    z-index: -1;
+    @include centered-element(50%, 0, 0, -50%);
+  }
+  .sortFilter {
+    float: right;
+    padding-left: 20px;
+    margin: 5px 0;
+    background: $white;
+  }
+}
+
+.stepsWrapper {
+  padding-left: 20px;
+  h3 {
+    color: $alto;
+    padding: 0 20px;
+    line-height: normal;
+  }
+  .stepCir {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    margin: 4px 20px 4px 0;
+    background: $white;
+    border: 1px solid $alto;
+    color: $alto;
+    text-align: center;
+    line-height: 39px;
+    &.active{
+      background: $primaryColor;
+      color: $white;
+    }
+  }
+}
+
+.prodCarouselWrapper {
+  margin: 0 15px;
+}
+
+.itemSpecsWrapper{
+  background-color: $white - 10;
+  padding: 15px;
+  .itemSpecs{
+    border-bottom: 1px solid $alto;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    color: $doveGray;
+    width: 100%;
+    &:last-child{
+      border: 0;
+    }
+    strong{
+      float: right;
+    }
+    span{
+      float: left;
+    }
+  }
+  .imgWrap{
+    @include centered-element(50%,0,0,-50%);
+  }
+  > div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    [class*="col-"]{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.selectLensWrap{
+  margin-top: 50px;
+  .btn{
+    min-width: 210px;
+    padding: 10px 0;
+  }
+}

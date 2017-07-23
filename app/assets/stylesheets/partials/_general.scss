@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  font-family: $primaryFont;
+  font-size: 16px;
+  color: $mineShaft;
+  height: 100%;
+  background: $white;
+}
+
+a{
+  color: $mineShaft;
+  @include transition($transitionValue);
+  &:hover, :focus{
+    background: inherit;
+    outline: 0;
+    color: inherit;
+  }
+}
+
+.btn{
+  background: $white;
+  border: 1px solid $mineShaft;
+  text-transform: uppercase;
+  border-radius: 0;
+  min-width: 140px;
+  font-size: 15px;
+  &.btn-default{
+    &:hover, &:focus{
+      background: $white - 16;
+      outline:0;
+      border-color: inherit;
+    }
+  }
+}
+
+.mainWrapper{
+  min-height: 100%;
+  @include Mq(XS){
+    padding-top: 58px;
+  }
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+input[type="select"]:focus,
+.uneditable-input:focus,
+.noFocus{
+  border-color: transparent;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.inlineBlockTop{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.inlineBlockMiddle{
+  display: inline-block;
+  vertical-align: middle;
+}

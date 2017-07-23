@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1>Order List</h1>
+
+    <% if @order_list.empty? %>
+      <p>Sorry, There are no order made yet.</p>
+    <% else %>
+      <% for @order in @order_list %>
+          <%= render 'carts/cart_list' %>
+      <% end %>
+      <%= paginate @order_list %>
+    <%  end %>
+</div>

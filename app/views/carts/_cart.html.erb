@@ -1,33 +1,28 @@
-<% if @order.order_lines.empty? %>
-    <p>Sorry, There are no items in your shopping cart.</p>
-<% else %>
-
-    <table class="table table-striped table-hover table-bordered">
-      <tbody>
+<table class="table table-striped table-hover table-bordered">
+  <tbody>
+  <tr>
+    <th>Item</th>
+    <th>QTY</th>
+    <th>Unit Price</th>
+    <th>Total Price</th>
+    <th>Remove</th>
+  </tr>
+  <% for order_line in @order.order_lines  %>
       <tr>
-        <th>Item</th>
-        <th>QTY</th>
-        <th>Unit Price</th>
-        <th>Total Price</th>
-        <th>Remove</th>
+        <td><%= order_line.product.name %></td>
+        <td><%= order_line.qty %></td>
+        <td><%= number_to_currency(order_line.unit_price) %></td>
+        <td><%= number_to_currency(order_line.total_price) %></td>
+        <td><%= link_to 'remove', order_line_path(order_line), method: "DELETE" %></td>
       </tr>
-      <% for order_line in @order.order_lines  %>
-          <tr>
-            <td><%= order_line.product.name %></td>
-            <td><%= order_line.qty %></td>
-            <td><%= number_to_currency(order_line.unit_price) %></td>
-            <td><%= number_to_currency(order_line.total_price) %></td>
-            <td><%= link_to 'remove', order_line_path(order_line), method: "DELETE" %></td>
-          </tr>
-      <% end %>
-      <tr>
-        <th colspan="3"><span class="pull-right">Total</span></th>
-        <th><%= number_to_currency(@order.total) %></th>
-      </tr>
-      <tr>
-        <td><%= link_to 'Continue Shopping', products_path, class: "btn btn-primary" %></td>
-        <td colspan="3"><%= link_to 'Checkout', new_checkouts_path, class: "pull-right btn btn-success" %></td>
-      </tr>
-      </tbody>
-    </table>
-<% end %>
+  <% end %>
+  <tr>
+    <th colspan="3"><span class="pull-right">Total</span></th>
+    <th><%= number_to_currency(@order.total) %></th>
+  </tr>
+  <tr>
+    <td><%= link_to 'Continue Shopping', products_path, class: "btn btn-primary" %></td>
+    <td colspan="3"><%= link_to 'Checkout', new_checkouts_path, class: "pull-right btn btn-success" %></td>
+  </tr>
+  </tbody>
+</table>

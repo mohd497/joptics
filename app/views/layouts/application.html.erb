@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CrossoverTest</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Ali-Kazmi">
+
+  <title>I-Glass</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+  
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <link rel="stylesheet" href="https://mbraak.github.io/jqTree/jqtree.css" />
+  <script src="https://mbraak.github.io/jqTree/tree.jquery.js"></script>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<!--
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,6 +42,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
             <li><%= link_to 'Products', products_path %></li>
+            <li><%= link_to 'Order List', carts_path %></li>
             <li><%= link_to 'Add a new product', new_product_path %></li>
             <li><%= link_to "#{ current_order.order_lines.size }  Cart", cart_path %></li>
             <li><%= link_to('Logout', destroy_customer_session_path, :method => :delete) %></li>
@@ -37,7 +63,164 @@
       </div>
     </div>
 <% end %>
+-->
+
+<header>
+  <div class="topnav clearfix">
+    <div class="container">
+      <span class="tollNumber">(0800)000-0000</span>
+      <div class="searchSignIn pull-right">
+        <span class="fa fa-search"></span>
+        <span>Track Order</span>
+        <span>Sign in</span>
+        <span class="fa fa-heart"></span>
+        <span class="fa fa-shopping-cart"> (0)</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-cus">
+    <div class="container clearfix">
+
+      <div class="navbar-header">
+        <div id="hamBurgerIcon">
+          <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <a class="navbar-brand" href="index.html">
+          <h2>JGLASSES</h2>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <div class="clearfix">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="javascript:" data-toggle="dropdown" class="dropdown-toggle">Men</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="javascript:">Eyeglasses</a>
+                </li>
+                <li>
+                  <a href="javascript:">Premium Eyeglasses</a>
+                </li>
+                <li>
+                  <a href="javascript:">Sunglasses</a>
+                </li>
+                <li>
+                  <a href="javascript:">Power Sunglasses</a>
+                </li>
+                <li>
+                  <a href="javascript:">Contact lenses</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:">Women</a>
+            </li>
+            <li>
+              <a href="javascript:">Kids</a>
+            </li>
+            <li><a href="javascript:">Sun Glasses</a>
+            </li>
+            <li>
+              <a href="javascript:">Try @ Home</a>
+            </li>
+            <li>
+              <a href="javascript:">Stores</a>
+            </li>
+            <li>
+              <a href="javascript:">Offers</a>
+            </li>
+            <li>
+              <a href="javascript:">Home-eye-style</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--.nav-collapse -->
+    </div>
+  </nav>
+  <!--navbar end-->
+</header>
+<!--header end-->
+
 <%= yield %>
+
+<!--footer start-->
+<footer>
+  <div class="container">
+    <div class="clearfix">
+      <div class="contactDetails">
+        <h2>JGlasses</h2>
+        <span>
+                <i class="support_icon call"></i>
+                1-800-832-5076
+            </span>
+        <span>
+                <i class="support_icon phone"></i>
+                0000 000 000
+            </span>
+        <span>
+                <i class="support_icon mail"></i>
+                info@marveloptics.com
+            </span>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li>
+            <a href="javascript:">Men</a>
+          </li>
+          <li>
+            <a href="javascript:">Women</a>
+          </li>
+          <li>
+            <a href="javascript:">Kids</a>
+          </li>
+          <li><a href="javascript:">Sun Glasses</a>
+          </li>
+          <li>
+            <a href="javascript:">Thry @ Home</a>
+          </li>
+          <li>
+            <a href="javascript:">Stores</a>
+          </li>
+          <li>
+            <a href="javascript:">Offers</a>
+          </li>
+          <li>
+            <a href="javascript:">Home-eye-style</a>
+          </li>
+        </ul>
+        <div class="subscribeWrap">
+          <label>Subscribe</label>
+          <div class="subInput">
+            <input type="text" class="form-control" placeholder="Email">
+          </div>
+        </div>
+      </div>
+      <div class="footerSocialNav pull-right">
+        <a href="javascript:">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="javascript:">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+    <hr>
+    <div class="copyRightWrap clearfix">
+      <span class="pull-left">&copy; Copyrights 2017 Jglasses. All Rights Reserved.</span>
+      <span>Terms of Use&nbsp;&nbsp;Privacy Policy</span>
+      <span class="pull-right">Powered by: pixelength.com</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

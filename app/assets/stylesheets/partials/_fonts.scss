@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Rockwell';
+  src: font_url('fonts/Rockwell-Bold.eot');
+  src: font_url('Rockwell-Bold.eot?#iefix') format('embedded-opentype'),
+  font_url('Rockwell-Bold.woff') format('woff'),
+  font_url('fonts/Rockwell-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rockwell';
+  src: font_url('fonts/Rockwell.eot');
+  src: font_url('Rockwell.eot?#iefix') format('embedded-opentype'),
+  font_url('fonts/Rockwell.woff') format('woff'),
+  font_url('fonts/Rockwell.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

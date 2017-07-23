@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe OrderLinesController, type: :controller do
 
   before(:each) do
-    sign_in FactoryGirl.create(:customer)
+    sign_in create(:customer)
     @order_line_params = { qty: 3, unit_price: 1.5, product_id: create(:product).id }
   end
 
@@ -25,8 +25,8 @@ RSpec.describe OrderLinesController, type: :controller do
   describe "update order line" do
 
     before(:each) do
-      @order = FactoryGirl.create(:order)
-      @order_line = FactoryGirl.create(:order_line, order: @order)
+      @order = create(:order)
+      @order_line = create(:order_line, order: @order)
       request.session[:order_id] = @order.id
       post :update, order_line: @order_line_params, id: @order_line.id
     end
@@ -45,8 +45,8 @@ RSpec.describe OrderLinesController, type: :controller do
   describe "delete order line" do
 
     before(:each) do
-      @order = FactoryGirl.create(:order)
-      @order_line = FactoryGirl.create(:order_line, order: @order)
+      @order = create(:order)
+      @order_line = create(:order_line, order: @order)
     end
 
     it "decrease the count of order lines" do

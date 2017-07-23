@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:success] = "Product created successfully"
+      flash[:success] = I18n.t("product_created")
       redirect_to products_path
     else
       flash.now[:alert] = @product.errors.full_messages.to_sentence
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      flash[:success] = "Product edited successfully"
+      flash[:success] = I18n.t("product_edit")
       redirect_to products_path
     else
       flash.now[:alert] = @product.errors.full_messages.to_sentence

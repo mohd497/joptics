@@ -1,0 +1,142 @@
+.radioCheckWrap {
+  input[type=radio], input[type=checkbox] {
+    display: none;
+    + label {
+      position: relative;
+      font-weight: $fwLight;
+    }
+  }
+
+  input[type=checkbox] + label:before, input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background-color: $white;
+    border: 1px solid $alto;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  input[type=radio] + label:before {
+    border-radius: 50%;
+  }
+
+  input[type=radio]:checked + label:before {
+    content: "\2022"; /* Tick */
+    color: $primaryColor;
+    background-color: $white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 30px;
+    text-indent: -1px;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    content: "\2714"; /* Tick */
+    color: $primaryColor;
+    background-color: $white;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+
+.noUi-horizontal {
+  height: 7px;
+  border-radius: 0;
+  .noUi-handle {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top: -13px;
+    &:before, &:after {
+      content: none;
+    }
+    &:hover, &:focus {
+      outline: 0;
+    }
+  }
+  .noUi-connect {
+    background: $gallery;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.select2-container {
+  .select2-selection--single {
+    height: 32px;
+    border: 1px solid $alto;
+    outline: 0;
+    .select2-selection__arrow {
+      height: 30px;
+    }
+    .select2-selection__rendered {
+      font-size: 14px;
+      color: $doveGray;
+      line-height: 30px;
+    }
+  }
+}
+
+.select2-container--default {
+  .select2-results__options {
+    font-size: 14px;
+    color: $doveGray;
+    .select2-results__option--highlighted[aria-selected] {
+      background: $primaryColor;
+    }
+  }
+}
+
+.form-title{
+  font-size: 28px;
+  font-weight: $fwRegular;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.productInfoWrap{
+  label{
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-right: 30px;
+    margin-bottom: 0;
+    width: 50px;
+  }
+  label, select, .btn{
+    @extend .inlineBlockMiddle;
+  }
+  .select2-container{
+    min-width: 130px;
+    width: calc(100% - 120px) !important; 
+  }
+  .btn-info{
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin-left: 15px;
+    padding: 0;
+    min-width: inherit;
+    font-size: 10px;
+    border-width: 2px;
+  }
+  .prescDropWrap{
+    margin-bottom: 10px;
+    &:nth-last-of-type(1){
+      margin-bottom: 30px;
+    }
+  }
+  .cusColFourth{
+    width: 45%;
+    float: left;
+    padding-right: 130px;
+    &:last-child{
+      padding-left: 130px;
+      padding-right: 0;
+      border-left: 1px solid $gallery;
+    }
+  }
+}

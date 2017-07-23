@@ -1,0 +1,205 @@
+.topnav{
+  background: $black;
+  color: $white;
+  font-size: 14px;
+  padding: 5px 0;
+  .searchSignIn{
+    display: inline-block;
+    span{
+      padding-left: 10px;
+    }
+  }
+}
+
+.navbar {
+  background: $white;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  @include box-shadow(0, 1px, 2px, 3px, rgba(0, 0, 0, 0.2));
+  @include transition($transitionValue);
+  z-index: 20;
+  .navbar-header {
+    a {
+      height: auto;
+      padding: 12px 0;
+      margin: 1px 0 0 0;
+    }
+    .navbar-brand{
+      h2{
+        text-transform: uppercase;
+        color: $primaryColor;
+        margin: 0;
+        font-weight: $fwRegular;
+      }
+    }
+  }
+  .navbar-nav {
+    > li {
+      border-bottom: 2px solid transparent;
+      @include transition($transitionValue);
+      &:hover{
+        border-bottom: 2px solid $marron;
+        a {
+          color: $primaryColor;
+          &:hover, &:focus{
+            color: $primaryColor;
+          }
+        }
+      }
+      a {
+        padding: 18px 15px;
+        text-transform: uppercase;
+        @include Mq(LD){
+          padding: 15px 10px;
+        }
+      }
+      &.dropdown{
+        &:hover{
+          .dropdown-menu{
+            display: block;
+          }
+        }
+        &.open, &.active{
+          border-bottom: 2px solid $marron;
+        }
+      }
+      .dropdown-menu{
+        min-width: 207px;
+        left: 0;
+        top: calc(100% + 2px);
+        padding: 0;
+        li{
+          border: 0;
+          a{
+            padding: 10px 25px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.fixedtop{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  @include Mq(LMD){
+    .navbar-header{
+      float: none;
+      width: 100%;
+      text-align: center;
+      a{
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+    ul {
+      text-align: center;
+      > li {
+        float: none;
+        display: inline-block;
+        a{
+          padding: 15px 7px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  @include Mq(XS){
+    position: absolute;
+    width: 100%;
+    .navbar-header{
+      margin: 0;
+    }
+    .navbar-nav {
+      > li {
+        &:hover{
+          border-bottom: 2px solid $marron;
+        }
+        &.dropdown{
+          border-bottom: 2px solid transparent;
+          &:hover{
+            border-bottom: 2px solid transparent;
+            .dropdown-menu{
+              display: none;
+            }
+          }
+          &.open{
+            .dropdown-menu{
+              display: block;
+              border-top: 2px solid $marron;
+            }
+          }
+        }
+        .dropdown-menu{
+          width: 100%;
+          li{
+            a{
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-toggle{
+  width: 40px;
+  height: 34px;
+  padding: 0;
+  position: relative;
+  margin: 15px auto 0;
+  @include rotate(0);
+  @include transition(.5s ease-in-out);
+  cursor: pointer;
+  span{
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: $primaryColor;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    @include rotate(0);
+    @include transition(.25s ease-in-out);
+  }
+  span:nth-child(1) {
+    @include rotate(45);
+    top: 12px;
+    left: 0;
+  }
+  span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    @include rotate(-45);
+    top: 12px;
+    left: 0;
+  }
+  &.collapsed{
+    span{
+      @include rotate(0);
+    }
+    span:nth-child(1) {
+      top: 0;
+      left: 0;
+      @include transform-origin(left, center);
+    }
+    span:nth-child(2) {
+      top: 12px;
+      width: 100%;
+      opacity: 1;
+      @include transform-origin(left, center);
+    }
+    span:nth-child(3) {
+      top: 24px;
+      left: 0;
+      @include transform-origin(left, center);
+    }
+  }
+}

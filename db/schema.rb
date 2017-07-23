@@ -13,61 +13,65 @@
 
 ActiveRecord::Schema.define(version: 20170206125810) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "customers", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.string   "first_name",             limit: 255
-    t.string   "last_name",              limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
   create_table "order_lines", force: :cascade do |t|
-    t.integer  "order_id",    limit: 4
-    t.integer  "product_id",  limit: 4
-    t.integer  "qty",         limit: 4
-    t.float    "unit_price",  limit: 24
-    t.float    "total_price", limit: 24
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "qty"
+    t.float    "unit_price"
+    t.string   "total_price"
+    t.string   "float"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "order_no",    limit: 4
-    t.integer  "customer_id", limit: 4
-    t.float    "total",       limit: 24
+    t.integer  "order_no"
+    t.integer  "customer_id"
+    t.float    "total"
     t.date     "order_date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "status",      limit: 4
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "status"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "description", limit: 255
-    t.string   "name",        limit: 255
-    t.float    "price",       limit: 24
+    t.string   "description"
+    t.string   "name"
+    t.float    "price"
     t.boolean  "status"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "shipping_addresses", force: :cascade do |t|
-    t.string   "address",      limit: 255
-    t.string   "phone_number", limit: 255
-    t.integer  "customer_id",  limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "address"
+    t.string   "phone_number"
+    t.integer  "customer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

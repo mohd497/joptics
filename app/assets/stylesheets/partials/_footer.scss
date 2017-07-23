@@ -1,0 +1,186 @@
+footer {
+  background: $doveGray;
+  border-top: 3px solid $marron;
+  padding: 50px 0 30px;
+  margin-top: 70px;
+  color: $white;
+  .contactDetails {
+    @extend .inlineBlockTop;
+    h2 {
+      color: $white;
+      font-size: 47px;
+      margin-top: 0;
+      font-weight: $fwRegular;
+      text-transform: uppercase;
+    }
+    span {
+      display: block;
+      line-height: 25px;
+      font-size: 14px;
+      i.support_icon {
+        background: url(../images/support_sprite.png) no-repeat 0 0;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        padding-right: 26px;
+        vertical-align: middle;
+        &.call {
+          background-position: 0 0;
+        }
+        &.phone {
+          height: 13px;
+          background-position: 0 -21px;
+        }
+        &.mail {
+          height: 11px;
+          background-position: 0 -44px;
+        }
+      }
+    }
+  }
+  .footerNav {
+    @extend .inlineBlockTop;
+    margin: 0;
+    width: calc(100% - 298px);
+    padding: 0 calc(100% - 1040px);
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style-type: none;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 15px;
+        &:first-child {
+          padding-left: 0;
+        }
+        a {
+          color: $white;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .subscribeWrap{
+      margin-top: 30px;
+      label{
+        @extend .inlineBlockMiddle;
+        font-weight: $fwRegular;
+        margin: 0;
+      }
+      @include placeholder{
+        color: $white;
+      }
+      .subInput{
+        position: relative;
+        max-width: 250px;
+        margin-left: 15px;
+        width: 100%;
+        @extend .inlineBlockMiddle;
+        &:after{
+          content: "\f105";
+          font-family: FontAwesome;
+          font-size: 16px;
+          color: $white;
+          right: 7px;
+          @include centered-element(50%,auto,0,-50%);
+        }
+        input{
+          background: $doveGray + 23;
+          border-radius: 0;
+          padding-right: 25px;
+          color: $white;
+          border: 0;
+        }
+      }
+    }
+
+    @include Mq(LD){
+      padding: 0 15px;
+      text-align: center;
+      ul{
+        li a{
+          display: block;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  .footerSocialNav {
+    @extend .inlineBlockTop;
+    a {
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      display: inline-block;
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+      i {
+        @include centered-element(50%, 50%, -50%, -50%);
+      }
+    }
+  }
+  hr{
+    border-color: $doveGray - 25;
+  }
+  .copyRightWrap{
+    font-size: 12px;
+    color: $white;
+    text-align: center;
+  }
+  @include Mq(MMD){
+    .contactDetails {
+      h2 {
+        font-size: 30px;
+      }
+    }
+    .footerNav {
+      ul {
+        li {
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+      .subscribeWrap{
+        label{
+          font-size: 14px;
+        }
+        .subInput{
+          input{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .footerSocialNav {
+      a {
+        font-size: 14px;
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+  @include Mq(XS){
+    .contactDetails {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .footerNav {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .footerSocialNav {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

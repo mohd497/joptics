@@ -13,7 +13,24 @@
  */
 
 @import 'bootstrap';
-@import 'cart';
-@import 'registrations';
-@import 'products';
+@import 'vendor/bootstrap-theme.min';
+@import "main";
 @import 'screen';
+@import "home";
+
+@import "partials/_fonts";
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_general";
+@import "partials/_component";
+@import "partials/_header";
+@import "partials/_footer";
+@import "partials/_formControls";
+@import "partials/_filters";
+@import "partials/_carousels";
+@import "partials/_sidebar";
+
+//pages
+@import "partials/_home";
+
+

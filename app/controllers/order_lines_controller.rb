@@ -7,7 +7,7 @@ class OrderLinesController < ApplicationController
     @order_line = @order.order_lines.new(order_lines_params)
     @order.save
     session[:order_id] = @order.id
-    flash[:success] = "Item added to cart"
+    flash[:success] = I18n.t("item_added")
     redirect_to request.referer || root_path
   end
 
@@ -15,7 +15,6 @@ class OrderLinesController < ApplicationController
     @order = current_order
     @order_line = @order.order_lines.find(params[:id])
     @order_line.update_attributes(order_lines_params)
-    @order_lines = @order.order_lines
     redirect_to request.referer || root_path
   end
 
@@ -23,8 +22,7 @@ class OrderLinesController < ApplicationController
     @order = current_order
     @order_line = @order.order_lines.find(params[:id])
     @order_line.destroy
-    @order_lines = @order.order_lines
-    flash[:success] = "Item is removed from cart"
+    flash[:success] = I18n.t("item_removed")
     redirect_to request.referer || root_path
   end
 

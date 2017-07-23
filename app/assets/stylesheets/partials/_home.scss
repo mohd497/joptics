@@ -1,0 +1,80 @@
+.mainBanner {
+  background: image_url("bg.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  > div {
+    position: relative;
+    height: 100%;
+  }
+  .bannerDesc {
+    @include centered-element(50%, 0, 0, -50%);
+    max-width: 510px;
+    h1 {
+      font-size: 47px;
+      color: $black;
+      border-bottom: 1px solid $marron;
+      position: relative;
+      padding-bottom: 12px;
+      margin: 0;
+      &:before {
+        content: "";
+        width: 35%;
+        border-bottom: 7px solid $marron;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+      }
+    }
+    h4 {
+      font-size: 22px;
+      color: $scorpian;
+      margin: 20px 0 25px;
+      span {
+        color: $primaryColor;
+        font-weight: $fwBold;
+      }
+    }
+  }
+  @include Mq(LD) {
+    height: 500px;
+  }
+  @include Mq(LMD) {
+    height: 400px;
+  }
+  @include Mq(MMD) {
+    .bannerDesc {
+      max-width: 480px;
+      h1 {
+        font-size: 40px;
+      }
+      h4 {
+        font-size: 16px;
+      }
+    }
+  }
+  @include Mq(XS) {
+    height: 280px;
+    .bannerDesc {
+      margin-left: 15px;
+      max-width: 70%;
+      h1{
+        font-size: 30px;
+        border:0;
+        &:before{
+          content: none;
+        }
+      }
+      h4 {
+        display: none;
+      }
+    }
+  }
+}
+.internalBanner{
+  background: image_url("bg.jpg") no-repeat center -88px;
+  background-size: cover;
+  height: 120px;
+  @include Mq(MMD){
+    background-position: center center;
+  }
+}

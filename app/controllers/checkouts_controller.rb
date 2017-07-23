@@ -2,6 +2,8 @@ class CheckoutsController < ApplicationController
   require "uri"
   require "net/http"
 
+  before_action :authenticate_customer!
+
   def new
     @address = ShippingAddress.new
   end

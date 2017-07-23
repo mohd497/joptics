@@ -1,0 +1,247 @@
+.slick-slider {
+  &.slick-initialized .slick-slide {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    img {
+      display: block;
+      margin: auto;
+      max-width: 80%;
+    }
+  }
+  .slick-prev {
+    left: -25px;
+    &:before{
+      content: "\f104";
+    }
+  }
+  .slick-next {
+    right: -25px;
+    &:before{
+      content: "\f105";
+    }
+  }
+  .slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    &:before{
+      font-family: FontAwesome;
+      font-size: 30px;
+      color: $black - 25;
+    }
+  }
+  @include Mq(XS){
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+    .slick-list{
+      margin: 0 20px;
+    }
+  }
+}
+
+.glassesShowCase{
+  width: 100%;
+  h2{
+    text-align: center;
+    font-family: $secondaryFont;
+    font-weight: $fwRegular;
+    font-size: 35px;
+    border-bottom: 1px solid $mercury;
+    max-width: 500px;
+    padding-bottom: 12px;
+    margin: 70px auto 15px;
+    position: relative;
+    &:after{
+      content: "";
+      width: 35%;
+      border-bottom: 7px solid $mercury;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: -4px;
+    }
+  }
+  .nav-tabs{
+    border: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    li{
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+      a{
+        border: 0;
+        color: $primaryColor;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 0;
+      }
+      &.active{
+        a{
+          border: 1px solid $primaryColor + 20;
+        }
+      }
+    }
+  }
+  .tab-content{
+    display: block;
+    > .tab-pane{
+      height: 0;
+      display: block;
+      overflow: hidden;
+      &.active{
+        height: auto;
+        display: block;
+        overflow: inherit;
+      }
+    }
+  }
+}
+
+.glassInfoWrap{
+  border: 1px solid transparent;
+  padding: 10px;
+  height: 250px;
+  position: relative;
+  @include transition($transitionValue);
+  &:before{
+    content: "";
+    background: image_url("ribbon.png") no-repeat center center;
+    background-size: contain;
+    width: 13px;
+    height: 20px;
+    position: absolute;
+    top: -2px;
+    right: 15px;
+    opacity: 0;
+    @include transition($transitionValue);
+  }
+  img{
+    margin: auto;
+    right: 0;
+    @include centered-element(50%,0,0,-50%);
+  }
+  .price{
+    font-weight: $fwBold;
+    font-size: 15px;
+    padding-left: 22px;
+    position: relative;
+    display: block;
+    opacity: 0;
+    @include transition($transitionValue);
+    &:before{
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 0;
+      background: $coffee;
+      border-radius: 50%;
+      margin-top: 2px;
+    }
+  }
+  .ratingSocialWrap{
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 30px);
+    opacity: 0;
+    @include transition($transitionValue);
+    .socialWrap{
+      @include centered-element(50%,auto,0,-50%);
+      right: 0;
+      margin-top: -5px;
+      a{
+        color: $alto - 30;
+        text-decoration: none;
+        font-size: 24px;
+        display: inline-block;
+        margin-left: 5px;
+        &:first-child{
+          margin-left: 0;
+        }
+        &:hover{
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+  &:hover{
+    background-color: $white - 10;
+    border: 1px solid $mercury;
+    .price, .ratingSocialWrap, &:before{
+      opacity: 1;
+    }
+  }
+  &:focus{
+    @extend .noFocus;
+  }
+}
+
+.productDescWrap{
+  .glassInfoWrap{
+    background-color: $white - 10;
+    border: 1px solid $mercury;
+    height: 400px;
+    &:before{
+      content: "";
+      background: image_url("ribbon.png") no-repeat center center;
+      background-size: contain;
+      width: 13px;
+      height: 20px;
+      position: absolute;
+      top: -2px;
+      right: 15px;
+      opacity: 1;
+    }
+    [id*="mlens_target_"]{
+      background-color: $white - 10;
+    }
+  }
+}
+
+.slider-nav{
+  .slick-list{
+    padding: 0 !important;
+    margin: 50px 40px;
+  }
+  .slick-slide{
+    border: 1px solid $alto;
+    height: 100px;
+    vertical-align: middle;
+    float: left !important;
+    margin-left: 15px;
+    position: relative;
+    background: $white;
+    &.slick-current{
+      border-radius: 3px;
+      background: $white - 7;
+    }
+    img{
+      @include centered-element(50%,0,0,-50%);
+      right: 0;
+    }
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+}
