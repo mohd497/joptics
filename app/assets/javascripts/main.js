@@ -1,8 +1,47 @@
+function openPage(){
+    window.open("/","_self")
+}
+
+function openPage_mens(){
+  window.open("/products?value=men","_self")
+}
+
+function openPage_womens(){
+    window.open("/products?value=women","_self")
+}
+
+function openPage_kids(){
+    window.open("/products?value=kids","_self")
+}
+
+function openPage_mens_eyeglasses(){
+    window.open("/products?value=men&subvalue=eyeglasses","_self")
+}
+
+function openPage_mens_preglasses(){
+    window.open("/products?value=men&subvalue=preglasses","_self")
+}
+
+function openPage_mens_sunglasses(){
+    window.open("/products?value=men&subvalue=sunglasses","_self")
+}
+
+function openPage_mens_powerglasses(){
+    window.open("/products?value=men&subvalue=powerglasses","_self")
+}
+
+
+
 $(document).ready(function () {
 
 
+
+
+
+
+
+
     $('#na_men a').click(function (e) {
-        alert("aa");
         e.preventDefault()
         $(this).tab('show')
     })

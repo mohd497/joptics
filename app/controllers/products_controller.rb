@@ -1,9 +1,25 @@
 class ProductsController < ApplicationController
 
-  before_action :authenticate_customer!
+  #before_action :authenticate_customer!
 
   def index
-    @products = Product.page(params[:page]).per(5).is_enabled
+    if params["value"].nil?
+     @products = Product.is_enabled
+    elsif params["value"] == "men" && params["subvalue"].nil?
+      @products = Product.where(:category => "men")
+    elsif params["value"] == "women" && params["subvalue"].nil?
+      @products = Product.where(:category => "women")
+    elsif params["value"] == "kids" && params["subvalue"].nil?
+      @products = Product.where(:category => "kids")
+    elsif params["value"] == "men" && params["subvalue"] == "eyeglasses"
+      @products = Product.where(:category => "men", :subcategory => "eyeglasses")
+    elsif params["value"] == "men" && params["subvalue"] == "preglasses"
+      @products = Product.where(:category => "men", :subcategory => "preglasses")
+    elsif params["value"] == "men" && params["subvalue"] == "sunglasses"
+      @products = Product.where(:category => "men", :subcategory => "sunglasses")
+    elsif params["value"] == "men" && params["subvalue"] == "powerglasses"
+      @products = Product.where(:category => "men", :subcategory => "powerglasses")
+    end
     @order_line = current_order.order_lines.new
     respond_to do |format|
         format.html
@@ -53,7 +69,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :status)
+    params.require(:product).permit(:name, :description, :price, :status, :avatar, :category, :subcategory)
   end
 
 end

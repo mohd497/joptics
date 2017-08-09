@@ -46,9 +46,10 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="na_women">
             <div class="gscSlider">
+              <% for product in @products_new_women %>
               <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass1.png", :alt => "", :class => "img-responsive") %>
+                <span class="price"><%= number_to_currency(product.price) %></span>
+                <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="naw_star5" name="rating" value="5"/><label
@@ -80,202 +81,35 @@
                                     </span>
                 </div>
               </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass2.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star10"></label>
-                    <input type="radio" id="naw_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star9"></label>
-                    <input type="radio" id="naw_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star8"></label>
-                    <input type="radio" id="naw_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star7"></label>
-                    <input type="radio" id="naw_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star15"></label>
-                    <input type="radio" id="naw_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star14"></label>
-                    <input type="radio" id="naw_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star13"></label>
-                    <input type="radio" id="naw_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star12"></label>
-                    <input type="radio" id="naw_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass4.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star20"></label>
-                    <input type="radio" id="naw_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star19"></label>
-                    <input type="radio" id="naw_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star18"></label>
-                    <input type="radio" id="naw_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star17"></label>
-                    <input type="radio" id="naw_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass1.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star25"></label>
-                    <input type="radio" id="naw_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star24"></label>
-                    <input type="radio" id="naw_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star23"></label>
-                    <input type="radio" id="naw_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star22"></label>
-                    <input type="radio" id="naw_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass2.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star30"></label>
-                    <input type="radio" id="naw_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star29"></label>
-                    <input type="radio" id="naw_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star28"></label>
-                    <input type="radio" id="naw_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star27"></label>
-                    <input type="radio" id="naw_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+              <% end %>
+
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="na_men">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star5"></label>
-                    <input type="radio" id="nam_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star4"></label>
-                    <input type="radio" id="nam_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star3"></label>
-                    <input type="radio" id="nam_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star2"></label>
-                    <input type="radio" id="nam_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_new_men %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="naw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="naw_star5"></label>
+                        <input type="radio" id="naw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="naw_star4"></label>
+                        <input type="radio" id="naw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="naw_star3"></label>
+                        <input type="radio" id="naw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="naw_star2"></label>
+                        <input type="radio" id="naw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="naw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -286,204 +120,37 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass2.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star10"></label>
-                    <input type="radio" id="nam_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star9"></label>
-                    <input type="radio" id="nam_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star8"></label>
-                    <input type="radio" id="nam_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star7"></label>
-                    <input type="radio" id="nam_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star15"></label>
-                    <input type="radio" id="nam_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star14"></label>
-                    <input type="radio" id="nam_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star13"></label>
-                    <input type="radio" id="nam_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star12"></label>
-                    <input type="radio" id="nam_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass4.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star20"></label>
-                    <input type="radio" id="nam_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star19"></label>
-                    <input type="radio" id="nam_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star18"></label>
-                    <input type="radio" id="nam_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star17"></label>
-                    <input type="radio" id="nam_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass1.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star25"></label>
-                    <input type="radio" id="nam_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star24"></label>
-                    <input type="radio" id="nam_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star23"></label>
-                    <input type="radio" id="nam_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star22"></label>
-                    <input type="radio" id="nam_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass2.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nam_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="nam_star30"></label>
-                    <input type="radio" id="nam_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="nam_star29"></label>
-                    <input type="radio" id="nam_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="nam_star28"></label>
-                    <input type="radio" id="nam_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="nam_star27"></label>
-                    <input type="radio" id="nam_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="nam_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
+
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="na_kids">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass1.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star5"></label>
-                    <input type="radio" id="nak_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star4"></label>
-                    <input type="radio" id="nak_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star3"></label>
-                    <input type="radio" id="nak_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star2"></label>
-                    <input type="radio" id="nak_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_new_kids %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="naw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="naw_star5"></label>
+                        <input type="radio" id="naw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="naw_star4"></label>
+                        <input type="radio" id="naw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="naw_star3"></label>
+                        <input type="radio" id="naw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="naw_star2"></label>
+                        <input type="radio" id="naw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="naw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -494,178 +161,10 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass1.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star10"></label>
-                    <input type="radio" id="nak_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star9"></label>
-                    <input type="radio" id="nak_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star8"></label>
-                    <input type="radio" id="nak_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star7"></label>
-                    <input type="radio" id="nak_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star15"></label>
-                    <input type="radio" id="nak_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star14"></label>
-                    <input type="radio" id="nak_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star13"></label>
-                    <input type="radio" id="nak_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star12"></label>
-                    <input type="radio" id="nak_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star20"></label>
-                    <input type="radio" id="nak_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star19"></label>
-                    <input type="radio" id="nak_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star18"></label>
-                    <input type="radio" id="nak_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star17"></label>
-                    <input type="radio" id="nak_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star25"></label>
-                    <input type="radio" id="nak_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star24"></label>
-                    <input type="radio" id="nak_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star23"></label>
-                    <input type="radio" id="nak_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star22"></label>
-                    <input type="radio" id="nak_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="nak_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="nak_star30"></label>
-                    <input type="radio" id="nak_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="nak_star29"></label>
-                    <input type="radio" id="nak_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="nak_star28"></label>
-                    <input type="radio" id="nak_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="nak_star27"></label>
-                    <input type="radio" id="nak_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="nak_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
+
             </div>
           </div>
         </div>
@@ -694,9 +193,10 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="bs_women">
             <div class="gscSlider">
+              <% for product in @products_best_women %>
               <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
+                <span class="price"><%= number_to_currency(product.price) %></span>
+                <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="bsw_star5" name="rating" value="5"/><label
@@ -728,202 +228,35 @@
                                     </span>
                 </div>
               </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star10"></label>
-                    <input type="radio" id="bsw_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star9"></label>
-                    <input type="radio" id="bsw_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star8"></label>
-                    <input type="radio" id="bsw_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star7"></label>
-                    <input type="radio" id="bsw_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star15"></label>
-                    <input type="radio" id="bsw_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star14"></label>
-                    <input type="radio" id="bsw_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star13"></label>
-                    <input type="radio" id="bsw_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star12"></label>
-                    <input type="radio" id="bsw_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star20"></label>
-                    <input type="radio" id="bsw_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star19"></label>
-                    <input type="radio" id="bsw_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star18"></label>
-                    <input type="radio" id="bsw_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star17"></label>
-                    <input type="radio" id="bsw_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star25"></label>
-                    <input type="radio" id="bsw_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star24"></label>
-                    <input type="radio" id="bsw_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star23"></label>
-                    <input type="radio" id="bsw_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star22"></label>
-                    <input type="radio" id="bsw_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star30"></label>
-                    <input type="radio" id="bsw_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star29"></label>
-                    <input type="radio" id="bsw_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star28"></label>
-                    <input type="radio" id="bsw_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star27"></label>
-                    <input type="radio" id="bsw_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+              <% end %>
+
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="bs_men">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star5"></label>
-                    <input type="radio" id="bsm_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star4"></label>
-                    <input type="radio" id="bsm_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star3"></label>
-                    <input type="radio" id="bsm_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star2"></label>
-                    <input type="radio" id="bsm_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_best_men %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="bsw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="bsw_star5"></label>
+                        <input type="radio" id="bsw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="bsw_star4"></label>
+                        <input type="radio" id="bsw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="bsw_star3"></label>
+                        <input type="radio" id="bsw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="bsw_star2"></label>
+                        <input type="radio" id="bsw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="bsw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -934,204 +267,37 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star10"></label>
-                    <input type="radio" id="bsm_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star9"></label>
-                    <input type="radio" id="bsm_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star8"></label>
-                    <input type="radio" id="bsm_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star7"></label>
-                    <input type="radio" id="bsm_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star15"></label>
-                    <input type="radio" id="bsm_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star14"></label>
-                    <input type="radio" id="bsm_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star13"></label>
-                    <input type="radio" id="bsm_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star12"></label>
-                    <input type="radio" id="bsm_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star20"></label>
-                    <input type="radio" id="bsm_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star19"></label>
-                    <input type="radio" id="bsm_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star18"></label>
-                    <input type="radio" id="bsm_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star17"></label>
-                    <input type="radio" id="bsm_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star25"></label>
-                    <input type="radio" id="bsm_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star24"></label>
-                    <input type="radio" id="bsm_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star23"></label>
-                    <input type="radio" id="bsm_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star22"></label>
-                    <input type="radio" id="bsm_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsm_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="bsm_star30"></label>
-                    <input type="radio" id="bsm_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="bsm_star29"></label>
-                    <input type="radio" id="bsm_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="bsm_star28"></label>
-                    <input type="radio" id="bsm_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="bsm_star27"></label>
-                    <input type="radio" id="bsm_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="bsm_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
+
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="bs_kids">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star5"></label>
-                    <input type="radio" id="bsk_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star4"></label>
-                    <input type="radio" id="bsk_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star3"></label>
-                    <input type="radio" id="bsk_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star2"></label>
-                    <input type="radio" id="bsk_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_best_kids %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="bsw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="bsw_star5"></label>
+                        <input type="radio" id="bsw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="bsw_star4"></label>
+                        <input type="radio" id="bsw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="bsw_star3"></label>
+                        <input type="radio" id="bsw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="bsw_star2"></label>
+                        <input type="radio" id="bsw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="bsw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -1142,178 +308,10 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star10"></label>
-                    <input type="radio" id="bsk_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star9"></label>
-                    <input type="radio" id="bsk_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star8"></label>
-                    <input type="radio" id="bsk_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star7"></label>
-                    <input type="radio" id="bsk_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star15"></label>
-                    <input type="radio" id="bsk_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star14"></label>
-                    <input type="radio" id="bsk_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star13"></label>
-                    <input type="radio" id="bsk_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star12"></label>
-                    <input type="radio" id="bsk_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star20"></label>
-                    <input type="radio" id="bsk_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star19"></label>
-                    <input type="radio" id="bsk_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star18"></label>
-                    <input type="radio" id="bsk_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star17"></label>
-                    <input type="radio" id="bsk_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star25"></label>
-                    <input type="radio" id="bsk_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star24"></label>
-                    <input type="radio" id="bsk_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star23"></label>
-                    <input type="radio" id="bsk_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star22"></label>
-                    <input type="radio" id="bsk_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsk_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="bsk_star30"></label>
-                    <input type="radio" id="bsk_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="bsk_star29"></label>
-                    <input type="radio" id="bsk_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="bsk_star28"></label>
-                    <input type="radio" id="bsk_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="bsk_star27"></label>
-                    <input type="radio" id="bsk_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="bsk_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
+
             </div>
           </div>
         </div>
@@ -1342,9 +340,10 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="pb_women">
             <div class="gscSlider">
+              <% for product in @products_popularbrand_women %>
               <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
+                <span class="price"><%= number_to_currency(product.price) %></span>
+                <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="pbw_star5" name="rating" value="5"/><label
@@ -1376,202 +375,34 @@
                                     </span>
                 </div>
               </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star10"></label>
-                    <input type="radio" id="pbw_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star9"></label>
-                    <input type="radio" id="pbw_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star8"></label>
-                    <input type="radio" id="pbw_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star7"></label>
-                    <input type="radio" id="pbw_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star15"></label>
-                    <input type="radio" id="pbw_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star14"></label>
-                    <input type="radio" id="pbw_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star13"></label>
-                    <input type="radio" id="pbw_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star12"></label>
-                    <input type="radio" id="pbw_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star20"></label>
-                    <input type="radio" id="pbw_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star19"></label>
-                    <input type="radio" id="pbw_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star18"></label>
-                    <input type="radio" id="pbw_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star17"></label>
-                    <input type="radio" id="pbw_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star25"></label>
-                    <input type="radio" id="pbw_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star24"></label>
-                    <input type="radio" id="pbw_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star23"></label>
-                    <input type="radio" id="pbw_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star22"></label>
-                    <input type="radio" id="pbw_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star30"></label>
-                    <input type="radio" id="pbw_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star29"></label>
-                    <input type="radio" id="pbw_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star28"></label>
-                    <input type="radio" id="pbw_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star27"></label>
-                    <input type="radio" id="pbw_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="pb_men">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star5"></label>
-                    <input type="radio" id="pbm_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star4"></label>
-                    <input type="radio" id="pbm_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star3"></label>
-                    <input type="radio" id="pbm_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star2"></label>
-                    <input type="radio" id="pbm_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_popularbrand_men %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="pbw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="pbw_star5"></label>
+                        <input type="radio" id="pbw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="pbw_star4"></label>
+                        <input type="radio" id="pbw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="pbw_star3"></label>
+                        <input type="radio" id="pbw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="pbw_star2"></label>
+                        <input type="radio" id="pbw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="pbw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -1582,204 +413,36 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star10"></label>
-                    <input type="radio" id="pbm_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star9"></label>
-                    <input type="radio" id="pbm_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star8"></label>
-                    <input type="radio" id="pbm_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star7"></label>
-                    <input type="radio" id="pbm_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star15"></label>
-                    <input type="radio" id="pbm_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star14"></label>
-                    <input type="radio" id="pbm_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star13"></label>
-                    <input type="radio" id="pbm_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star12"></label>
-                    <input type="radio" id="pbm_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star20"></label>
-                    <input type="radio" id="pbm_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star19"></label>
-                    <input type="radio" id="pbm_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star18"></label>
-                    <input type="radio" id="pbm_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star17"></label>
-                    <input type="radio" id="pbm_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star25"></label>
-                    <input type="radio" id="pbm_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star24"></label>
-                    <input type="radio" id="pbm_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star23"></label>
-                    <input type="radio" id="pbm_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star22"></label>
-                    <input type="radio" id="pbm_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbm_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="pbm_star30"></label>
-                    <input type="radio" id="pbm_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="pbm_star29"></label>
-                    <input type="radio" id="pbm_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="pbm_star28"></label>
-                    <input type="radio" id="pbm_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="pbm_star27"></label>
-                    <input type="radio" id="pbm_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="pbm_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="pb_kids">
             <div class="gscSlider">
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star5"></label>
-                    <input type="radio" id="pbk_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star4"></label>
-                    <input type="radio" id="pbk_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star3"></label>
-                    <input type="radio" id="pbk_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star2"></label>
-                    <input type="radio" id="pbk_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star1"></label>
-                  </fieldset>
-                  <span class="socialWrap">
+              <% for product in @products_popularbrand_kids %>
+                  <div class="glassInfoWrap">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <div class="ratingSocialWrap">
+                      <fieldset class="rating">
+                        <input type="radio" id="pbw_star5" name="rating" value="5"/><label
+                      class="full"
+                      for="pbw_star5"></label>
+                        <input type="radio" id="pbw_star4" name="rating" value="4"/><label
+                      class="full"
+                      for="pbw_star4"></label>
+                        <input type="radio" id="pbw_star3" name="rating" value="3"/><label
+                      class="full"
+                      for="pbw_star3"></label>
+                        <input type="radio" id="pbw_star2" name="rating" value="2"/><label
+                      class="full"
+                      for="pbw_star2"></label>
+                        <input type="radio" id="pbw_star1" name="rating" value="1"/><label
+                      class="full"
+                      for="pbw_star1"></label>
+                      </fieldset>
+                      <span class="socialWrap">
                                         <a href="javascript:">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                                         </a>
@@ -1790,178 +453,9 @@
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         </a>
                                     </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star10" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star10"></label>
-                    <input type="radio" id="pbk_star9" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star9"></label>
-                    <input type="radio" id="pbk_star8" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star8"></label>
-                    <input type="radio" id="pbk_star7" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star7"></label>
-                    <input type="radio" id="pbk_star6" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star6"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star15" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star15"></label>
-                    <input type="radio" id="pbk_star14" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star14"></label>
-                    <input type="radio" id="pbk_star13" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star13"></label>
-                    <input type="radio" id="pbk_star12" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star12"></label>
-                    <input type="radio" id="pbk_star11" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star11"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star20" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star20"></label>
-                    <input type="radio" id="pbk_star19" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star19"></label>
-                    <input type="radio" id="pbk_star18" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star18"></label>
-                    <input type="radio" id="pbk_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star17"></label>
-                    <input type="radio" id="pbk_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star16"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star25" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star25"></label>
-                    <input type="radio" id="pbk_star24" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star24"></label>
-                    <input type="radio" id="pbk_star23" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star23"></label>
-                    <input type="radio" id="pbk_star22" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star22"></label>
-                    <input type="radio" id="pbk_star21" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star21"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
-              <div class="glassInfoWrap">
-                <span class="price">$25.29</span>
-                <%= image_tag("glass3.png", :alt => "", :class => "img-responsive") %>
-                <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbk_star30" name="rating" value="5"/><label
-                  class="full"
-                  for="pbk_star30"></label>
-                    <input type="radio" id="pbk_star29" name="rating" value="4"/><label
-                  class="full"
-                  for="pbk_star29"></label>
-                    <input type="radio" id="pbk_star28" name="rating" value="3"/><label
-                  class="full"
-                  for="pbk_star28"></label>
-                    <input type="radio" id="pbk_star27" name="rating" value="2"/><label
-                  class="full"
-                  for="pbk_star27"></label>
-                    <input type="radio" id="pbk_star26" name="rating" value="1"/><label
-                  class="full"
-                  for="pbk_star26"></label>
-                  </fieldset>
-                  <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+              <% end %>
             </div>
           </div>
         </div>

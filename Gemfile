@@ -15,6 +15,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'carrierwave', '~> 1.0'
+
+gem 'mini_magick'
+
 gem 'kaminari', '~> 0.17.0'
 
 gem 'faker', '~> 1.6', '>= 1.6.2'

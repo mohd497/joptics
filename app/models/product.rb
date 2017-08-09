@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  mount_uploader :avatar, AvatarUploader
+
   has_many :order_lines
   scope :is_enabled, -> { where(status: true) }
 
