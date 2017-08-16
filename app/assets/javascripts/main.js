@@ -3,42 +3,40 @@ function openPage(){
 }
 
 function openPage_mens(){
-  window.open("/products?value=men","_self")
+  window.open("/products?utf8=✓&q[category_in][]=men&commit=Search","_self")
 }
 
 function openPage_womens(){
-    window.open("/products?value=women","_self")
+    window.open("/products?utf8=✓&q[category_in][]=women&commit=Search","_self")
 }
 
 function openPage_kids(){
-    window.open("/products?value=kids","_self")
+    window.open("/products?utf8=✓&q[category_in][]=kids&commit=Search","_self")
 }
 
 function openPage_mens_eyeglasses(){
-    window.open("/products?value=men&subvalue=eyeglasses","_self")
+    window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=eyeglasses&commit=Search","_self")
 }
 
 function openPage_mens_preglasses(){
-    window.open("/products?value=men&subvalue=preglasses","_self")
+    window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=preglasses&commit=Search","_self")
 }
 
 function openPage_mens_sunglasses(){
-    window.open("/products?value=men&subvalue=sunglasses","_self")
+    window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=sunglasses&commit=Search","_self")
 }
 
 function openPage_mens_powerglasses(){
-    window.open("/products?value=men&subvalue=powerglasses","_self")
+    window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=powerglasses&commit=Search","_self")
+}
+
+function select_prev_check(id) {
+    $("#" + id).prev().click();
 }
 
 
 
 $(document).ready(function () {
-
-
-
-
-
-
 
 
     $('#na_men a').click(function (e) {

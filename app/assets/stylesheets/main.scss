@@ -32,6 +32,15 @@ body {
   height: 100%;
   background: #fff; }
 
+.checkbox-inline{
+  display: none;
+}
+
+.filter-button{
+  background-color: #34495e !important;
+  margin-left: 960px;
+}
+
 a {
   color: #333;
   -webkit-transition: all 400ms ease-in-out;

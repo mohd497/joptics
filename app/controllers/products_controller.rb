@@ -3,23 +3,11 @@ class ProductsController < ApplicationController
   #before_action :authenticate_customer!
 
   def index
-    if params["value"].nil?
-     @products = Product.is_enabled
-    elsif params["value"] == "men" && params["subvalue"].nil?
-      @products = Product.where(:category => "men")
-    elsif params["value"] == "women" && params["subvalue"].nil?
-      @products = Product.where(:category => "women")
-    elsif params["value"] == "kids" && params["subvalue"].nil?
-      @products = Product.where(:category => "kids")
-    elsif params["value"] == "men" && params["subvalue"] == "eyeglasses"
-      @products = Product.where(:category => "men", :subcategory => "eyeglasses")
-    elsif params["value"] == "men" && params["subvalue"] == "preglasses"
-      @products = Product.where(:category => "men", :subcategory => "preglasses")
-    elsif params["value"] == "men" && params["subvalue"] == "sunglasses"
-      @products = Product.where(:category => "men", :subcategory => "sunglasses")
-    elsif params["value"] == "men" && params["subvalue"] == "powerglasses"
-      @products = Product.where(:category => "men", :subcategory => "powerglasses")
-    end
+
+    @q = Product.search(params[:q])
+    @products = @q.result(distinct: true)
+
+
     @order_line = current_order.order_lines.new
     respond_to do |format|
         format.html

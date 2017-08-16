@@ -38,6 +38,7 @@
         </ul>
       </div>
     </div>
+    <%= search_form_for @q , url: products_path, :html => { class: 'your-class' } do |f| %>
     <div class="filterOptions">
       <div class="container">
         <ul>
@@ -46,154 +47,179 @@
             <span id="slider-margin-value-min"></span>
             <span id="slider-margin-value-max"></span>
           </li>
+
           <li data-legend="Gender">
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c1" name="cc1"/>
+              <%= check_box_tag('q[category_in][]', 'men', nil, :id => "c1" ) %>
               <label for="c1"><span></span>Men's</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c2" name="cc1"/>
+              <%= check_box_tag('q[category_in][]', 'women', nil, :id => "c2" ) %>
               <label for="c2"><span></span>Women's</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c3" name="cc1"/>
+              <%= check_box_tag('q[category_in][]', 'kids', nil, :id => "c3" ) %>
               <label for="c3"><span></span>Kid's</label>
             </div>
+
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c4" name="cc1"/>
+              <%= check_box_tag('q[subcategory_in][]', 'sunglasses', nil, :id => "c4" ) %>
               <label for="c4"><span></span>Sun Glasses</label>
             </div>
           </li>
           <li data-legend="Frames">
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c5" name="cc2"/>
+              <%= check_box_tag('q[frames_in][]', 'half rim', nil, :id => "c5" ) %>
               <label for="c5"><span></span>Half Rim</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c6" name="cc2"/>
+              <%= check_box_tag('q[frames_in][]', 'full rim', nil, :id => "c6" ) %>
               <label for="c6"><span></span>Full Rim</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c7" name="cc2"/>
+              <%= check_box_tag('q[frames_in][]', 'rimless', nil, :id => "c7" ) %>
               <label for="c7"><span></span>Rimless</label>
             </div>
           </li>
           <li data-legend="Shapes">
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c8" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'aviator', nil, :id => "c8" ) %>
               <label for="c8"><span></span>Aviator</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c9" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'rectangle', nil, :id => "c9" ) %>
               <label for="c9"><span></span>Rectangle</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c10" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'oval', nil, :id => "c10" ) %>
               <label for="c10"><span></span>Oval</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c11" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'sheild', nil, :id => "c11" ) %>
               <label for="c11"><span></span>Shield</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c12" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'wayfarer', nil, :id => "c12" ) %>
               <label for="c12"><span></span>Wayfarer</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c13" name="cc3"/>
+              <%= check_box_tag('q[shapes_in][]', 'cat', nil, :id => "c13" ) %>
               <label for="c13"><span></span>Cat</label>
             </div>
           </li>
           <li data-legend="Material">
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c14" name="cc4"/>
+              <%= check_box_tag('q[material_in][]', 'titanium', nil, :id => "c14" ) %>
               <label for="c14"><span></span>Titanium</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c15" name="cc4"/>
+              <%= check_box_tag('q[shapes_in][]', 'plastic', nil, :id => "c15" ) %>
               <label for="c15"><span></span>Plastic</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c16" name="cc4"/>
+              <%= check_box_tag('q[shapes_in][]', 'metal', nil, :id => "c16" ) %>
               <label for="c16"><span></span>Metal</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c17" name="cc4"/>
+              <%= check_box_tag('q[shapes_in][]', 'wood', nil, :id => "c17" ) %>
               <label for="c17"><span></span>Wood</label>
             </div>
           </li>
           <li data-legend="Size">
             <div class="radioCheckWrap">
-              <input type="radio" id="r1" name="rr1"/>
+              <%= check_box_tag('q[size_in][]', 'small', nil, :id => "r1" ) %>
               <label for="r1"><span></span>Small</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="radio" id="r2" name="rr1"/>
+              <%= check_box_tag('q[shapes_in][]', 'medium', nil, :id => "r2" ) %>
               <label for="r2"><span></span>Medium</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="radio" id="r3" name="rr1"/>
+              <%= check_box_tag('q[shapes_in][]', 'large', nil, :id => "r3" ) %>
               <label for="r3"><span></span>Large</label>
             </div>
           </li>
+
           <li data-legend="Color">
             <div class="colorPallete">
               <div>
-                <a href="javascript:"><span class="filterColor fallGreen"></span></a>
-                <a href="javascript:"><span class="filterColor black"></span></a>
-                <a href="javascript:"><span class="filterColor gray"></span></a>
+                <%= check_box_tag('q[color_in][]', 'fallgreen', nil,class: 'checkbox-inline', :id => "co_col_1" ) %>
+                <a onclick="select_prev_check(id='color1')"  id="color1" href="javascript:"><span class="filterColor fallGreen"></span></a>
+                <%= check_box_tag('q[color_in][]', 'black', nil,class: 'checkbox-inline', :id => "co_col_2" ) %>
+                <a onclick="select_prev_check(id='color2')" id="color2" href="javascript:"><span class="filterColor black"></span></a>
+                <%= check_box_tag('q[color_in][]', 'gray', nil,class: 'checkbox-inline', :id => "co_col_3" ) %>
+                <a onclick="select_prev_check(id='color3')" id="color3" href="javascript:"><span class="filterColor gray"></span></a>
               </div>
               <div>
-                <a href="javascript:"><span class="filterColor blue"></span></a>
-                <a href="javascript:"><span class="filterColor buddhaGold"></span></a>
-                <a href="javascript:"><span class="filterColor totemPole"></span></a>
+                <%= check_box_tag('q[color_in][]', 'blue', nil,class: 'checkbox-inline', :id => "co_col_4" ) %>
+                <a onclick="select_prev_check(id='color4')" id="color4" href="javascript:"><span class="filterColor blue"></span></a>
+                <%= check_box_tag('q[color_in][]', 'buddhagold', nil,class: 'checkbox-inline', :id => "co_col_5" ) %>
+                <a onclick="select_prev_check(id='color5')" id="color5" href="javascript:"><span class="filterColor buddhaGold"></span></a>
+                <%= check_box_tag('q[color_in][]', 'totempole', nil,class: 'checkbox-inline', :id => "co_col_6" ) %>
+                <a onclick="select_prev_check(id='color6')" id="color6" href="javascript:"><span class="filterColor totemPole"></span></a>
               </div>
               <div>
-                <a href="javascript:"><span class="filterColor eggPlant"></span></a>
-                <a href="javascript:"><span class="filterColor pink"></span></a>
-                <a href="javascript:"><span class="filterColor copper"></span></a>
+                <%= check_box_tag('q[color_in][]', 'eggplant', nil,class: 'checkbox-inline', :id => "co_col_7" ) %>
+                <a onclick="select_prev_check(id='color7')" id="color7" href="javascript:"><span class="filterColor eggPlant"></span></a>
+                <%= check_box_tag('q[color_in][]', 'pink', nil,class: 'checkbox-inline', :id => "co_col_8" ) %>
+                <a onclick="select_prev_check(id='color8')" id="color8" href="javascript:"><span class="filterColor pink"></span></a>
+                <%= check_box_tag('q[color_in][]', 'copper', nil,class: 'checkbox-inline', :id => "co_col_9" ) %>
+                <a onclick="select_prev_check(id='color9')" id="color9" href="javascript:"><span class="filterColor copper"></span></a>
               </div>
               <div>
-                <a href="javascript:"><span class="filterColor white"></span></a>
-                <a href="javascript:"><span class="filterColor yellow"></span></a>
-                <a href="javascript:"><span class="filterColor titan"></span></a>
+                <%= check_box_tag('q[color_in][]', 'white', nil,class: 'checkbox-inline', :id => "co_col_10" ) %>
+                <a onclick="select_prev_check(id='color10')" id="color10" href="javascript:"><span class="filterColor white"></span></a>
+                <%= check_box_tag('q[color_in][]', 'yellow', nil,class: 'checkbox-inline', :id => "co_col_11" ) %>
+                <a onclick="select_prev_check(id='color11')" id="color11" href="javascript:"><span class="filterColor yellow"></span></a>
+                <%= check_box_tag('q[color_in][]', 'titan', nil,class: 'checkbox-inline', :id => "co_col_12" ) %>
+                <a onclick="select_prev_check(id='color12')" id="color12" href="javascript:"><span class="filterColor titan"></span></a>
               </div>
               <div>
-                <a href="javascript:"><span class="filterColor orange"></span></a>
-                <a href="javascript:"><span class="filterColor brown"></span></a>
-                <a href="javascript:"><span class="filterColor doveGray"></span></a>
+                <%= check_box_tag('q[color_in][]', 'orange', nil,class: 'checkbox-inline', :id => "co_col_13" ) %>
+                <a onclick="select_prev_check(id='color13')" id="color13" href="javascript:"><span class="filterColor orange"></span></a>
+                <%= check_box_tag('q[color_in][]', 'brown', nil,class: 'checkbox-inline', :id => "co_col_14" ) %>
+                <a onclick="select_prev_check(id='color14')" id="color14" href="javascript:"><span class="filterColor brown"></span></a>
+                <%= check_box_tag('q[color_in][]', 'fallgreen', nil,class: 'checkbox-inline', :id => "co_col_15" ) %>
+                <a onclick="select_prev_check(id='color15')" id="color15" href="javascript:"><span class="filterColor doveGray"></span></a>
               </div>
             </div>
           </li>
           <li data-legend="RX Type">
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c18" name="cc5"/>
+              <%= check_box_tag('q[rx_type_in][]', 'single vision', nil, :id => "c18" ) %>
               <label for="c18"><span></span>Single Vision</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c19" name="cc5"/>
+              <%= check_box_tag('q[rx_type_in][]', 'bifocal', nil, :id => "c19" ) %>
               <label for="c19"><span></span>Bifocal</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c20" name="cc5"/>
+              <%= check_box_tag('q[rx_type_in][]', 'progressive', nil, :id => "c20" ) %>
               <label for="c20"><span></span>Progessive</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c21" name="cc5"/>
+              <%= check_box_tag('q[rx_type_in][]', 'high definition', nil, :id => "c21" ) %>
               <label for="c21"><span></span>High Definition</label>
             </div>
             <div class="radioCheckWrap">
-              <input type="checkbox" id="c22" name="cc5"/>
+              <%= check_box_tag('q[rx_type_in][]', 'non prescription', nil, :id => "c22" ) %>
               <label for="c22"><span></span>Non Prescription</label>
             </div>
           </li>
         </ul>
+
       </div>
+      <button onlick="openPage_clear()" type="button" class="btn btn-lg btn-primary filter-button">clear</button>
+      <%= f.submit "filter", class: "btn btn-lg btn-primary filter-button" %>
+    <% end %>
+
       <!--<div class="collapseArrow">-->
       <!--<a href="javascript:"><i class="fa fa-angle-up"></i></a>-->
       <!--</div>-->
     </div>
+
   </div>
+
   <div class="filterByTypeWrapper">
     <section class="glassesShowCase">
       <div class="container">
@@ -207,6 +233,9 @@
                     </span>
           <div class="border-bg"></div>
         </div>
+
+        <div id="filterrific_results">
+
         <div class="row">
           <% for product in @products %>
             <div class="col-md-3">
@@ -247,6 +276,7 @@
             </div>
           <% end %>
         </div>
+          </div>
       </div>
     </section>
   </div>

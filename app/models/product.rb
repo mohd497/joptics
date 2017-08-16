@@ -8,4 +8,9 @@ class Product < ActiveRecord::Base
   validates :name, :description, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 1.0 }
   validates :name, uniqueness: true
+
+  scope :with_category, lambda { |flag|
+    where(category:[*flag])
+  }
+
 end
