@@ -19,6 +19,8 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'ransack'
 
+gem 'rails_12factor'
+
 gem 'mini_magick'
 
 gem 'kaminari', '~> 0.17.0'
