@@ -5,6 +5,31 @@ class ProductsController < ApplicationController
   def index
 
     @q = Product.search(params[:q])
+
+    if params["sort"] == "asc"
+      @q.sorts = "price asc"
+    elsif params["sort"] == "dec"
+      @q.sorts = "price dec"
+    end
+
+    begin
+      if params["q"]["category_in"].length == 1
+        if params["q"]["category_in"][0] == "men"
+          @page_title = """Men's"""
+        elsif params["q"]["category_in"][0] == "women"
+           @page_title = """Women's"""
+        elsif params["q"]["category_in"][0] == "kids"
+            @page_title = """Kid's"""
+        else
+            @page_title = """Any"""
+        end
+      else
+        @page_title = """Any"""
+      end
+    rescue
+      @page_title = """Any"""
+    end
+
     @products = @q.result(distinct: true)
 
 
@@ -57,7 +82,13 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :status, :avatar, :category, :subcategory)
+    params.require(:product).permit(:name, :description, :price, :status, :avatar, :secavatar,
+                                    :thirdavatar, :fourthavatar,
+                                    :fifthavatar, :sixthavatar,
+                                    :seventhavatar, :eighthavatar,
+                                    :ninthavatar, :tenthavatar, :itemspec, :category, :subcategory, :newarrivals,
+                                    :bestselling, :popularbrand, :brand, :frames, :shapes,
+                                    :material, :size, :color, :rx_type)
   end
 
 end

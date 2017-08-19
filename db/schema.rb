@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811182616) do
+ActiveRecord::Schema.define(version: 20170818113628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20170811182616) do
     t.string   "name"
     t.float    "price"
     t.boolean  "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "category"
     t.string   "subcategory"
     t.string   "avatar"
@@ -77,6 +77,16 @@ ActiveRecord::Schema.define(version: 20170811182616) do
     t.string   "size"
     t.string   "color"
     t.string   "rx_type"
+    t.string   "secavatar"
+    t.string   "thirdavatar"
+    t.string   "fourthavatar"
+    t.string   "fifthavatar"
+    t.string   "sixthavatar"
+    t.string   "seventhavatar"
+    t.string   "eighthavatar"
+    t.string   "tenthavatar"
+    t.string   "itemspec"
+    t.string   "ninthavatar"
   end
 
   create_table "shipping_addresses", force: :cascade do |t|

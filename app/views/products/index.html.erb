@@ -38,7 +38,7 @@
         </ul>
       </div>
     </div>
-    <%= search_form_for @q , url: products_path, :html => { class: 'your-class' } do |f| %>
+    <%= search_form_for @q , url: products_path do |f| %>
     <div class="filterOptions">
       <div class="container">
         <ul>
@@ -209,7 +209,7 @@
         </ul>
 
       </div>
-      <button onlick="openPage_clear()" type="button" class="btn btn-lg btn-primary filter-button">clear</button>
+      <a onclick="openPage_clear()" href="javascript:"  class="btn btn-lg btn-primary filter-button">clear</a>
       <%= f.submit "filter", class: "btn btn-lg btn-primary filter-button" %>
     <% end %>
 
@@ -224,11 +224,11 @@
     <section class="glassesShowCase">
       <div class="container">
         <div class="clearfix titleWrapper">
-          <h3 class="pull-left">Men's</h3>
+          <h3 class="pull-left"><%= @page_title %></h3>
           <span class="sortFilter pull-right">
-                        <select class="form-control">
-                            <option>Price upto High</option>
-                            <option>Price upto Low</option>
+                        <select id="changer" class="form-control">
+                            <option value="asc">Price upto High</option>
+                            <option value="dec">Price upto Low</option>
                         </select>
                     </span>
           <div class="border-bg"></div>
@@ -240,8 +240,9 @@
           <% for product in @products %>
             <div class="col-md-3">
               <div class="glassInfoWrap">
+                <h4 class="list-group-item-heading"><%= link_to product.name, product, method: :get %></h4>
                 <span class="price"><%= number_to_currency(product.price) %></span>
-                <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <%= image_tag(product.secavatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="naw_star5" name="rating" value="5"/><label

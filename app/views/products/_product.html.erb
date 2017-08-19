@@ -1,26 +1,149 @@
-<div class="card">
-  <div class="container-fliud">
-    <div class="wrapper row">
-      <div class="preview col-md-6">
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
 
-        <div class="preview-pic tab-content">
-          <div class="tab-pane active" id="pic-1"><img src="http://placehold.it/400x252" /></div>
-        </div>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <div class="clearfix stepsWrapper">
+        <span class="stepCir pull-left">1</span>
+        <h3 class="pull-left">Your Prescription</h3>
+        <span class="stepCir pull-right">3</span>
+        <span class="stepCir pull-right">2</span>
+        <div class="border-bg"></div>
+      </div>
+      <section class="productInfoWrap">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="prodCarouselWrapper">
+              <div class="productDescWrap">
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.secavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.thirdavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.fourthavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.fifthavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.sixthavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.seventhavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.eighthavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.ninthavatar, :class => "img-responsive") %>
+                </div>
+                <div class="glassInfoWrap">
+                  <%= image_tag(@product.tenthavatar, :class => "img-responsive") %>
+                </div>
+              </div>
+              <div class="slider-nav">
+                <div>
+                  <%= image_tag(@product.secavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.thirdavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.fourthavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.fifthavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.sixthavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.seventhavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.eighthavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.ninthavatar, :class => "img-responsive") %>
+                </div>
+                <div>
+                  <%= image_tag(@product.tenthavatar, :class => "img-responsive") %>
+                </div>
+              </div>
+            </div>
+            <div class="itemSpecsWrapper">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="itemSpecs clearfix">
+                    <span>Eligible for Progressive</span>
+                    <strong>Yes</strong>
+                  </div>
+                  <div class="itemSpecs clearfix">
+                    <span>Material</span>
+                    <strong>Plastic</strong>
+                  </div>
+                  <div class="itemSpecs clearfix">
+                    <span>Gender</span>
+                    <strong>Unisex</strong>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="imgWrap">
+                    <%= image_tag(@product.itemspec, :class => "img-responsive") %>
 
-      </div>
-      <div class="details col-md-6">
-        <%= form_for @order_line do |f| %>
-            <h3 class="product-title"><%= @product.name %></h3>
-            <p class="product-description"><%= @product.description %></p>
-            <h4 class="price">current price: <span><%= number_to_currency(@product.price) %></span></h4>
-            <div class="action">
-              <%= f.submit "Add to Cart", class: "btn btn-primary btn-lg btn-block" %>
-              <label>Quantity:</label><%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
-              <%= f.hidden_field :product_id, value: @product.id %>
-              <%= f.hidden_field :unit_price, value: @product.price %>
-        <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="productSidebar">
+              <h3><%= @product.name %><br><%= @product.color %></h3>
+              <h4>
+                <span>$179.00</span>
+                <%= number_to_currency(@product.price) %>
+              </h4>
+              <div class="descProd">
+                <%= @product.description %>
+                <div class="ratingSocialWrap">
+                  <fieldset class="rating">
+                    <input type="radio" id="naw_star20" name="rating" value="5" checked/><label
+                  class="full"
+                  for="naw_star20"></label>
+                    <input type="radio" id="naw_star19" name="rating" value="4" checked/><label
+                  class="full"
+                  for="naw_star19"></label>
+                    <input type="radio" id="naw_star18" name="rating" value="3" checked/><label
+                  class="full"
+                  for="naw_star18"></label>
+                    <input type="radio" id="naw_star17" name="rating" value="2"/><label
+                  class="full"
+                  for="naw_star17"></label>
+                    <input type="radio" id="naw_star16" name="rating" value="1"/><label
+                  class="full"
+                  for="naw_star16"></label>
+                  </fieldset>
+                  <span class="socialWrap">
+                                        <a href="javascript:">
+                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="javascript:">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                        </a>
+                                    </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="selectLensWrap">
+          <a class="btn btn-default" href="javascript:">Back</a>
+          <a class="btn btn-primary" href="javascript:">Select Lens</a>
+        </div>
+      </section>
     </div>
   </div>
 </div>

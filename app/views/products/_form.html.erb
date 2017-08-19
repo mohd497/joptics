@@ -8,6 +8,13 @@
       </div>
 
       <div class="col-lg-12 form-group margin50">
+        <%= f.label :brand, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.text_field :brand, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
         <%= f.label :description, class: "col-lg-2" %>
         <div class="col-lg-4">
           <%= f.text_area :description, class: "form-control name" %>
@@ -22,16 +29,103 @@
       </div>
 
       <div class="col-lg-12 form-group margin50">
+        <%= f.label :secavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :secavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :thirdavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :thirdavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :fourthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :fourthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :fifthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :fifthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :sixthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :sixthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :seventhavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :seventhavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :eighthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :eighthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :ninthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :ninthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :tenthavatar, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :tenthavatar, class: "form-control name" %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :itemspec, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.file_field :itemspec, class: "form-control name" %>
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 form-group margin50">
         <%= f.label :category, class: "col-lg-2" %>
         <div class="col-lg-4">
-          <%= f.text_area :category, class: "form-control name" %>
+          <%= f.select :category, options_for_select([['men','men'],['women','women'],['kid','kids']]) %>
         </div>
       </div>
 
       <div class="col-lg-12 form-group margin50">
         <%= f.label :subcategory, class: "col-lg-2" %>
         <div class="col-lg-4">
-          <%= f.text_area :subcategory, class: "form-control name" %>
+          <%= f.select :subcategory, options_for_select([['eyeglasses','eyeglasses'],['preglasses','preglasses'],['sunglasses','sunglasses'],
+                                                         ['powerglasses','powerglasses']]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :rx_type, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :rx_type, options_for_select([['Single Vision','Single Vision'],['Bifocal','Bifocal'],['Progessive','Progessive'],
+                                                         ['High Definition','High Definition']]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :color, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.text_field :color, class: "form-control name" %>
         </div>
       </div>
 
@@ -45,6 +139,60 @@
         <%= f.label :status, class: "col-lg-2" %>
         <div class="col-lg-4">
           <%= f.select :status, options_for_select([['Enabled',true],['Disabled',false]]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :frames, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :frames, options_for_select([['Half Rim','Half Rim'],['Full Rim','Full Rim'],['Rimless','Rimless']]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :shapes, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :shapes, options_for_select([['Aviator','Aviator'],['Rectangle','Rectangle'],['Oval','Oval'],
+                                                    ['Shield','Shield'],['Wayfarer','Wayfarer'],['Cat','Cat']]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :material, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :material, options_for_select([['Titanium','Titanium'],['Plastic','Plastic'],['Metal','Metal'],
+                                                    ['Wood','Wood']]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :size, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :size, options_for_select([['Small','Small'],['Medium','Medium'],['Large','Large']]) %>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :newarrivals, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :newarrivals, options_for_select([['True',true],['False',false]]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :bestselling, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :bestselling, options_for_select([['True',true],['False',false]]) %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 form-group margin50">
+        <%= f.label :popularbrand, class: "col-lg-2" %>
+        <div class="col-lg-4">
+          <%= f.select :popularbrand, options_for_select([['True',true],['False',false]]) %>
         </div>
       </div>
 

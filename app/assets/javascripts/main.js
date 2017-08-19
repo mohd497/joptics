@@ -30,13 +30,47 @@ function openPage_mens_powerglasses(){
     window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=powerglasses&commit=Search","_self")
 }
 
+function openPage_clear(){
+    window.open("/products?commit=Search","_self")
+}
+
 function select_prev_check(id) {
     $("#" + id).prev().click();
 }
 
 
 
+
+
 $(document).ready(function () {
+
+    $('#changer').change(function(){
+        this_url = window.location.href
+        if(this_url.indexOf("sort") > 0){
+             this_url = this_url.slice(0,-3)
+            window.open(this_url + $(this).val(),"_self");
+        }
+        else {
+            window.open(this_url + "&sort=" + $(this).val(),"_self");
+        }
+
+    });
+
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results==null){
+            return null;
+        }
+        else{
+            return decodeURI(results[1]) || 0;
+        }
+    }
+
+    if($.urlParam("sort") == 'dec'){
+        document.getElementById("changer").options[1].selected = true;
+    } else if($.urlParam("sort") == 'asc') {
+        document.getElementById("changer").options[0].selected = true;
+    }
 
 
     $('#na_men a').click(function (e) {
