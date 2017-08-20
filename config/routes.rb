@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'test' => 'home#test'
   resources :products, except: [:delete] do
-    resources :reviews, only: [:index, :create]
+    resources :reviews, only: [:index, :create], defaults: {format: :json}
   end
   resources :order_lines, only: [:create, :update, :destroy]
   resource :checkouts, only: [:new, :create]

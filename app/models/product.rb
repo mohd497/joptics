@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
 
   has_many :order_lines
   has_many :reviews
+
   scope :is_enabled, -> { where(status: true) }
 
   validates :name, :description, :price, presence: true

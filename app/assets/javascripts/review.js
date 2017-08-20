@@ -12,9 +12,13 @@ $(document).ready(function () {
         console.log(caption);
         var product_id = $('#input-id').attr('data-product-id');
         $('#input-id').rating('refresh', {displayOnly: true, showClear: false, showCaption: true});
-        $.post( `/products/${product_id}/reviews`, { rating: 5 })
+        $.post( `/products/${product_id}/reviews`, { rating: value })
         .done(function( data ) {
-          alert( "Data Loaded: " + data.msg );
+          console.log(JSON.stringify(data));
+          alert( "Data Loaded: " + data.rating );
+        })
+        .fail(function(xhr, status, error) {
+          alert(xhr.responseText);
         });
       });
     }
