@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'review/index'
+
   get 'home/index'
 
   get 'checkout/new'
@@ -9,7 +11,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'test' => 'home#test'
-  resources :products, except: [:delete]
+  resources :products, except: [:delete] do
+    resources :reviews, only: [:index]
+  end
   resources :order_lines, only: [:create, :update, :destroy]
   resource :checkouts, only: [:new, :create]
 

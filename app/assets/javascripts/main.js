@@ -164,12 +164,4 @@ $(document).ready(function () {
             responsive: true       // true if mlens has to be responsive (boolean)
         });
 
-    $("#input-id").attr({value: '3'});
-    $("#input-id").rating({ size: 'xs', step: 1, showClear: false});
-    $('#input-id').on('rating.change', function(event, value, caption) {
-      console.log(value);
-      console.log(caption);
-      $('#input-id').rating('refresh', {displayOnly: true, showClear: false, showCaption: true});
-    });
-
 });
