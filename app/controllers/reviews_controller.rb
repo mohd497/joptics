@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_customer!, only: [:create]
 
   def index
-    render json: {rating: 4}
+    render json: {rating: Review.average_rating(params['product_id'])}
   end
 
   def create

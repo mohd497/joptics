@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "GET",
-    url: "/products/5/reviews",
+    url: "/products/3/reviews",
     dataType: "json",
     success: function(data){
       $("#input-id").attr({value: data.rating || '0'});
@@ -15,7 +15,7 @@ $(document).ready(function () {
         $.post( `/products/${product_id}/reviews`, { rating: value })
         .done(function( data ) {
           console.log(JSON.stringify(data));
-          alert( "Data Loaded: " + data.rating );
+          // alert( "Data Loaded: " + data.rating );
         })
         .fail(function(xhr, status, error) {
           alert(xhr.responseText);
