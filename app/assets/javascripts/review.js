@@ -10,7 +10,12 @@ $(document).ready(function () {
       $('#input-id').on('rating.change', function(event, value, caption) {
         console.log(value);
         console.log(caption);
+        var product_id = $('#input-id').attr('data-product-id');
         $('#input-id').rating('refresh', {displayOnly: true, showClear: false, showCaption: true});
+        $.post( `/products/${product_id}/reviews`, { rating: 5 })
+        .done(function( data ) {
+          alert( "Data Loaded: " + data.msg );
+        });
       });
     }
   });
