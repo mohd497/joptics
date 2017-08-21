@@ -25,4 +25,12 @@ class Product < ActiveRecord::Base
     where(category:[*flag])
   }
 
+  def rating=(value)
+    @rating = value
+  end
+
+  def rating
+    @rating = Review.average_rating(id)
+    @rating ? @rating.to_i : 0
+  end
 end
