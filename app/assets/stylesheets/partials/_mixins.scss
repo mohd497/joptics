@@ -165,9 +165,9 @@ $maxMD: $LG - 1px;
       @content;
     }
   }
-    //screens greater than or equal 992px
+    //screens less than 992px
   @else if $canvas == MMD {
-    @media only screen and (max-width: $MD) {
+    @media only screen and (max-width: $MD - 1) {
       @content;
     }
   }
@@ -185,7 +185,7 @@ $maxMD: $LG - 1px;
   }
 }
 
-@mixin centered-element($top, $left, $x, $y){
+@mixin centered-element($top, $left, $x, $y) {
   position: absolute;
   top: $top;
   left: $left;

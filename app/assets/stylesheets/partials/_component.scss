@@ -1,28 +1,28 @@
 .btn {
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 18px;
   text-transform: capitalize;
   border: 0;
   text-shadow: none;
   @include transition($transitionValue);
-  + .btn{
+  + .btn {
     margin-left: 10px;
   }
   &.btn-default {
     background: $doveGray;
     color: $white;
-    &:hover {
+    &:hover, &:focus {
       background: $primaryColor - 10;
     }
   }
   &.btn-primary {
     background: $marron;
     color: $white;
-    &:hover {
+    &:hover, &:focus {
       background: $marron - 10;
     }
   }
-  &.btn-info{
+  &.btn-info {
     border: 1px solid $fountainBlue;
     background: $fountainBlue + 15;
     color: $white;
@@ -49,6 +49,8 @@
   > label {
     color: $alto - 25;
     float: right;
+    width: auto;
+    margin: 0;
   }
   > input:checked ~ label, &:not(:checked) > label:hover, &:not(:checked) > label:hover ~ label, > input:checked + label:hover, > input:checked ~ label:hover, > label:hover ~ input:checked ~ label, > input:checked ~ label:hover ~ label {
     color: $primaryColor;
@@ -81,7 +83,20 @@
     background: $white;
   }
 }
-
+.titleWrapper{
+  @include Mq(XS){
+    .border-bg {
+      display: none;
+    }
+    h3, .sortFilter{
+      width: 100%;
+      padding: 0;
+    }
+    .sortFilter{
+      margin-top: 15px;
+    }
+  }
+}
 .stepsWrapper {
   padding-left: 20px;
   h3 {
@@ -99,46 +114,81 @@
     color: $alto;
     text-align: center;
     line-height: 39px;
-    &.active{
+    &.active {
       background: $primaryColor;
       color: $white;
+    }
+  }
+  &.stepsActive {
+    h3 {
+      color: $black;
+    }
+  }
+  @include Mq(XS) {
+    padding-left: 10px;
+    margin: 20px 0 70px;
+    .stepCir {
+      width: 30px;
+      height: 30px;
+      margin: 4px 10px 4px 0;
+      line-height: 29px;
+    }
+    h3 {
+      position: absolute;
+      left: 0;
+      bottom: -40px;
+      font-size: 18px;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }
 
 .prodCarouselWrapper {
   margin: 0 15px;
+  @include Mq(XS){
+    .slick-slider{
+      .slick-slide{
+        margin-left: 0;
+      }
+    }
+  }
 }
 
-.itemSpecsWrapper{
+.itemSpecsWrapper {
   background-color: $white - 10;
   padding: 15px;
-  .itemSpecs{
+  .itemSpecs {
     border-bottom: 1px solid $alto;
     padding-bottom: 5px;
     margin-bottom: 5px;
     color: $doveGray;
     width: 100%;
-    &:last-child{
+    &:last-child {
       border: 0;
     }
-    strong{
+    strong {
       float: right;
     }
-    span{
+    span {
       float: left;
     }
   }
-  .imgWrap{
-    @include centered-element(50%,0,0,-50%);
+  .imgWrap {
+    @include centered-element(50%, 0, 0, -50%);
   }
-  > div{
+  > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    [class*="col-"]{
+    [class*="col-"] {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -148,10 +198,243 @@
   }
 }
 
-.selectLensWrap{
+.selectLensWrap {
   margin-top: 50px;
-  .btn{
+  .btn {
     min-width: 210px;
     padding: 10px 0;
+  }
+  @include Mq(XS) {
+    .btn {
+      display: block;
+      max-width: 200px;
+      margin: auto;
+      + .btn {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.enterLensWrap {
+  a {
+    display: block;
+    height: 325px;
+    position: relative;
+    background: $white - 10;
+    border-radius: 2px;
+    border: 1px solid $alto;
+    img {
+      @include centered-element(50%, 50%, -50%, -50%);
+      max-width: 90%;
+    }
+  }
+  .form-title {
+    margin-top: 20px;
+  }
+}
+
+.cartShowCase {
+  background: $white - 10;
+  border-radius: 2px;
+  height: 200px;
+  position: relative;
+  img {
+    @include centered-element(50%, 50%, -50%, -50%);
+    max-width: 80%;
+  }
+}
+
+.cartFormWrap {
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: $fwRegular;
+    + h4 {
+      margin-top: 20px;
+    }
+  }
+  .radioCheckWrap {
+    a {
+      color: $primaryColor;
+    }
+  }
+  @include Mq(MMD){
+    margin-top: 20px;
+    .radioCheckWrap {
+      label{
+        display: block;
+      }
+    }
+  }
+  @include Mq(XS){
+    form {
+      .form-group {
+        .select2-container, input.form-control {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.cartInfoTable {
+  max-width: 100%;
+  overflow: auto;
+  background: $white - 10;
+  border-radius: 2px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 20px 0;
+  table {
+    border: 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    tr {
+      th {
+        font-weight: $fwBold;
+        text-transform: uppercase;
+      }
+      td {
+        border: 0;
+      }
+    }
+  }
+}
+
+.cartCheckoutDetail {
+  background: $white;
+  border-radius: 2px;
+  border: 1px solid $alto;
+  padding: 0;
+  margin: 20px 0;
+  li {
+    border-bottom: 1px solid $alto;
+    list-style-type: none;
+    padding: 10px;
+    position: relative;
+    font-weight: $fwBold;
+    text-align: left;
+    &:last-child {
+      border: 0;
+    }
+    span {
+      @extend .inlineBlockMiddle;
+    }
+    h4 {
+      right: 10px;
+      @extend .inlineBlockMiddle;
+      position: absolute;
+      font-size: 20px;
+      font-weight: $fwBold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.lensCotingPriceBox {
+  background: $white - 10;
+  border-radius: 2px;
+  border: 1px solid $alto;
+  padding: 10px;
+  min-height: 150px;
+  position: relative;
+  .radioCheckWrap {
+    @include centered-element(50%, 10px, 0, -50%);
+    label {
+      font-size: 22px;
+      color: $marron;
+    }
+  }
+  .imgShowCase {
+    @include centered-element(50%, 120px, 0, -50%);
+    img {
+      max-width: 50%;
+    }
+    @include Mq(LMD) {
+      padding-left: 0;
+      width: calc(100% - 106px);
+    }
+  }
+  @include Mq(MMD) {
+    margin-bottom: 10px;
+  }
+  @include Mq(XS) {
+    margin-bottom: 20px;
+  }
+}
+
+.coatingWrapper {
+  margin-top: 40px;
+  .coatingInfoBox {
+    .radioCheckWrap {
+      display: block;
+      label {
+        font-size: 22px;
+        color: $marron;
+      }
+    }
+    p {
+      padding-left: 25px;
+      margin: 5px 0 0 0;
+      strong, span {
+        display: block;
+      }
+    }
+  }
+  @include Mq(MMD) {
+    .coatingInfoBox {
+      margin-bottom: 10px;
+    }
+  }
+  @include Mq(XS) {
+    .coatingInfoBox {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.priceStaticWrapper {
+  background: $white - 10;
+  padding: 30px 15px;
+  position: relative;
+  margin: 40px 0 20px;
+  strong {
+    font-size: 32px;
+  }
+}
+
+.prodBilling {
+  margin: 40px 0 20px;
+  .info-heading {
+    font-weight: 500;
+  }
+  form {
+    .form-group {
+      label {
+        min-width: 150px;
+        margin: 0;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+      .select2-container, input.form-control {
+        min-width: 130px;
+        width: 100% !important;
+        max-width: 260px;
+        @extend .inlineBlockMiddle;
+      }
+    }
+  }
+  @include Mq(XS){
+    form {
+      .form-group {
+        .select2-container, input.form-control {
+          max-width: none;
+        }
+      }
+    }
   }
 }

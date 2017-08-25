@@ -42,9 +42,6 @@ a{
 
 .mainWrapper{
   min-height: 100%;
-  @include Mq(XS){
-    padding-top: 58px;
-  }
 }
 
 textarea:focus,
@@ -78,4 +75,37 @@ input[type="select"]:focus,
 .inlineBlockMiddle{
   display: inline-block;
   vertical-align: middle;
+}
+
+.page-title{
+  font-size: 30px;
+  font-family: $secondaryFont;
+  color: $black;
+  margin: 20px 0;
+  @include Mq(MMD){
+    font-size: 24px;
+  }
+  @include Mq(XS){
+    font-size: 20px;
+  }
+}
+
+.primary-color{
+  color: $primaryColor;
+}
+
+label{
+  font-weight: 500;
+  margin: 0;
+}
+
+input.form-control{
+  border: 1px solid $alto;
+  &:focus{
+    border-color: $alto;
+  }
+}
+
+.error-class{
+  color: $marron;
 }

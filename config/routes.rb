@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :order_lines, only: [:create, :update, :destroy]
   resource :checkouts, only: [:new, :create]
 
+  get 'prescription' => 'lens#enter_pre'
+  get 'select_lens' => 'lens#select_len'
+  post 'prescription/create' => 'lens#create'
+  patch 'prescription/update' => 'lens#update'
   get 'cart' => 'carts#show'
   get 'carts' => 'carts#index'
   get 'card' => 'checkouts#credit_card_info'

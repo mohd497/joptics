@@ -1,0 +1,124 @@
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
+  <%= form_for @pre , url: prescription_create_path do |f| %>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <div class="clearfix stepsWrapper stepsActive">
+        <span class="stepCir pull-left active">1</span>
+        <span class="stepCir pull-left active">2</span>
+        <h3 class="pull-left">Lenses and Coatings</h3>
+        <div class="border-bg"></div>
+      </div>
+      <section class="productInfoWrap">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="form-subtitle">Lenses</h3>
+          </div>
+          <div class="col-md-4">
+            <div class="lensCotingPriceBox" data-container="body" data-toggle="popover"
+                 data-placement="bottom" data-content="- High Quality Single Vision 1.50 Index prescription lenses<br>- Recomended RX range: -1.00 + 1.00<br>- 40% to 60% saving from traditional glasses
+  retailer ($170)" data-trigger="hover" data-html="true">
+              <div class="radioCheckWrap">
+                <%= f.radio_button :lense_type, "standard lenses 1.5", id: "lcp1" %>
+                <label for="lcp1"><span>Free</span></label>
+              </div>
+              <div class="imgShowCase">
+                <img class="img-responsive" src="images/glass1.png"/>
+                <h5>
+                  <strong>Standard Lenses</strong>
+                  (1.5 Index)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="lensCotingPriceBox" data-container="body" data-toggle="popover"
+                 data-placement="bottom" data-content="- High Quality Single Vision 1.50 Index prescription lenses<br>- Recomended RX range: -1.00 + 1.00<br>- 40% to 60% saving from traditional glasses
+  retailer ($170)" data-trigger="hover" data-html="true">
+              <div class="radioCheckWrap">
+                <%= f.radio_button :lense_type, "High Index lenses 1.61", id: "lcp2" %>
+                <label for="lcp2"><span>+$9.95</span></label>
+              </div>
+              <div class="imgShowCase">
+                <img class="img-responsive" src="images/glass1.png"/>
+                <h5>
+                  <strong>High Index Lenses</strong>
+                  (1.61 Index)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="lensCotingPriceBox" data-container="body" data-toggle="popover"
+                 data-placement="bottom" data-content="- High Quality Single Vision 1.50 Index prescription lenses<br>- Recomended RX range: -1.00 + 1.00<br>- 40% to 60% saving from traditional glasses
+  retailer ($170)" data-trigger="hover" data-html="true">
+              <div class="radioCheckWrap">
+                <%= f.radio_button :lense_type, "High Index lenses 1.67", id: "lcp3" %>
+                <label for="lcp3"><span>+$29.95</span></label>
+              </div>
+              <div class="imgShowCase">
+                <img class="img-responsive" src="images/glass1.png"/>
+                <h5>
+                  <strong>High Index Lenses</strong>
+                  (1.67 Index)
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row coatingWrapper">
+          <div class="col-md-12">
+            <h3 class="form-subtitle">Coatings</h3>
+          </div>
+          <div class="col-md-4">
+            <div class="coatingInfoBox">
+              <div class="radioCheckWrap">
+                <%= f.check_box :protective_coating, id: "cw1" %>
+                <label for="cw1"><span>$9.95</span></label>
+              </div>
+              <p>
+                <strong>UV Protective Coating</strong>
+                <span>UV Protective Coating shields your
+                                    eyes form harmful UV rays.</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="coatingInfoBox">
+              <div class="radioCheckWrap">
+                <%= f.check_box :scratch_resistant_coating, id: "cw2" %>
+                <label for="cw2"><span>$9.95</span></label>
+              </div>
+              <p>
+                <strong>Scratch Resistant Coating</strong>
+                <span>Scratch Resistant Coating minimizes the occurence of minor scratches on the surface and improves the durability the lenses.</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="coatingInfoBox">
+              <div class="radioCheckWrap">
+                <%= f.check_box :anti_reflective_coating, id: "cw3" %>
+                <label for="cw3"><span>$9.95</span></label>
+              </div>
+              <p>
+                <strong>Anti Reflective Coating</strong>
+                <span>Anti Reflective Coating reduces glares and minimizes eye strain. This coating is important for extended computer use and nighttime driving</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="priceStaticWrapper clearfix">
+          <strong class="pull-right"><sup>$</sup><strong id="price-change" ><%= @product.price %></strong></strong>
+        </div>
+        <div class="selectLensWrap">
+          <a class="btn btn-default" href="#" onclick="openPrevPre()">Back</a>
+          <a class="btn btn-primary" href="javascript:">Add to Cart</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<% end %>
+<!--home page end-->

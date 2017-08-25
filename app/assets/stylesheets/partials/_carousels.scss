@@ -11,13 +11,13 @@
   }
   .slick-prev {
     left: -25px;
-    &:before{
+    &:before {
       content: "\f104";
     }
   }
   .slick-next {
     right: -25px;
-    &:before{
+    &:before {
       content: "\f105";
     }
   }
@@ -36,28 +36,28 @@
     border: none;
     outline: none;
     background: transparent;
-    &:before{
+    &:before {
       font-family: FontAwesome;
       font-size: 30px;
       color: $black - 25;
     }
   }
-  @include Mq(XS){
+  @include Mq(XS) {
     .slick-prev {
       left: 0;
     }
     .slick-next {
       right: 0;
     }
-    .slick-list{
+    .slick-list {
       margin: 0 20px;
     }
   }
 }
 
-.glassesShowCase{
+.glassesShowCase {
   width: 100%;
-  h2{
+  h2 {
     text-align: center;
     font-family: $secondaryFont;
     font-weight: $fwRegular;
@@ -67,7 +67,7 @@
     padding-bottom: 12px;
     margin: 70px auto 15px;
     position: relative;
-    &:after{
+    &:after {
       content: "";
       width: 35%;
       border-bottom: 7px solid $mercury;
@@ -78,35 +78,35 @@
       bottom: -4px;
     }
   }
-  .nav-tabs{
+  .nav-tabs {
     border: 0;
     text-align: center;
     margin-bottom: 25px;
-    li{
+    li {
       float: none;
       display: inline-block;
       vertical-align: middle;
-      a{
+      a {
         border: 0;
         color: $primaryColor;
         font-size: 20px;
         padding: 5px 10px;
         border-radius: 0;
       }
-      &.active{
-        a{
+      &.active {
+        a {
           border: 1px solid $primaryColor + 20;
         }
       }
     }
   }
-  .tab-content{
+  .tab-content {
     display: block;
-    > .tab-pane{
+    > .tab-pane {
       height: 0;
       display: block;
       overflow: hidden;
-      &.active{
+      &.active {
         height: auto;
         display: block;
         overflow: inherit;
@@ -115,13 +115,13 @@
   }
 }
 
-.glassInfoWrap{
+.glassInfoWrap {
   border: 1px solid transparent;
   padding: 10px;
   height: 250px;
   position: relative;
   @include transition($transitionValue);
-  &:before{
+  &:before {
     content: "";
     background: image_url("ribbon.png") no-repeat center center;
     background-size: contain;
@@ -133,12 +133,12 @@
     opacity: 0;
     @include transition($transitionValue);
   }
-  img{
+  img {
     margin: auto;
     right: 0;
-    @include centered-element(50%,0,0,-50%);
+    @include centered-element(50%, 0, 0, -50%);
   }
-  .price{
+  .price {
     font-weight: $fwBold;
     font-size: 15px;
     padding-left: 22px;
@@ -146,7 +146,7 @@
     display: block;
     opacity: 0;
     @include transition($transitionValue);
-    &:before{
+    &:before {
       content: "";
       width: 16px;
       height: 16px;
@@ -157,49 +157,49 @@
       margin-top: 2px;
     }
   }
-  .ratingSocialWrap{
+  .ratingSocialWrap {
     position: absolute;
     bottom: 5px;
     width: calc(100% - 30px);
     opacity: 0;
     @include transition($transitionValue);
-    .socialWrap{
-      @include centered-element(50%,auto,0,-50%);
+    .socialWrap {
+      @include centered-element(50%, auto, 0, -50%);
       right: 0;
       margin-top: -5px;
-      a{
+      a {
         color: $alto - 30;
         text-decoration: none;
         font-size: 24px;
         display: inline-block;
         margin-left: 5px;
-        &:first-child{
+        &:first-child {
           margin-left: 0;
         }
-        &:hover{
+        &:hover {
           color: $primaryColor;
         }
       }
     }
   }
-  &:hover{
+  &:hover {
     background-color: $white - 10;
     border: 1px solid $mercury;
-    .price, .ratingSocialWrap, &:before{
+    .price, .ratingSocialWrap, &:before {
       opacity: 1;
     }
   }
-  &:focus{
+  &:focus {
     @extend .noFocus;
   }
 }
 
-.productDescWrap{
-  .glassInfoWrap{
+.productDescWrap {
+  .glassInfoWrap {
     background-color: $white - 10;
     border: 1px solid $mercury;
     height: 400px;
-    &:before{
+    &:before {
       content: "";
       background: image_url("ribbon.png") no-repeat center center;
       background-size: contain;
@@ -210,18 +210,23 @@
       right: 15px;
       opacity: 1;
     }
-    [id*="mlens_target_"]{
+    [id*="mlens_target_"] {
       background-color: $white - 10;
+    }
+  }
+  @include Mq(XS) {
+    .glassInfoWrap {
+      height: 200px;
     }
   }
 }
 
-.slider-nav{
-  .slick-list{
+.slider-nav {
+  .slick-list {
     padding: 0 !important;
     margin: 50px 40px;
   }
-  .slick-slide{
+  .slick-slide {
     border: 1px solid $alto;
     height: 100px;
     vertical-align: middle;
@@ -229,12 +234,12 @@
     margin-left: 15px;
     position: relative;
     background: $white;
-    &.slick-current{
+    &.slick-current {
       border-radius: 3px;
       background: $white - 7;
     }
-    img{
-      @include centered-element(50%,0,0,-50%);
+    img {
+      @include centered-element(50%, 0, 0, -50%);
       right: 0;
     }
   }
