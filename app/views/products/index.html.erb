@@ -12,6 +12,7 @@
 <h1>hassan</h1>
   <% @products.each do |product| %>
     <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
+    <%= link_to 'Add to Favorite', favorites_product_path(product), method: :post, :remote => true %>
   <% end %>
 <div class="mainWrapper">
   <section class="internalBanner">
