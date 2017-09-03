@@ -13,4 +13,8 @@ $(document).ready(function () {
       alert(xhr.responseText);
     });
   });
+
+  $("#share").jsSocials({
+    shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+  });
 });

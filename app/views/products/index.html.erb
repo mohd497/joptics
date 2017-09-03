@@ -8,7 +8,7 @@
     <% end %>
     </div>
 </div>-->
-
+<div id="share"></div>
 <h1>hassan</h1>
   <% @products.each do |product| %>
     <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
@@ -284,3 +284,7 @@
     </section>
   </div>
 </div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
