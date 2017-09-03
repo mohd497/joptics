@@ -15,6 +15,6 @@ $(document).ready(function () {
   });
 
   $("#share").jsSocials({
-    shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+    shares: ["twitter", "facebook"]
   });
 });
