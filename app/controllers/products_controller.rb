@@ -85,7 +85,9 @@ class ProductsController < ApplicationController
   end
 
   def favorites
-    @favorite_products = Product.find(session[:favorite_products] || [])
+    @products = Product.find(session[:favorite_products] || [])
+    @q = Product.search(params[:q])
+    render :index
   end
 
   private
