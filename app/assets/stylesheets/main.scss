@@ -1541,3 +1541,9 @@ footer .copyRightWrap {
     font-size: 1.4em !important;
     margin-bottom: 10px !important;
 }
+
+.favorite-disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #1a9f85 !important;
+}

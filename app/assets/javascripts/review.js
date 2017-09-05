@@ -14,6 +14,10 @@ $(document).ready(function () {
     });
   });
 
+  $('.socialWrap a[data-remote="true"]').on('click', function(event) {
+    $(this).addClass('favorite-disabled');
+  });
+
   var productDescription = $('.descProd').contents().get(0).nodeValue;
   $("#share").jsSocials({
     shares: ["twitter", "facebook"],
