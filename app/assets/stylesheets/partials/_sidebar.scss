@@ -50,4 +50,89 @@
       }
     }
   }
+  .btnWrap{
+    .btn{
+      width: 100%;
+      padding: 10px 0;
+      + .btn{
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      &.btn-primary{
+        background: $primaryColor;
+        &:hover, &:focus {
+          background: $primaryColor - 10;
+        }
+      }
+      &.btn-default{
+        background: $gallery;
+        color: $doveGray;
+        &:hover, &:focus {
+          background: $gallery - 10;
+        }
+      }
+    }
+  }
+  .shippingInfoWrap{
+    background: $white - 10;
+    padding: 15px;
+    border-top: 1px solid $alto;
+    &:nth-of-type(1){
+      margin-top: -10px;
+      border:0;
+    }
+    h2{
+      font-family: $secondaryFont;
+      font-size: 22px;
+      margin: 0;
+      a{
+        font-family: $primaryFont;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 5px;
+      }
+    }
+    small{
+      color: $doveGray;
+      font-size: 15px;
+      font-weight: $fwBold;
+      margin: 15px 0 0;
+      padding-left: 25px;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      li{
+        list-style-type: none;
+        margin-bottom: 5px;
+        display: block;
+        i{
+          color: $primaryColor;
+          margin-top: 3px;
+          @extend .inlineBlockTop;
+        }
+        span{
+          padding-left: 7px;
+          width: calc(100% - 23px);
+          @extend .inlineBlockTop;
+        }
+      }
+    }
+    .radioCheckWrap{
+      margin: 15px 0;
+    }
+    .offerInfo{
+      display: block;
+      padding-left: 25px;
+    }
+  }
+  @include Mq(MMD){
+    margin-top: 20px;
+    h3 {
+      padding-left: 25px;
+      &:before {
+        left: 0;
+      }
+    }
+  }
 }

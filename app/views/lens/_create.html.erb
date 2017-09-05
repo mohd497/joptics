@@ -1,0 +1,93 @@
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
+  <%= form_for @pre , url: prescription_create_path do |f| %>
+      <div class="productDetailWrapper">
+        <div class="container">
+          <div class="clearfix stepsWrapper">
+            <span class="stepCir pull-left active">1</span>
+            <h3 class="pull-left">Your Prescription</h3>
+            <span class="stepCir pull-right">3</span>
+            <span class="stepCir pull-right">2</span>
+            <div class="border-bg"></div>
+          </div>
+
+          <section class="productInfoWrap">
+            <div class="prescDropWrap" style="width: 556px;">
+              <label for="typ">Type:</label>
+              <%= f.select(:pre_type, options_for_select(@pre_type, id: "typ")) %>
+
+              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+            </div>
+          </section>
+
+          <section class="productInfoWrap">
+            <div class="clearfix">
+              <div class="cusColFourth">
+                <h3 class="form-title">OD (Left)</h3>
+                <div class="prescDropWrap">
+                  <label for="sph">SPH</label>
+                  <%= f.select(:sphere, options_for_select(@len_one, id: "sph")) %>
+
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="cyl">cyl</label>
+                  <%= f.select(:cylinder, options_for_select(@cyl_one, id: "cyl")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="axis">axis</label>
+                  <%= f.select(:axis, options_for_select(@axis_one, id: "axis")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="add">add</label>
+                  <%= f.select(:add, options_for_select(@add_one, id: "add")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="pd">pd</label>
+                  <%= f.select(:pd, options_for_select(@pd_one, id: "pd")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+              </div>
+              <div class="cusColFourth">
+                <h3 class="form-title">OD (Right)</h3>
+                <div class="prescDropWrap">
+                  <label for="sph">SPH</label>
+                  <%= f.select(:sphere_right, options_for_select(@len_one, id: "sph")) %>
+
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="cyl">cyl</label>
+                  <%= f.select(:cylinder_right, options_for_select(@cyl_one, id: "cyl")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="axis">axis</label>
+                  <%= f.select(:axis_right, options_for_select(@axis_one, id: "axis")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="add">add</label>
+                  <%= f.select(:add_right, options_for_select(@add_one, id: "add")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+                <div class="prescDropWrap">
+                  <label for="pd">pd</label>
+                  <%= f.select(:pd_right, options_for_select(@pd_one, id: "pd")) %>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                </div>
+              </div>
+            </div>
+            <div class="selectLensWrap">
+              <a class="btn btn-default" href="#" onclick="openPrevProduct('<%= session[:product_id] %>')">Back</a>
+              <%= f.submit "Select Lens", class: "btn btn-primary" %>
+            </div>
+          </section>
+        </div>
+      </div>
+  <% end %>
+</div>

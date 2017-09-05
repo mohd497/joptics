@@ -99,19 +99,12 @@
 }
 
 .productInfoWrap{
-  label{
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-right: 0px;
-    margin-bottom: 0;
-    width: 30px;
-  }
   label, select, .btn{
     @extend .inlineBlockMiddle;
   }
   .select2-container{
     min-width: 130px;
-    width: calc(100% - 120px) !important; 
+    width: calc(100% - 120px) !important;
   }
   .btn-info{
     border-radius: 50%;
@@ -128,6 +121,13 @@
     &:nth-last-of-type(1){
       margin-bottom: 30px;
     }
+    > label{
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-right: 30px;
+      margin-bottom: 0;
+      width: 50px;
+    }
   }
   .cusColFourth{
     width: 45%;
@@ -137,6 +137,54 @@
       padding-left: 130px;
       padding-right: 0;
       border-left: 1px solid $gallery;
+    }
+  }
+  form{
+    margin: 20px 0;
+    .form-group{
+      label{
+        min-width: 150px;
+        margin: 0;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+      .select2-container, input.form-control {
+        min-width: 130px;
+        width: 100% !important;
+        max-width: 260px;
+        @extend .inlineBlockMiddle;
+      }
+    }
+  }
+  @include Mq(MMD){
+    .cusColFourth{
+      width: 100%;
+      padding: 0 15px;
+      &:last-child{
+        padding: 0 15px;
+        border-left: 0;
+      }
+    }
+  }
+  @include Mq(XS){
+    form {
+      .form-group {
+        .select2-container, input.form-control {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.popover{
+  background: $primaryColor;
+  border-color: $primaryColor;
+  color: $white;
+  &.bottom > .arrow{
+    border-bottom-color: $primaryColor;
+    &:after{
+      border-bottom-color: $primaryColor;
     }
   }
 }

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170820094400) do
+=======
+ActiveRecord::Schema.define(version: 20170824103407) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +59,29 @@ ActiveRecord::Schema.define(version: 20170820094400) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "status"
+  end
+
+  create_table "presciptions", force: :cascade do |t|
+    t.float    "sphere"
+    t.float    "cylinder"
+    t.integer  "axis"
+    t.float    "add"
+    t.float    "pd"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "customer_id"
+    t.string   "pre_token"
+    t.float    "sphere_right"
+    t.float    "cylinder_right"
+    t.float    "axis_right"
+    t.integer  "add_right"
+    t.float    "pd_right"
+    t.string   "pre_type"
+    t.string   "lense_type"
+    t.boolean  "protective_coating",        default: false
+    t.boolean  "scratch_resistant_coating", default: false
+    t.boolean  "anti_reflective_coating",   default: false
+    t.integer  "product_id"
   end
 
   create_table "products", force: :cascade do |t|

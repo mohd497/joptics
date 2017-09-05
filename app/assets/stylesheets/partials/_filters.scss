@@ -53,6 +53,35 @@
     ul{
       margin: 0;
     }
+    .filterCat{
+      li{
+        display: none;
+        &.filterLegend{
+          display: block;
+          a{
+            padding: 0;
+            border: 0;
+          }
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include Mq(XS){
+    ul {
+      li {
+        &.allFilter {
+          display: block;
+          padding-right: 0;
+          margin-bottom: 5px;
+          padding-bottom: 5px;
+          border-right: 0;
+          border-bottom: 1px solid $marron;
+        }
+      }
+    }
   }
 }
 
@@ -99,6 +128,7 @@
   width: 100%;
   overflow: hidden;
   height: 0;
+  @include box-shadow(10px,0,13px,-13px, rgba($black,0.5));
   ul{
     padding: 0;
     margin: 0;
@@ -129,6 +159,49 @@
       }
     }
   }
+  .radioCheckWrap{
+    margin-bottom: 5px;
+    label{
+      &:before{
+        vertical-align: top !important;
+      }
+      span{
+        vertical-align: top !important;
+        width: calc(100% - 25px);
+      }
+    }
+  }
+  @include Mq(MMD){
+    ul{
+      display: block;
+      overflow: auto;
+      padding: 0 50px 10px;
+      white-space: nowrap;
+      li{
+        width: auto;
+        min-width: 130px;
+        &:first-child{
+          width: auto;
+        }
+        &:before{
+          content: attr(data-legend)": ";
+          display: inline-block;
+          width: auto;
+          font-size: 16px;
+          font-weight: $fwBold;
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .radioCheckWrap{
+      label{
+        span{
+          vertical-align: top !important;
+          width: auto;
+        }
+      }
+    }
+  }
 }
 
 .colorPallete{
@@ -142,9 +215,12 @@
     width: 20px;
     height: 20px;
     overflow: hidden;
+    &:first-child{
+      margin-left: 0;
+    }
   }
   .filterColor{
-    display: block; 
+    display: block;
     height: 100%;
     &:first-child{
       margin-left: 0;

@@ -42,7 +42,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @order_line = current_order.order_lines.new
+    session[:product_id] = @product.id
+
     respond_to do |format|
       format.html
       format.json { render json: @product }

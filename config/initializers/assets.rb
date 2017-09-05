@@ -10,3 +10,7 @@ Rails.application.config.assets.precompile += %w( star-rating.min.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+Rails.application.config.assets.precompile += %w( slick.min.js )
+Rails.application.config.assets.precompile += %w( nouislider.min )
+Rails.application.config.assets.precompile += %w( select2.min )

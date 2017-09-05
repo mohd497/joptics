@@ -7,7 +7,6 @@
       <div class="clearfix stepsWrapper">
         <span class="stepCir pull-left">1</span>
         <h3 class="pull-left">Your Prescription</h3>
-        <span class="stepCir pull-right">3</span>
         <span class="stepCir pull-right">2</span>
         <div class="border-bg"></div>
       </div>
@@ -140,10 +139,10 @@
             </div>
           </div>
         </div>
-        <div class="selectLensWrap">
-          <a class="btn btn-default" href="javascript:">Back</a>
-          <a class="btn btn-primary" href="javascript:">Select Lens</a>
-        </div>
+          <div class="selectLensWrap">
+
+            <%= link_to "Select Prescription", prescription_path, method: :get, class: "btn btn-primary" %>
+          </div>
       </section>
     </div>
   </div>

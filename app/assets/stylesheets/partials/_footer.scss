@@ -18,7 +18,7 @@ footer {
       line-height: 25px;
       font-size: 14px;
       i.support_icon {
-        background: url(../images/support_sprite.png) no-repeat 0 0;
+        background: image_url("support_sprite.png") no-repeat 0 0;
         width: 16px;
         height: 16px;
         display: inline-block;
@@ -169,6 +169,7 @@ footer {
     }
   }
   @include Mq(XS){
+    margin-top: 40px;
     .contactDetails {
       width: 100%;
       text-align: center;
