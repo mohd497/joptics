@@ -245,7 +245,7 @@
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= image_tag(product.secavatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
-                  <fieldset class="rating">
+                  <!-- <fieldset class="rating">
                     <input type="radio" id="naw_star5" name="rating" value="5"/><label
                   class="full"
                   for="naw_star5"></label>
@@ -261,18 +261,19 @@
                     <input type="radio" id="naw_star1" name="rating" value="1"/><label
                   class="full"
                   for="naw_star1"></label>
-                  </fieldset>
+                  </fieldset> -->
+                  <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                      <a href="javascript:">
+                          <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                      <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                      <a href="javascript:">
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                  </span>
                 </div>
               </div>
             </div>
