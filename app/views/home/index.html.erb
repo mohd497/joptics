@@ -51,34 +51,15 @@
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star5"></label>
-                    <input type="radio" id="naw_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star4"></label>
-                    <input type="radio" id="naw_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star3"></label>
-                    <input type="radio" id="naw_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star2"></label>
-                    <input type="radio" id="naw_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star1"></label>
-                  </fieldset>
+                  <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                      <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                      <a href="javascript:">
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                  </span>
                 </div>
               </div>
               <% end %>
@@ -92,34 +73,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="naw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="naw_star5"></label>
-                        <input type="radio" id="naw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="naw_star4"></label>
-                        <input type="radio" id="naw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="naw_star3"></label>
-                        <input type="radio" id="naw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="naw_star2"></label>
-                        <input type="radio" id="naw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="naw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -133,34 +95,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="naw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="naw_star5"></label>
-                        <input type="radio" id="naw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="naw_star4"></label>
-                        <input type="radio" id="naw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="naw_star3"></label>
-                        <input type="radio" id="naw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="naw_star2"></label>
-                        <input type="radio" id="naw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="naw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -198,34 +141,15 @@
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="bsw_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="bsw_star5"></label>
-                    <input type="radio" id="bsw_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="bsw_star4"></label>
-                    <input type="radio" id="bsw_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="bsw_star3"></label>
-                    <input type="radio" id="bsw_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="bsw_star2"></label>
-                    <input type="radio" id="bsw_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="bsw_star1"></label>
-                  </fieldset>
+                  <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                      <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                      <a href="javascript:">
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                  </span>
                 </div>
               </div>
               <% end %>
@@ -239,34 +163,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="bsw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="bsw_star5"></label>
-                        <input type="radio" id="bsw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="bsw_star4"></label>
-                        <input type="radio" id="bsw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="bsw_star3"></label>
-                        <input type="radio" id="bsw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="bsw_star2"></label>
-                        <input type="radio" id="bsw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="bsw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -280,34 +185,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="bsw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="bsw_star5"></label>
-                        <input type="radio" id="bsw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="bsw_star4"></label>
-                        <input type="radio" id="bsw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="bsw_star3"></label>
-                        <input type="radio" id="bsw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="bsw_star2"></label>
-                        <input type="radio" id="bsw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="bsw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -345,34 +231,15 @@
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="pbw_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="pbw_star5"></label>
-                    <input type="radio" id="pbw_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="pbw_star4"></label>
-                    <input type="radio" id="pbw_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="pbw_star3"></label>
-                    <input type="radio" id="pbw_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="pbw_star2"></label>
-                    <input type="radio" id="pbw_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="pbw_star1"></label>
-                  </fieldset>
+                  <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                      <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                      <a href="javascript:">
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                  </span>
                 </div>
               </div>
               <% end %>
@@ -385,34 +252,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="pbw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="pbw_star5"></label>
-                        <input type="radio" id="pbw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="pbw_star4"></label>
-                        <input type="radio" id="pbw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="pbw_star3"></label>
-                        <input type="radio" id="pbw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="pbw_star2"></label>
-                        <input type="radio" id="pbw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="pbw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -425,34 +273,15 @@
                     <span class="price"><%= number_to_currency(product.price) %></span>
                     <%= image_tag(product.avatar, :class => "img-responsive") %>
                     <div class="ratingSocialWrap">
-                      <fieldset class="rating">
-                        <input type="radio" id="pbw_star5" name="rating" value="5"/><label
-                      class="full"
-                      for="pbw_star5"></label>
-                        <input type="radio" id="pbw_star4" name="rating" value="4"/><label
-                      class="full"
-                      for="pbw_star4"></label>
-                        <input type="radio" id="pbw_star3" name="rating" value="3"/><label
-                      class="full"
-                      for="pbw_star3"></label>
-                        <input type="radio" id="pbw_star2" name="rating" value="2"/><label
-                      class="full"
-                      for="pbw_star2"></label>
-                        <input type="radio" id="pbw_star1" name="rating" value="1"/><label
-                      class="full"
-                      for="pbw_star1"></label>
-                      </fieldset>
+                      <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                       <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                          <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
+                          <a href="javascript:">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                          </a>
+                      </span>
                     </div>
                   </div>
               <% end %>
@@ -465,4 +294,3 @@
   </section>
 </div>
 </div>
-

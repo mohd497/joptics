@@ -8,10 +8,6 @@
     <% end %>
     </div>
 </div>-->
-<% @products.each do |product| %>
-  <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
-  <%= link_to 'Add to Favorite', favorites_product_path(product), method: :post, :remote => true %>
-<% end %>
 <div class="mainWrapper">
   <section class="internalBanner">
   </section>
@@ -245,23 +241,6 @@
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= image_tag(product.secavatar, :class => "img-responsive") %>
                 <div class="ratingSocialWrap">
-                  <!-- <fieldset class="rating">
-                    <input type="radio" id="naw_star5" name="rating" value="5"/><label
-                  class="full"
-                  for="naw_star5"></label>
-                    <input type="radio" id="naw_star4" name="rating" value="4"/><label
-                  class="full"
-                  for="naw_star4"></label>
-                    <input type="radio" id="naw_star3" name="rating" value="3"/><label
-                  class="full"
-                  for="naw_star3"></label>
-                    <input type="radio" id="naw_star2" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star2"></label>
-                    <input type="radio" id="naw_star1" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star1"></label>
-                  </fieldset> -->
                   <%= number_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
                       <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
