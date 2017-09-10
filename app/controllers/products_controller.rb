@@ -30,10 +30,10 @@ class ProductsController < ApplicationController
       @page_title = """Any"""
     end
 
+
     @products = @q.result(distinct: true)
 
 
-    @order_line = current_order.order_lines.new
     respond_to do |format|
         format.html
         format.json

@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   mount_uploader :tenthavatar, TenthavatarUploader
   mount_uploader :itemspec, ItemspecUploader
 
-  has_many :order_lines
+  has_one :presciptions
   scope :is_enabled, -> { where(status: true) }
 
   validates :name, :description, :price, presence: true

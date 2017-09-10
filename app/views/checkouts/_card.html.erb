@@ -1,31 +1,200 @@
-<fieldset>
+<div class="mainWrapper" xmlns="http://www.w3.org/1999/html">
+  <section class="internalBanner">
+  </section>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <section class="productInfoWrap">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="page-title">Review and Payment</h3>
+          </div>
 
-  <div class="col-lg-12 form-group margin50">
-    <%= label_tag :card_number, "credit card number", class: "col-lg-2" %>
-    <div class="col-lg-4">
-      <%= text_field_tag "card_number", nil, :maxlength => 12, :size => 12 %>
+          <% for pre in @order.presciptions %>
+
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="cartShowCase">
+                    <%= image_tag(pre.product.avatar, :class => "img-responsive") %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="cartFormWrap">
+                    <h4><strong>Type:</strong><br>
+                      <%= pre.pre_type %><br>
+                      PD (<%= pre.pd %>)
+                    </h4>
+                    <div class="cartInfoTable">
+                      <table class="table">
+                        <thead>
+                        <tr>
+                          <th></th>
+                          <th>sph</th>
+                          <th>cyl</th>
+                          <th>axis</th>
+                          <th>add</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>OD (Left)</td>
+                          <td><%= pre.sphere %></td>
+                          <td><%= pre.cylinder %></td>
+                          <td><%= pre.axis %></td>
+                          <td><%= pre.add %></td>
+                        </tr>
+                        <tr>
+                          <td>OD (Right)</td>
+                          <td><%= pre.sphere_right %></td>
+                          <td><%= pre.cylinder_right %></td>
+                          <td><%= pre.axis_right %></td>
+                          <td><%= pre.add_right %></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <h4><strong>Lens Type:</strong><br>
+                      <%= pre.lense_type %></h4>
+                    <h4><strong>Your Coatings:</strong><br>
+                      <% if pre.protective_coating or pre.anti_reflective_coating or pre.scratch_resistant_coating %>
+                          <%= "#{'UV Protective' if pre.protective_coating}" +
+                                  "#{' + '    if pre.protective_coating && pre.anti_reflective_coating}" +
+                                  "#{'Anti Flective Coating'  if pre.anti_reflective_coating}" +
+                                  "#{' + '    if (pre.anti_reflective_coating && pre.scratch_resistant_coating) || (pre.protective_coating && pre.scratch_resistant_coating)}" +
+                                  "#{'Scratch Resistant'   if pre.scratch_resistant_coating}"
+                          %>
+                      <% else %>
+                          None
+                      <% end %>
+                    </h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="productSidebar">
+                    <h3><%= pre.product.name %><br></h3>
+                    <h4>
+                      <sup>$</sup><%= pre.total_cost %>
+                    </h4>
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+
+              <br>
+              <br>
+
+          <% end %>
+        </div>
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+              <ul class="cartCheckoutDetail">
+                <li>
+                  <span>Subtotal</span>
+                  <h4>$<%= @order.total %></h4>
+                </li>
+                <li>
+                  <span>Handling</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Shipping</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Tax</span>
+                  <h4>$0.00</h4>
+                </li>
+                <li>
+                  <span>Total (CAD)</span>
+                  <h4>$<%= @order.total %></h4>
+                </li>
+              </ul>
+              <div class="radioCheckWrap">
+                <input type="radio" id="at1" name="at1"/>
+                <label for="at1"><span>Credit Card</span> </label>
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="credit-card">Credit Card</label>
+                  <select name="" id="credit-card">
+                    <option value="0">Visa</option>
+                    <option value="1">Debit</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="card-holder">Card Holder Name</label>
+                  <input type="text" class="form-control" id="card-holder">
+                </div>
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="number" class="form-control" id="card-number">
+                </div>
+                <div class="form-group">
+                  <label for="card-pin">Card Pin</label>
+                  <input type="number" class="form-control" id="card-pin">
+                </div>
+                <div class="form-group">
+                  <label for="amount">Amount</label>
+                  <input type="number" class="form-control" id="amount">
+                </div>
+              </form>
+
+              <div class="selectLensWrap">
+                <a class="btn btn-primary" href="javascript:">Confirm Order</a>
+              </div>
+            </div>
+
+
+
+          <div class="col-md-3">
+            <div class="productSidebar">
+              <div class="shippingInfoWrap">
+                <h2 class="clearfix">
+                  Billing Address
+                  <a href="javascript:" class="pull-right primary-color"></a>
+                </h2>
+                <small>Type of mailing</small>
+                <ul>
+                  <li>
+                    <i class="fa fa-envelope"></i>
+                    <span><%= @order.shipping_address.email %></span>
+                  </li>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <span><%= @order.shipping_address.phone_number %></span>
+                  </li>
+                  <li>
+                    <i class="fa fa-bookmark"></i>
+                    <span><%= @order.shipping_address.first_name %></span>
+                  </li>
+                  <li>
+                    <i class="fa fa-map-marker"></i>
+                    <span><%= @order.shipping_address.address %></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="shippingInfoWrap">
+                <h2 class="clearfix">
+                  Shipping Method
+                </h2>
+                <div class="radioCheckWrap">
+                  <input type="radio" id="postmethod" name="postmethod"/>
+                  <label for="postmethod"><span>Pakistan Post ($0.00)</span> </label>
+                </div>
+                <strong class="offerInfo">Free shipping for any order over ($60)</strong>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        </div>
     </div>
   </div>
-
-  <div class="col-lg-12 form-group margin50">
-    <%= label_tag :cvv, "cvv", class: "col-lg-2" %>
-    <div class="col-lg-4">
-      <%= text_field_tag "cvv", nil, :maxlength => 3, :size => 3 %>
-    </div>
-  </div>
-
-  <div class="col-lg-12 form-group margin50">
-    <%= label_tag :card_month, "Card Expiration", class: "col-lg-2" %>
-    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15},
-                    {name: nil, id: "card_year"} %>
-  </div>
-
-  <div class="col-lg-12 form-group margin50">
-    <div class="col-lg-4">
-      <%= submit_tag "Submit", class:"btn btn-lg btn-primary btn-block custom-button" %>
-    </div>
-  </div>
-
-
-</fieldset>
+</div>

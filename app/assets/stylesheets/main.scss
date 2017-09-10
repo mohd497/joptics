@@ -447,17 +447,20 @@ input[type="select"]:focus,
   margin: 40px 0 20px; }
 .prodBilling .info-heading {
   font-weight: 500; }
-.prodBilling form .form-group label {
+.prodBilling .form-group {
+  width: 414px;
+}
+.prodBilling .form-group label {
   min-width: 150px;
   margin: 0;
   vertical-align: middle;
   font-size: 14px; }
-.prodBilling form .form-group .select2-container, .prodBilling form .form-group input.form-control {
+.prodBilling .form-group .select2-container, .prodBilling  .form-group input.form-control {
   min-width: 130px;
   width: 100% !important;
   max-width: 260px; }
 @media only screen and (max-width: 767px) {
-  .prodBilling form .form-group .select2-container, .prodBilling form .form-group input.form-control {
+  .prodBilling .form-group .select2-container, .prodBilling  .form-group input.form-control {
     max-width: none; } }
 
 .topnav {
@@ -489,7 +492,6 @@ input[type="select"]:focus,
   padding: 12px 0;
   margin: 1px 0 0 0; }
 .navbar .navbar-header .navbar-brand h2 {
-  text-transform: uppercase;
   color: #598b7f;
   margin: 0;
   font-weight: 400; }
@@ -949,6 +951,31 @@ footer .copyRightWrap {
 @media only screen and (max-width: 767px) {
   .productInfoWrap form .form-group .select2-container, .productInfoWrap form .form-group input.form-control {
     max-width: none; } }
+
+
+.PersonDetailWrapper .cusColFourth {
+  width: 45%;
+  float: left;
+  padding-right: 130px; }
+.PersonDetailWrapper .cusColFourth:last-child {
+  padding-left: 130px;
+  padding-right: 0;
+  border-left: 1px solid #ebebeb; }
+.PersonDetailWrapper form {
+  margin: 20px 0; }
+.PersonDetailWrapper form .form-group label {
+  min-width: 150px;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 14px; }
+@media only screen and (max-width: 991px) {
+  .PersonDetailWrapper .cusColFourth {
+    width: 100%;
+    padding: 0 15px; }
+  .PersonDetailWrapper .cusColFourth:last-child {
+    padding: 0 15px;
+    border-left: 0; } }
+
 
 .popover {
   background: #1a9f85;

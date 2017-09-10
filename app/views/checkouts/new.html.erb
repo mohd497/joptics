@@ -1,1 +1,101 @@
-<%= render 'checkouts/form' %>
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
+  <%= form_for @address , url: checkouts_path  do |f| %>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <section class="prodBilling">
+        <div class="PersonDetailWrapper">
+          <div class="clearfix">
+        <div class="cusColFourth">
+        <h3 class="page-title">Billing Address</h3>
+
+          <div class="form-group">
+            <label for="first-name">First Name<span class="error-class">*</span></label>
+            <%= f.text_field :first_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name<span class="error-class">*</span></label>
+            <%= f.text_field :last_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="email">Email<span class="error-class">*</span></label>
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <%= f.select(:country, options_for_select([["Pakistan","Pakistan"]])) %>
+          </div>
+          <div class="form-group">
+            <label for="province">Province</label>
+            <%= f.select(:province, options_for_select([["Sindh","Sindh"],["Punjab","Punjab"],["NWFP","NWFP"],["Balochistan","Balochistan"]])) %>
+
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <%= f.select(:city, options_for_select([["Karachi","Karachi"],["Lahore","Lahore"],["Islamabad","Islamabad"],["Quetta","Quetta"]])) %>
+          </div>
+          <div class="form-group">
+            <label for="add1">Address<span class="error-class">*</span></label>
+            <%= f.text_field :address, class: "form-control name" %>
+          </div>
+          <div class="form-group">
+            <label for="pc">Postal Code<span class="error-class">*</span></label>
+            <%= f.text_field :postal_code, class: "form-control name" %>
+          </div>
+          <div class="form-group">
+            <label for="phnumb">Phone Number<span class="error-class">*</span></label>
+            <%= f.text_field :phone_number, class: "form-control name", :placeholder => "+923005555555" %>
+          </div>
+
+          </div>
+
+        <div class="cusColFourth">
+          <h3 class="page-title">Shipping Address</h3>
+          <div class="form-group">
+            <label for="add1">Address<span class="error-class">*</span></label>
+            <%= f.text_field :shipping_address, class: "form-control name" %>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <%= f.select(:shipping_country, options_for_select([["Pakistan","Pakistan"]])) %>
+          </div>
+          <div class="form-group">
+            <label for="province">Province</label>
+            <%= f.select(:shipping_province, options_for_select([["Sindh","Sindh"],["Punjab","Punjab"],["NWFP","NWFP"],["Balochistan","Balochistan"]])) %>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <%= f.select(:shipping_city, options_for_select([["Karachi","Karachi"],["Lahore","Lahore"],["Islamabad","Islamabad"],["Quetta","Quetta"]])) %>
+          </div>
+          <div class="form-group">
+            <label for="pc">Postal Code<span class="error-class">*</span></label>
+            <%= f.text_field :shipping_postal_code, class: "form-control name" %>
+          </div>
+        </div>
+          </div>
+          </div>
+
+        <br />
+          <div class="row">
+          <div class="form-group">
+            <div class="radioCheckWrap">
+              <input type="checkbox" id="cnf1" name="cnf1"/>
+              <label for="cnf1"><span>My billing address is the same as shipping address.</span> </label>
+            </div>
+          </div>
+
+        <div class="selectLensWrap">
+          <%= f.submit "Next", class:"btn btn-primary" %>
+        </div>
+          </div>
+      </section>
+
+
+    </div>
+
+
+  </div>
+
+  <% end %>
+</div>

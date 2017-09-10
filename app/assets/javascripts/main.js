@@ -1,7 +1,7 @@
 $lcp2_price = false;
 $lcp3_price = false;
 $price_original = 0;
-
+$is_shipping = true;
 
 
 function openPage(){
@@ -52,18 +52,156 @@ function select_prev_check(id) {
     $("#" + id).prev().click();
 }
 
+function pres_selection(e){
+    if (!$('#lcp3').is(':checked') && !$('#lcp2').is(':checked') && !$('#lcp1').is(':checked')) {
+
+        e.stopImmediatePropagation();
+        e.preventDefault();
 
 
+        swal("", "Please select a lense type", "warning");
+
+    }
+
+}
+
+
+function warnBeforeRedirect(e) {
+
+
+    if (do_something === true) {
+
+        e.stopImmediatePropagation();
+        e.preventDefault();
+
+
+        swal({
+            title: "Are you sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                do_something = false;
+                $(e.target).click();
+            }
+        }
+    );
+
+    }
+
+}
 
 
 $(document).ready(function () {
 
+    do_something = true;
+
+    $("#nav-logout").click(function(e) {
+
+    });
+
+    jQuery.validator.addMethod('phonePK', function(phone_number, element) {
+        phone_number = phone_number.replace(/\s+/g, '');
+        return this.optional(element) || phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+    }, 'Please specify a valid phone number');
+
+
+    $('#new_shipping_address').validate({
+        rules: {
+            "shipping_address[first_name]": {
+                minlength: 2,
+                required: true
+            },
+            "shipping_address[last_name]": {
+                minlength: 2,
+                required: true
+            },
+            "shipping_address[email]": {
+                required: true,
+                email: true
+            },
+            "shipping_address[address]": {
+                required: true
+            },"shipping_address[postal_code]": {
+                required: true
+            },
+            "shipping_address[phone_number]": {
+                minlength:10,
+                phonePK: true
+            },
+            "shipping_address[shipping_address]": {
+                required: $is_shipping
+            },
+            "shipping_address[shipping_postal_code]": {
+                required: $is_shipping
+            }
+
+        },highlight: function (element) {
+            $(element).addClass('my-error-class')
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+
+    if($('#lcp2').is(':checked')){
+        $lcp2_price = true;
+    }
+
+    if($('#lcp3').is(':checked')){
+        $lcp3_price = true;
+    }
+
+
+    $("#cnf1").on('click', function(){
+
+
+        $( "#shipping_address_shipping_address" ).prop( "disabled", false );
+        $( "#shipping_address_shipping_postal_code" ).prop( "disabled", false );
+        $( "#shipping_address_shipping_country" ).prop( "disabled", false );
+        $( "#shipping_address_shipping_province" ).prop( "disabled", false );
+        $( "#shipping_address_shipping_city" ).prop( "disabled", false );
+        $is_shipping = true
+
+        if($('#cnf1').is(':checked')){
+            $( "#shipping_address_shipping_address" ).prop( "disabled", true );
+            $( "#shipping_address_shipping_postal_code" ).prop( "disabled", true );
+            $( "#shipping_address_shipping_country" ).prop( "disabled", true );
+            $( "#shipping_address_shipping_province" ).prop( "disabled", true );
+            $( "#shipping_address_shipping_city" ).prop( "disabled", true );
+            $is_shipping = false
+        }
+
+
+    });
+
+
+
     $price_original = parseFloat($('#price-change').text());
 
+
+    $('#presciption_total_cost').val($('#price-change').text());
+
     $('#lcp1').on('click', function(){
-        $('#price-change').text($price_original.toFixed(2));
-        $lcp2_price = false;
-        $lcp3_price = false;
+        price = parseFloat($('#price-change').text());
+
+        if($lcp3_price == true && $lcp2_price == false){
+            price_new = price - 29.95;
+            $('#price-change').text(price_new.toFixed(2));
+            $lcp2_price = false;
+            $lcp3_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
+        }
+
+        if($lcp3_price == false && $lcp2_price == true){
+            price_new = price - 9.95;
+            $('#price-change').text(price_new.toFixed(2));
+            $lcp2_price = false;
+            $lcp3_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
+        }
     });
 
     $('#lcp2').on('click', function(){
@@ -74,6 +212,7 @@ $(document).ready(function () {
             $('#price-change').text(price_new.toFixed(2));
             $lcp2_price = true;
             $lcp3_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
         }
 
         if($lcp3_price == false && $lcp2_price == false){
@@ -81,6 +220,7 @@ $(document).ready(function () {
             $('#price-change').text(price_new.toFixed(2));
             $lcp2_price = true;
             $lcp3_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
         }
 
     });
@@ -93,6 +233,7 @@ $(document).ready(function () {
             $('#price-change').text(price_new.toFixed(2));
             $lcp3_price = true;
             $lcp2_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
         }
 
         if($lcp2_price == false && $lcp3_price == false){
@@ -100,6 +241,7 @@ $(document).ready(function () {
             $('#price-change').text(price_new.toFixed(2));
             $lcp3_price = true;
             $lcp2_price = false;
+            $('#presciption_total_cost').val($('#price-change').text());
         }
 
     });
@@ -112,10 +254,12 @@ $(document).ready(function () {
             price_new = price + 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original + 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
         } else {
             price_new = price - 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original - 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
 
         }
     });
@@ -128,10 +272,12 @@ $(document).ready(function () {
             price_new = price + 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original + 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
         } else {
             price_new = price - 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original - 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
 
         }
     });
@@ -144,10 +290,12 @@ $(document).ready(function () {
             price_new = price + 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original + 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
         } else {
             price_new = price - 9.95;
             $('#price-change').text(price_new.toFixed(2));
             $price_original = $price_original - 9.95;
+            $('#presciption_total_cost').val($('#price-change').text());
 
         }
     });

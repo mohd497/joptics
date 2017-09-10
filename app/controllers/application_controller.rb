@@ -10,10 +10,9 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if session[:order_id].nil?
-      Order.new do |u|
-        u.customer = current_customer
-        u.status = "cart"
-      end
+      order = Order.create(:status => 'cart')
+      order.save
+      return order
     else
       Order.find(session[:order_id])
     end

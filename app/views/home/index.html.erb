@@ -49,7 +49,9 @@
               <% for product in @products_new_women %>
               <div class="glassInfoWrap">
                 <span class="price"><%= number_to_currency(product.price) %></span>
-                <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }   do %>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <% end %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="naw_star5" name="rating" value="5"/><label
@@ -90,7 +92,9 @@
               <% for product in @products_new_men %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' } do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="naw_star5" name="rating" value="5"/><label
@@ -131,7 +135,9 @@
               <% for product in @products_new_kids %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }  do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="naw_star5" name="rating" value="5"/><label
@@ -196,7 +202,9 @@
               <% for product in @products_best_women %>
               <div class="glassInfoWrap">
                 <span class="price"><%= number_to_currency(product.price) %></span>
-                <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }   do %>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <% end %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="bsw_star5" name="rating" value="5"/><label
@@ -237,7 +245,9 @@
               <% for product in @products_best_men %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }    do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="bsw_star5" name="rating" value="5"/><label
@@ -278,7 +288,9 @@
               <% for product in @products_best_kids %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }   do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="bsw_star5" name="rating" value="5"/><label
@@ -343,7 +355,9 @@
               <% for product in @products_popularbrand_women %>
               <div class="glassInfoWrap">
                 <span class="price"><%= number_to_currency(product.price) %></span>
-                <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }  do %>
+                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <% end %>
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="pbw_star5" name="rating" value="5"/><label
@@ -383,7 +397,9 @@
               <% for product in @products_popularbrand_men %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' } do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="pbw_star5" name="rating" value="5"/><label
@@ -423,7 +439,9 @@
               <% for product in @products_popularbrand_kids %>
                   <div class="glassInfoWrap">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <%= link_to product, { 'data-toggle' => "tooltip", 'data-placement' => "top","data-container" => "body", 'title' => product.name, 'data-method' => 'get' }  do %>
+                        <%= image_tag(product.avatar, :class => "img-responsive") %>
+                    <% end %>
                     <div class="ratingSocialWrap">
                       <fieldset class="rating">
                         <input type="radio" id="pbw_star5" name="rating" value="5"/><label

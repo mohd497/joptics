@@ -240,9 +240,13 @@
           <% for product in @products %>
             <div class="col-md-3">
               <div class="glassInfoWrap">
-                <h4 class="list-group-item-heading"><%= link_to product.name, product, method: :get %></h4>
+                <h4 class="list-group-item-heading"></h4>
                 <span class="price"><%= number_to_currency(product.price) %></span>
-                <%= image_tag(product.secavatar, :class => "img-responsive") %>
+
+                <%= link_to product,  { 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => product.name, 'data-method' => 'get' }  do %>
+                  <%= image_tag(product.avatar, :class => "img-responsive") %>
+                <% end %>
+
                 <div class="ratingSocialWrap">
                   <fieldset class="rating">
                     <input type="radio" id="naw_star5" name="rating" value="5"/><label

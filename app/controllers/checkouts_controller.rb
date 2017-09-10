@@ -2,8 +2,6 @@ class CheckoutsController < ApplicationController
   require "uri"
   require "net/http"
 
-  before_action :authenticate_customer!
-
   def new
     @address = ShippingAddress.new
   end
@@ -11,6 +9,9 @@ class CheckoutsController < ApplicationController
   def create
     @address = ShippingAddress.new(address_params)
     if @address.save
+      @address.order_id = session[:order_id]
+      @address.save
+      session[:address_id] = @address.id
       redirect_to card_path
     else
       flash.now[:alert] = @address.errors.full_messages.to_sentence
@@ -19,6 +20,7 @@ class CheckoutsController < ApplicationController
   end
 
   def credit_card_info
+    @order = current_order
   end
 
   def process_credit_card
@@ -35,6 +37,8 @@ class CheckoutsController < ApplicationController
 
   private
   def address_params
-    params.require(:shipping_address).permit(:address, :phone_number, :customer_id)
+    params.require(:shipping_address).permit(:customer_id,:first_name, :last_name, :email, :country, :province, :city,
+                                             :address, :postal_code, :phone_number, :shipping_address,:shipping_country,
+                                             :shipping_province,:shipping_city,:shipping_postal_code)
   end
 end
