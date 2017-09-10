@@ -65,7 +65,7 @@ function pres_selection(e){
 
 }
 
-
+/*
 function warnBeforeRedirect(e) {
 
 
@@ -91,7 +91,7 @@ function warnBeforeRedirect(e) {
     }
 
 }
-
+*/
 
 $(document).ready(function () {
 
