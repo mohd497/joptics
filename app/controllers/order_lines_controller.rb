@@ -1,6 +1,5 @@
 class OrderLinesController < ApplicationController
 
-  before_action :authenticate_customer!
 
   def create
     @order = current_order
@@ -8,7 +7,7 @@ class OrderLinesController < ApplicationController
     @order.save
     session[:order_id] = @order.id
     flash[:success] = I18n.t("item_added")
-    redirect_to request.referer || root_path
+    redirect_to cart_path
   end
 
   def update
@@ -28,7 +27,7 @@ class OrderLinesController < ApplicationController
 
   private
   def order_lines_params
-    params.require(:order_line).permit(:qty, :unit_price, :product_id)
+    params.require(:order_line).permit(:qty, :unit_price, :prescription_id)
   end
 
 end

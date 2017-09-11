@@ -1,28 +1,164 @@
-<table class="table table-striped table-hover table-bordered">
-  <tbody>
-  <tr>
-    <th>Item</th>
-    <th>QTY</th>
-    <th>Unit Price</th>
-    <th>Total Price</th>
-    <th>Remove</th>
-  </tr>
-  <% for order_line in @order.order_lines  %>
-      <tr>
-        <td><%= order_line.product.name %></td>
-        <td><%= order_line.qty %></td>
-        <td><%= number_to_currency(order_line.unit_price) %></td>
-        <td><%= number_to_currency(order_line.total_price) %></td>
-        <td><%= link_to 'remove', order_line_path(order_line), method: "DELETE" %></td>
-      </tr>
-  <% end %>
-  <tr>
-    <th colspan="3"><span class="pull-right">Total</span></th>
-    <th><%= number_to_currency(@order.total) %></th>
-  </tr>
-  <tr>
-    <td><%= link_to 'Continue Shopping', products_path, class: "btn btn-primary" %></td>
-    <td colspan="3"><%= link_to 'Checkout', new_checkouts_path, class: "pull-right btn btn-success" %></td>
-  </tr>
-  </tbody>
-</table>
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <section class="productInfoWrap">
+        <div class="row">
+          <div class="col-md-12">
+            <% if not @order.presciptions.empty? %>
+               <h3 class="page-title">Products</h3>
+            <% else %>
+                <h3>It seems like your cart is empty.</h3>
+            <% end %>
+          </div>
+
+          <% for pre in @order.presciptions %>
+
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="cartShowCase">
+                    <%= image_tag(pre.product.avatar, :class => "img-responsive") %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="cartFormWrap">
+                    <h4><strong>Type:</strong><br>
+                      <%= pre.pre_type %><br>
+                      PD (<%= pre.pd %>)
+                    </h4>
+                    <div class="cartInfoTable">
+                      <table class="table">
+                        <thead>
+                        <tr>
+                          <th></th>
+                          <th>sph</th>
+                          <th>cyl</th>
+                          <th>axis</th>
+                          <th>add</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>OD (Left)</td>
+                          <td><%= pre.sphere %></td>
+                          <td><%= pre.cylinder %></td>
+                          <td><%= pre.axis %></td>
+                          <td><%= pre.add %></td>
+                        </tr>
+                        <tr>
+                          <td>OD (Right)</td>
+                          <td><%= pre.sphere_right %></td>
+                          <td><%= pre.cylinder_right %></td>
+                          <td><%= pre.axis_right %></td>
+                          <td><%= pre.add_right %></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <h4><strong>Lens Type:</strong><br>
+                      <%= pre.lense_type %></h4>
+                    <h4><strong>Your Coatings:</strong><br>
+                      <% if pre.protective_coating or pre.anti_reflective_coating or pre.scratch_resistant_coating %>
+                          <%= "#{'UV Protective' if pre.protective_coating}" +
+                                  "#{' + '    if pre.protective_coating && pre.anti_reflective_coating}" +
+                                  "#{'Anti Flective Coating'  if pre.anti_reflective_coating}" +
+                                  "#{' + '    if (pre.anti_reflective_coating && pre.scratch_resistant_coating) || (pre.protective_coating && pre.scratch_resistant_coating)}" +
+                                  "#{'Scratch Resistant'   if pre.scratch_resistant_coating}"
+                          %>
+                      <% else %>
+                          None
+                      <% end %>
+                    </h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="productSidebar">
+                    <h3><%= pre.product.name %><br></h3>
+                    <h4>
+                      <sup>$</sup><%= pre.total_cost %>
+                    </h4>
+                    <div class="btnWrap">
+                      <a href="/prescription/destroy?id=<%= pre.id %>" data-toggle="tooltip" data-placement="left" title="Remove from cart" data-method="delete" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </a>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+
+              <br>
+              <br>
+
+          <% end %>
+
+
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+
+              <ul class="cartCheckoutDetail">
+                <li>
+                  <span>Subtotal</span>
+                  <h4>$<%= @order.total %></h4>
+                </li>
+                <li>
+                  <span>Handling</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Shipping</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Tax</span>
+                  <h4>$0.00</h4>
+                </li>
+                <li>
+                  <span>Total (CAD)</span>
+                  <h4>$<%= @order.total %></h4>
+                </li>
+              </ul>
+
+            </div>
+
+            <div class="col-md-3">
+            </div>
+
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-3">
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="selectLensWrap">
+
+                <% if not @order.presciptions.empty? %>
+                  <%= link_to "Checkout", new_checkouts_path, method: :get, class: "btn btn-primary" %>
+                <% end %>
+                <a class="btn btn-default" href="#" onclick="openPage_clear()" >Continue Shopping</a>
+              </div>
+
+            </div>
+
+            <div class="col-md-3">
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

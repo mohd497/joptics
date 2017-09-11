@@ -1,13 +1,104 @@
-<div class="container">
+<div class="mainWrapper">
+  <section class="internalBanner">
+  </section>
+  <div class="productDetailWrapper">
+    <div class="container">
+      <section class="productInfoWrap">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="page-title">Products</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="cartShowCase">
+              <img class="img-responsive" src="images/enter-lens2.png" alt=""/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cartFormWrap">
+              <h4><strong>Type:</strong><br>
+                Single Vision (Everyday Use)<br>
+                PD (63.00)
+              </h4>
+              <div class="cartInfoTable">
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th></th>
+                    <th>sph</th>
+                    <th>cyl</th>
+                    <th>axis</th>
+                    <th>add</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>OD (Right)</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>OD (Left)</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4><strong>Lens Type:</strong><br>
+                1.5 Index Standard Lenses ($0)</h4>
+              <h4><strong>Your Coatings:</strong><br>
+                Scratch Resistant + UV Protective + Anti Flective Coating ($19.95)</h4>
+              <ul class="cartCheckoutDetail">
+                <li>
+                  <span>Subtotal</span>
+                  <h4>$68.95</h4>
+                </li>
+                <li>
+                  <span>Handling</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Shipping</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Tax</span>
+                  <h4>$0.00</h4>
+                </li>
+                <li>
+                  <span>Total (CAD)</span>
+                  <h4>$68.95</h4>
+                </li>
+              </ul>
+              <div class="radioCheckWrap">
+                <input type="checkbox" id="at1" name="at1"/>
+                <label for="at1"><span>I accept the terms of use. <a href="javascript:">(read)</a></span> </label>
+              </div>
 
-  <h1>Order List</h1>
-
-    <% if @order_list.empty? %>
-      <p>Sorry, There are no order made yet.</p>
-    <% else %>
-      <% for @order in @order_list %>
-          <%= render 'carts/cart_list' %>
-      <% end %>
-      <%= paginate @order_list %>
-    <%  end %>
+              <div class="selectLensWrap">
+                <a class="btn btn-primary" href="javascript:">Checkout</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="productSidebar">
+              <h3>DNA 7129<br>Brown</h3>
+              <h4>
+                <sup>$</sup>68.95
+              </h4>
+              <div class="btnWrap">
+                <a class="btn btn-primary" href="javascript:">Pick a Free Frame</a>
+                <a class="btn btn-default" href="javascript:">Add a Free Backup Pair</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </div>
+<!--home page end-->

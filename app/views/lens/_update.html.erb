@@ -6,19 +6,29 @@
         <div class="container">
           <div class="clearfix stepsWrapper">
             <span class="stepCir pull-left active">1</span>
-            <h3 class="pull-left">Your Prescription</h3>
+            <h3 class="pull-left" style="color: #000000">Your Prescription</h3>
             <span class="stepCir pull-right">2</span>
             <div class="border-bg"></div>
           </div>
 
           <section class="productInfoWrap">
-          <div class="prescDropWrap"  style="width: 556px;">
-            <label for="typ">Type:</label>
-            <%= f.select(:pre_type, options_for_select(@pre_type, :selected => @pre.pre_type)) %>
+            <div class="prescDropWrap"  style="width: 556px;">
+              <label for="typ">Type:</label>
+              <%= f.select(:pre_type, options_for_select(@pre_type, :selected => @pre.pre_type)) %>
 
-            <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
-          </div>
+              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+            </div>
+
+
+            <div class="prescDropWrap"  style="width: 250px;">
+              <label for="qty">qty:</label>
+              <%= f.select(:qty, options_for_select([[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10]], :selected => @pre.qty)) %>
+              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+            </div>
+
           </section>
+
+
 
           <section class="productInfoWrap">
             <div class="clearfix">

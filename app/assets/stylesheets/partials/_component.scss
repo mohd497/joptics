@@ -412,7 +412,6 @@
   .info-heading {
     font-weight: 500;
   }
-  form {
     .form-group {
       label {
         min-width: 150px;
@@ -427,14 +426,13 @@
         @extend .inlineBlockMiddle;
       }
     }
-  }
+
   @include Mq(XS){
-    form {
       .form-group {
         .select2-container, input.form-control {
           max-width: none;
         }
       }
-    }
+
   }
 }

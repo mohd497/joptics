@@ -1,7 +1,7 @@
 <div class="mainWrapper">
   <section class="internalBanner">
   </section>
-  <%= form_for @pre , url: prescription_create_path do |f| %>
+  <%= form_for @pre , url: prescription_update_pre_path do |f| %>
   <div class="productDetailWrapper">
     <div class="container">
       <div class="clearfix stepsWrapper stepsActive">
@@ -24,7 +24,7 @@
                 <label for="lcp1"><span>Free</span></label>
               </div>
               <div class="imgShowCase">
-                <img class="img-responsive" src="images/glass1.png"/>
+                <%= image_tag('glass1.png', :class => "img-responsive") %>
                 <h5>
                   <strong>Standard Lenses</strong>
                   (1.5 Index)
@@ -41,7 +41,7 @@
                 <label for="lcp2"><span>+$9.95</span></label>
               </div>
               <div class="imgShowCase">
-                <img class="img-responsive" src="images/glass1.png"/>
+                <%= image_tag('glass1.png', :class => "img-responsive") %>
                 <h5>
                   <strong>High Index Lenses</strong>
                   (1.61 Index)
@@ -58,7 +58,7 @@
                 <label for="lcp3"><span>+$29.95</span></label>
               </div>
               <div class="imgShowCase">
-                <img class="img-responsive" src="images/glass1.png"/>
+                <%= image_tag('glass1.png', :class => "img-responsive") %>
                 <h5>
                   <strong>High Index Lenses</strong>
                   (1.67 Index)
@@ -110,12 +110,14 @@
           </div>
         </div>
         <div class="priceStaticWrapper clearfix">
-          <strong class="pull-right"><sup>$</sup><strong id="price-change" ><%= @product.price %></strong></strong>
+          <strong class="pull-right"><sup>$</sup><strong id="price-change" ><%= @pre.total_cost %></strong></strong>
         </div>
+        <%= f.hidden_field :total_cost %>
         <div class="selectLensWrap">
           <a class="btn btn-default" href="#" onclick="openPrevPre()">Back</a>
-          <a class="btn btn-primary" href="javascript:">Add to Cart</a>
+          <%= f.submit "Add to Cart", class: "btn btn-primary", :onclick => "pres_selection(event)" %>
         </div>
+
       </section>
     </div>
   </div>

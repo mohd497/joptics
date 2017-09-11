@@ -5,3 +5,29 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+select.error, textarea.error, input.error {
+  color:#FF0000;
+}
+
+.my-error-class {
+  border: 1px solid #ea1212 !important;  /* red */
+}
+.my-valid-class {
+  border: 1px solid #ccc !important;
+}
+
+
+label.error {
+  color: #a94442;
+  padding:1px 20px 1px 156px;
+}
+
+.tooltip {
+  display: block;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+
+}
+

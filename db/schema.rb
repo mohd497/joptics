@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824103407) do
+ActiveRecord::Schema.define(version: 20170908135830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(version: 20170824103407) do
     t.float    "unit_price"
     t.string   "total_price"
     t.string   "float"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "presciption_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -78,6 +79,10 @@ ActiveRecord::Schema.define(version: 20170824103407) do
     t.boolean  "scratch_resistant_coating", default: false
     t.boolean  "anti_reflective_coating",   default: false
     t.integer  "product_id"
+    t.integer  "order_id"
+    t.float    "total_cost"
+    t.integer  "qty"
+    t.float    "cost"
   end
 
   create_table "products", force: :cascade do |t|
@@ -126,8 +131,21 @@ ActiveRecord::Schema.define(version: 20170824103407) do
     t.string   "address"
     t.string   "phone_number"
     t.integer  "customer_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "country"
+    t.string   "province"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "shipping_country"
+    t.string   "shipping_address"
+    t.string   "shipping_province"
+    t.string   "shipping_city"
+    t.string   "shipping_postal_code"
+    t.integer  "order_id"
   end
 
 end
