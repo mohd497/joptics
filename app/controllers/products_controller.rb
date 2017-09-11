@@ -80,6 +80,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def add_to_favorites
+    (session[:favorite_products] ||= []) << params[:id]
+    render json: {msg: 'successfully added to favorites'}
+  end
+
+  def favorites
+    @products = Product.find(session[:favorite_products] || [])
+    @q = Product.search(params[:q])
+    render :index
+  end
+
   private
 
   def product_params

@@ -12,7 +12,11 @@ class Product < ActiveRecord::Base
   mount_uploader :tenthavatar, TenthavatarUploader
   mount_uploader :itemspec, ItemspecUploader
 
+
+  has_many :order_lines
+  has_many :reviews
   has_one :presciptions
+
   scope :is_enabled, -> { where(status: true) }
 
   validates :name, :description, :price, presence: true
@@ -23,4 +27,12 @@ class Product < ActiveRecord::Base
     where(category:[*flag])
   }
 
+  def rating=(value)
+    @rating = value
+  end
+
+  def rating
+    @rating = Review.average_rating(id)
+    @rating ? @rating.to_i : 0
+  end
 end

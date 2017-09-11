@@ -108,33 +108,18 @@
               <div class="descProd">
                 <%= @product.description %>
                 <div class="ratingSocialWrap">
-                  <fieldset class="rating">
-                    <input type="radio" id="naw_star20" name="rating" value="5" checked/><label
-                  class="full"
-                  for="naw_star20"></label>
-                    <input type="radio" id="naw_star19" name="rating" value="4" checked/><label
-                  class="full"
-                  for="naw_star19"></label>
-                    <input type="radio" id="naw_star18" name="rating" value="3" checked/><label
-                  class="full"
-                  for="naw_star18"></label>
-                    <input type="radio" id="naw_star17" name="rating" value="2"/><label
-                  class="full"
-                  for="naw_star17"></label>
-                    <input type="radio" id="naw_star16" name="rating" value="1"/><label
-                  class="full"
-                  for="naw_star16"></label>
-                  </fieldset>
+                  <%= number_field_tag @product.id, @product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
-                                        <a href="javascript:">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="javascript:">
-                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
+                      <%= link_to favorites_product_path(@product), method: :post, :remote => true do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                      <a href="javascript:">
+                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                  </span>
                 </div>
               </div>
+              <div id="share"></div>
             </div>
           </div>
         </div>

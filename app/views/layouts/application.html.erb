@@ -15,7 +15,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-
+  <%=  stylesheet_link_tag "star-rating.min" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 
@@ -24,6 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+
 
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -38,7 +39,7 @@
 
   <link rel="stylesheet" href="https://mbraak.github.io/jqTree/jqtree.css" />
   <script src="https://mbraak.github.io/jqTree/tree.jquery.js"></script>
-  
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -231,6 +232,10 @@
     </div>
   </div>
 </footer>
+<!-- js-social jquery plugin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
 
 </body>
 </html>

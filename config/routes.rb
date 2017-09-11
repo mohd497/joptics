@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'review/index'
+
   get 'home/index'
 
   get 'checkout/new'
@@ -9,7 +11,15 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'test' => 'home#test'
-  resources :products, except: [:delete]
+  resources :products, except: [:delete] do
+    member do
+      post 'favorites', to: 'products#add_to_favorites'
+    end
+    collection do
+      get 'favorites'
+    end
+    resources :reviews, only: [:index, :create], defaults: {format: :json}
+  end
   resources :order_lines, only: [:create, :update, :destroy]
   resource :checkouts, only: [:new, :create]
 
