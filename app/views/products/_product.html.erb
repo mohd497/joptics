@@ -108,7 +108,7 @@
               <div class="descProd">
                 <%= @product.description %>
                 <div class="ratingSocialWrap">
-                  <%= number_field_tag @product.id, @product.rating, class: 'custum-star-rating' %>
+                  <%= text_field_tag @product.id, @product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
                       <%= link_to favorites_product_path(@product), method: :post, :remote => true do %>
                         <i class="fa fa-heart" aria-hidden="true"></i>
