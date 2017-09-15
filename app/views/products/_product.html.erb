@@ -100,9 +100,9 @@
           </div>
           <div class="col-md-3">
             <div class="productSidebar">
-              <h3><%= @product.name %><br><%= @product.color %></h3>
+              <h3><%= @product.name %><br></h3>
               <h4>
-                <span>$179.00</span>
+               <!-- <span>$179.00</span> -->
                 <%= number_to_currency(@product.price) %>
               </h4>
               <div class="descProd">
@@ -113,20 +113,19 @@
                       <%= link_to favorites_product_path(@product), method: :post, :remote => true do %>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                       <% end %>
-                      <a href="javascript:">
-                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                      </a>
                   </span>
+
                 </div>
               </div>
               <div id="share"></div>
+              <div class="selectLensWrap">
+
+                <%= link_to "Select Prescription", prescription_path(:product => @product.id), method: :get, class: "btn btn-primary" %>
+              </div>
             </div>
           </div>
         </div>
-          <div class="selectLensWrap">
 
-            <%= link_to "Select Prescription", prescription_path, method: :get, class: "btn btn-primary" %>
-          </div>
       </section>
     </div>
   </div>

@@ -1,9 +1,13 @@
 class LensController < ApplicationController
 
+  before_action :get_current_order_search
+
   def enter_pre
 
     @pre_type = [["Distance / Frames Only", "Distance / Frames Only"], ["Reading Lenses", "Reading Lenses"],
                  ["Bifocal Lenses", "Bifocal Lenses"], ["Progressive Lenses", "Progressive Lenses"]]
+
+    session[:product_id] = params['product']
 
     @len_one = []
     (-15.00..6.00).step(0.25) do |n|

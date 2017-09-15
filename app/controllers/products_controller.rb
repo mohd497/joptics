@@ -1,10 +1,8 @@
 class ProductsController < ApplicationController
 
-  #before_action :authenticate_customer!
+  before_action :get_current_order_search
 
   def index
-
-    @q = Product.search(params[:q])
 
     if params["sort"] == "asc"
       @q.sorts = "price asc"
@@ -32,6 +30,7 @@ class ProductsController < ApplicationController
 
 
     @products = @q.result(distinct: true)
+    @fav_list = false
 
 
     respond_to do |format|
@@ -42,7 +41,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    session[:product_id] = @product.id
 
     respond_to do |format|
       format.html
@@ -86,6 +84,8 @@ class ProductsController < ApplicationController
   end
 
   def favorites
+    @page_title = """Your Wishlist"""
+    @fav_list = true
     @products = Product.find(session[:favorite_products] || [])
     @q = Product.search(params[:q])
     render :index

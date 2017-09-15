@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 
+  before_action :get_current_order_search
+
   def index
     @products_new_men = Product.where(:newarrivals => true, :category => "men")
     @products_new_kids = Product.where(:newarrivals => true, :category => "kids")

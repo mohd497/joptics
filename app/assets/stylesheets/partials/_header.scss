@@ -9,6 +9,28 @@
       padding-left: 10px;
     }
   }
+  .htSearchField{
+    display: inline-block;
+    .form-control{
+      display: inline-block;
+      width: 0;
+      padding: 0;
+      border: 0;
+      max-width: 100px;
+      height: 20px;
+      font-size: 12px;
+    }
+    .fa-search{
+      cursor: pointer;
+    }
+  }
+  @include Mq(XS){
+    .htSearchField{
+      .form-control{
+        max-width: 30px;
+      }
+    }
+  }
 }
 
 .navbar {

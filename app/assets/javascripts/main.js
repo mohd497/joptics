@@ -411,21 +411,54 @@ $(document).ready(function () {
     $('#filterMenuBtn').click(function () {
         var clicks = $(this).data('clicks');
         var filterMenu = $(".filterOptions");
-        if (clicks) {
-            filterMenu.animate({
-                height: "-=240",
-                padding: 0
-            });
-        } else {
-            filterMenu.animate({
-                height: "+=240",
-                padding: "15px 0"
-            });
+        var winWidth = $(window).width();
+        if(winWidth <= 991){
+            if (clicks) {
+                filterMenu.animate({
+                    height: "-=300",
+                    padding: 0
+                });
+            } else {
+                filterMenu.animate({
+                    height: "+=300",
+                    padding: "15px 0"
+                });
+            }
+        }
+        else{
+            if (clicks) {
+                filterMenu.animate({
+                    height: "-=250",
+                    padding: 0
+                });
+            } else {
+                filterMenu.animate({
+                    height: "+=250",
+                    padding: "15px 0"
+                });
+            }
         }
         $(this).data("clicks", !clicks);
     });
     $('select').select2({
         minimumResultsForSearch: -1
+    });
+    $(".htSearchField .fa-search").click(function() {
+        var clicks = $(this).data('clicks');
+        if (clicks) {
+            // odd clicks
+            $(".htSearchField input").animate({
+                "width": 0,
+                "padding": 0
+            });
+        } else {
+            // even clicks
+            $(".htSearchField input").animate({
+                "width": 100,
+                "padding": 5
+            });
+        }
+        $(this).data("clicks", !clicks);
     });
 });
 $(function () {
@@ -443,7 +476,7 @@ $(function () {
         noUiSlider.create(nonLinearSlider, {
             connect: true,
             behaviour: 'tap',
-            start: [200, 1300],
+            start: [0, 1300],
             range: {
                 'min': [0],
                 'max': [1500]
@@ -457,8 +490,10 @@ $(function () {
     nonLinearSlider.noUiSlider.on('update', function (values, handle) {
         if (handle) {
             marginMax.innerHTML = values[handle];
+            $('#q_price_lteq').val(marginMax.innerHTML);
         } else {
             marginMin.innerHTML = values[handle];
+            $('#q_price_gteq').val(marginMin.innerHTML);
         }
     });
     }

@@ -1,5 +1,6 @@
 class OrderLinesController < ApplicationController
 
+  before_action :get_current_order_search
 
   def create
     @order = current_order

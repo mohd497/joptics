@@ -2,6 +2,8 @@ class CheckoutsController < ApplicationController
   require "uri"
   require "net/http"
 
+  before_action :get_current_order_search
+
   def new
     @address = ShippingAddress.new
   end

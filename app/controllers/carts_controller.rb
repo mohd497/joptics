@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
 
+  before_action :get_current_order_search
+
   def show
     @order = current_order
     respond_to do |format|

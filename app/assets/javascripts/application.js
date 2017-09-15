@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require slick.min
 //= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require slick.min
 //= require turbolinks
 //= require_tree .

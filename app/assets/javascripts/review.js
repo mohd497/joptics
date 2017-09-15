@@ -10,17 +10,21 @@ $(document).ready(function () {
       console.log(JSON.stringify(data));
     })
     .fail(function(xhr, status, error) {
-      alert(xhr.responseText);
+        console.log(JSON.stringify(error));
     });
   });
 
   $('.socialWrap a[data-remote="true"]').on('click', function(event) {
     $(this).addClass('favorite-disabled');
+      swal("", "Product has been added to your wishlist", "success");
   });
 
-  var productDescription = $('.descProd').contents().get(0).nodeValue;
-  $("#share").jsSocials({
-    shares: ["twitter", "facebook"],
-    text: productDescription
-  });
+    if($('.descProd').contents().length != 0) {
+        var productDescription = $('.descProd').contents().get(0).nodeValue;
+        $("#share").jsSocials({
+            shares: ["twitter", "facebook"],
+            text: productDescription
+        });
+    }
+
 });

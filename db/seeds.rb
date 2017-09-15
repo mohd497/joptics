@@ -5,6 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Product.create(name: 'New Product', price: 150.3, description: 'This is a new product.', status: true)
-Product.create(name: 'New Product 2', price: 152.3, description: 'This is a new product 2.', status: true)
-Product.create(name: 'New Product 3', price: 154.3, description: 'This is a new product 3.', status: true)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

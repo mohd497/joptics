@@ -77,19 +77,28 @@
 -->
 
 <header>
+  <%= search_form_for @q , url: products_path do |f| %>
   <div class="topnav clearfix">
     <div class="container">
       <span class="tollNumber"></span>
       <div class="searchSignIn pull-right">
-        <span class="fa fa-search"></span>
-        <span>Track Order</span>
-        <span>Sign in</span>
+        <div class="htSearchField">
+          <%= f.search_field :name_cont, class: "form-control" %>
+
+          <span class="fa fa-search"></span>
+        </div>
+        <!-- <span>Track Order</span> -->
+        <!-- <span>Sign in</span> -->
+        <%= link_to favorites_products_path, :class => "top-icons",  :method => 'get'   do %>
         <span class="fa fa-heart"></span>
-        <span class="fa fa-shopping-cart"> (0)</span>
+        <% end %>
+        <%= link_to cart_path , :class => "top-icons",  :method => 'get'  do %>
+          <span class="fa fa-shopping-cart"> (<%= @order.presciptions.count %>)</span>
+        <% end %>
       </div>
     </div>
   </div>
-
+  <% end %>
   <nav class="navbar navbar-cus">
     <div class="container clearfix">
 

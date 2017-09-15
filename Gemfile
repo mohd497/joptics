@@ -23,7 +23,7 @@ gem 'rails_12factor'
 
 gem 'mini_magick'
 
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', github: 'kaminari/kaminari', ref: 'e95bb74'
 
 gem 'faker', '~> 1.6', '>= 1.6.2'
 
@@ -40,7 +40,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'activeadmin'
+
 gem 'devise', '~> 4.2'
+
+gem 'cancan' # or cancancan
+
+gem 'draper'
+
+gem 'pundit'
 
 gem 'font-awesome-sass'
 
