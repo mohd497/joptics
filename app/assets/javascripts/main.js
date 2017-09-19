@@ -44,6 +44,10 @@ function openPage_mens_powerglasses(){
     window.open("/products?utf8=✓&q[category_in][]=men&q[subcategory_in][]=powerglasses&commit=Search","_self")
 }
 
+function openPage_wishlist(){
+    window.open("/products/favorites","_self")
+}
+
 function openPage_clear(){
     window.open("/products?commit=Search","_self")
 }
@@ -95,6 +99,64 @@ function warnBeforeRedirect(e) {
 
 $(document).ready(function () {
 
+
+    jQuery.validator.addMethod("cdnPostal", function(postal, element) {
+        return this.optional(element) ||
+            postal.match(/[a-zA-Z][0-9][a-zA-Z](-| |)[0-9][a-zA-Z][0-9]/);
+    }, "Please specify a valid postal code.");
+
+
+
+    $('#shipping_address_shipping_province').on('change', function(){
+        $.ajax({
+            type: "GET",
+            url: "/cities",
+            data:'country_id='+ $(this).find("option:selected").text(),
+            success: function(data){
+                $("#shipping_address_shipping_city").empty();
+                $.each(data, function(key, value) {
+                    var option = $('<option></option>').attr("value", value).text(value);
+                    $("#shipping_address_shipping_city").append(option);
+                });
+            }
+        });
+    });
+
+    $('#shipping_address_province').on('change', function(){
+        $.ajax({
+            type: "GET",
+            url: "/cities",
+            data:'country_id='+ $(this).find("option:selected").text(),
+            success: function(data){
+                $("#shipping_address_city").empty();
+                $.each(data, function(key, value) {
+                    var option = $('<option></option>').attr("value", value).text(value);
+                    $("#shipping_address_city").append(option);
+                });
+            }
+        });
+    });
+
+    $(document).click(function(e) {
+        if( e.target.id != 'cartclick'){
+            if($('.shopping-cart').css("display") == "block"){
+                $(".shopping-cart").fadeToggle( "fast");
+            }
+        }
+    });
+
+
+
+    $("#cartclick").on("click", function() {
+
+        if ($(window).width() > 960) {
+            $(".shopping-cart").fadeToggle( "fast");
+        }
+        else {
+            window.open("/cart","_self")
+        }
+    });
+
     do_something = true;
 
     $("#nav-logout").click(function(e) {
@@ -103,7 +165,7 @@ $(document).ready(function () {
 
     jQuery.validator.addMethod('phonePK', function(phone_number, element) {
         phone_number = phone_number.replace(/\s+/g, '');
-        return this.optional(element) || phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+        return this.optional(element) || phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
     }, 'Please specify a valid phone number');
 
 
@@ -124,9 +186,50 @@ $(document).ready(function () {
             "shipping_address[address]": {
                 required: true
             },"shipping_address[postal_code]": {
-                required: true
+                required: true,
+                cdnPostal: true
             },
             "shipping_address[phone_number]": {
+                minlength:10,
+                phonePK: true
+            },
+            "shipping_address[shipping_address]": {
+                required: $is_shipping
+            },
+            "shipping_address[shipping_postal_code]": {
+                required: $is_shipping
+            }
+
+        },highlight: function (element) {
+            $(element).addClass('my-error-class')
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+    $('.edit_shipping_address').validate({
+        rules: {
+            "shipping_address[first_name]": {
+                minlength: 2,
+                required: true
+            },
+            "shipping_address[last_name]": {
+                minlength: 2,
+                required: true
+            },
+            "shipping_address[email]": {
+                required: true,
+                email: true
+            },
+            "shipping_address[address]": {
+                required: true
+            },"shipping_address[postal_code]": {
+                required: true,
+                cdnPostal: true
+            },
+            "shipping_address[phone_number]": {
+                required: true,
                 minlength:10,
                 phonePK: true
             },

@@ -2,10 +2,14 @@ class CheckoutsController < ApplicationController
   require "uri"
   require "net/http"
 
-  before_action :get_current_order_search
+  before_action :get_current_order_search, except: :cities
 
   def new
-    @address = ShippingAddress.new
+    if current_order.shipping_address
+      @address = current_order.shipping_address
+    else
+      @address = ShippingAddress.new
+    end
   end
 
   def create
@@ -19,6 +23,12 @@ class CheckoutsController < ApplicationController
       flash.now[:alert] = @address.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def update
+    @address = ShippingAddress.find(session[:address_id])
+    @address = @address.update(address_params)
+    redirect_to card_path
   end
 
   def credit_card_info
@@ -35,6 +45,11 @@ class CheckoutsController < ApplicationController
       flash[:alert] = data
     end
     redirect_to cart_path
+  end
+
+  def cities
+    @cities = CS.cities(params["country_id"], :ca)
+    render json: @cities
   end
 
   private

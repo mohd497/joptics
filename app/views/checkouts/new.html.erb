@@ -24,16 +24,16 @@
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <%= f.select(:country, options_for_select([["Pakistan","Pakistan"]])) %>
+            <%= f.select(:country, options_for_select([["Canada","Canada"]])) %>
           </div>
           <div class="form-group">
-            <label for="province">Province</label>
-            <%= f.select(:province, options_for_select([["Sindh","Sindh"],["Punjab","Punjab"],["NWFP","NWFP"],["Balochistan","Balochistan"]])) %>
+            <label for="province">State</label>
+            <%= f.select(:province, options_for_select(CS.states(:ca))) %>
 
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <%= f.select(:city, options_for_select([["Karachi","Karachi"],["Lahore","Lahore"],["Islamabad","Islamabad"],["Quetta","Quetta"]])) %>
+            <%= f.select(:city, options_for_select(CS.cities(:NB, :ca))) %>
           </div>
           <div class="form-group">
             <label for="add1">Address<span class="error-class">*</span></label>
@@ -41,11 +41,11 @@
           </div>
           <div class="form-group">
             <label for="pc">Postal Code<span class="error-class">*</span></label>
-            <%= f.text_field :postal_code, class: "form-control name" %>
+            <%= f.text_field :postal_code, class: "form-control name", :placeholder => "K1A0A6"  %>
           </div>
           <div class="form-group">
             <label for="phnumb">Phone Number<span class="error-class">*</span></label>
-            <%= f.text_field :phone_number, class: "form-control name", :placeholder => "+923005555555" %>
+            <%= f.text_field :phone_number, class: "form-control name", :placeholder => "14165096995" %>
           </div>
 
           </div>
@@ -58,19 +58,19 @@
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <%= f.select(:shipping_country, options_for_select([["Pakistan","Pakistan"]])) %>
+            <%= f.select(:shipping_country, options_for_select([["Canada","Canada"]])) %>
           </div>
           <div class="form-group">
             <label for="province">Province</label>
-            <%= f.select(:shipping_province, options_for_select([["Sindh","Sindh"],["Punjab","Punjab"],["NWFP","NWFP"],["Balochistan","Balochistan"]])) %>
+            <%= f.select(:shipping_province, options_for_select(CS.states(:ca))) %>
           </div>
           <div class="form-group">
             <label for="city">City</label>
-            <%= f.select(:shipping_city, options_for_select([["Karachi","Karachi"],["Lahore","Lahore"],["Islamabad","Islamabad"],["Quetta","Quetta"]])) %>
+            <%= f.select(:shipping_city, options_for_select(CS.cities(:NB, :ca))) %>
           </div>
           <div class="form-group">
             <label for="pc">Postal Code<span class="error-class">*</span></label>
-            <%= f.text_field :shipping_postal_code, class: "form-control name" %>
+            <%= f.text_field :shipping_postal_code, class: "form-control name", :placeholder => "K1A0A6" %>
           </div>
         </div>
           </div>

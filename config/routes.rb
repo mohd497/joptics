@@ -23,10 +23,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create], defaults: {format: :json}
   end
   resources :order_lines, only: [:create, :update, :destroy]
-  resource :checkouts, only: [:new, :create]
+  resource :checkouts, only: [:new, :create, :update]
 
   get 'prescription' => 'lens#enter_pre'
   get 'select_lens' => 'lens#select_len'
+  get 'cities' => 'checkouts#cities'
   post 'prescription/create' => 'lens#create'
   patch 'prescription/update' => 'lens#update'
   patch 'prescription/update_pre' => 'lens#update_pre'

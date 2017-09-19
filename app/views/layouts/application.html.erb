@@ -81,7 +81,7 @@
   <div class="topnav clearfix">
     <div class="container">
       <span class="tollNumber"></span>
-      <div class="searchSignIn pull-right">
+      <div style="margin-right: 15px" class="searchSignIn pull-right">
         <div class="htSearchField">
           <%= f.search_field :name_cont, class: "form-control" %>
 
@@ -89,12 +89,6 @@
         </div>
         <!-- <span>Track Order</span> -->
         <!-- <span>Sign in</span> -->
-        <%= link_to favorites_products_path, :class => "top-icons",  :method => 'get'   do %>
-        <span class="fa fa-heart"></span>
-        <% end %>
-        <%= link_to cart_path , :class => "top-icons",  :method => 'get'  do %>
-          <span class="fa fa-shopping-cart"> (<%= @order.presciptions.count %>)</span>
-        <% end %>
       </div>
     </div>
   </div>
@@ -152,13 +146,10 @@
               <a href="javascript:">Help Center</a>
             </li>
             <li>
-              <a href="javascript:">Stores</a>
+              <a onclick="openPage_wishlist()" href="javascript:">Wish list</a>
             </li>
             <li>
-              <a href="javascript:">Offers</a>
-            </li>
-            <li>
-              <a href="javascript:">Home-eye-style</a>
+              <a id="cartclick" href="javascript:"><i class="fa fa-shopping-cart"></i> Cart <span class="badge"><%=@order.presciptions.count %></span></a>
             </li>
           </ul>
         </div>
@@ -166,9 +157,56 @@
       <!--.nav-collapse -->
     </div>
   </nav>
+
+
+
   <!--navbar end-->
 </header>
 <!--header end-->
+
+<div class="container2" style="z-index: 1080">
+  <div class="shopping-cart" style="z-index: 1080">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge"><%=@order.presciptions.count %></span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text">$<%= @order.total %></span>
+      </div>
+    </div> <!--end shopping-cart-header -->
+
+    <% if @order.presciptions.empty? %>
+
+        <div class="selectLensWrap cartDTextWrap">
+          <h3>No Products in the cart</h3>
+        </div>
+
+    <% else %>
+
+        <ul class="shopping-cart-items">
+
+          <% for pre in @order.presciptions %>
+
+              <li class="clearfix2">
+                <div>
+                <%= image_tag(pre.product.avatar, class: 'shopping-img') %>
+                </div>
+                <div class="shopping-details">
+                <span class="item-name"><%= pre.product.name %></span>
+                <span class="item-price">$<%= pre.total_cost %></span>
+                <span class="item-quantity">Quantity: <%= pre.qty %></span>
+                </div>
+              </li>
+
+          <% end %>
+        </ul>
+        <%= link_to "Checkout", new_checkouts_path, method: :get, class: "button" %>
+        <%= link_to "View Cart", cart_path, method: :get, class: "button-cart" %>
+
+    <% end %>
+
+
+  </div> <!--end shopping-cart -->
+</div>
 
 <%= yield %>
 

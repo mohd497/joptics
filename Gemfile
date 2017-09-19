@@ -29,6 +29,8 @@ gem 'faker', '~> 1.6', '>= 1.6.2'
 
 gem "mongoid"
 
+gem 'city-state'
+
 gem "bson_ext"
 
 # Use jquery as the JavaScript library
