@@ -5,7 +5,7 @@ $(document).ready(function () {
     console.log(caption);
     var product_id = $(this).attr('id');
     $(this).rating('refresh', {displayOnly: true, showClear: false, showCaption: false});
-    $.post( `/products/${product_id}/reviews`, { rating: value })
+    $.post( "/products/${product_id}/reviews", { rating: value })
     .done(function( data ) {
       console.log(JSON.stringify(data));
     })
