@@ -280,6 +280,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   city-state
   coffee-rails (~> 4.1.0)
+  coffee-script-source
   devise (~> 4.2)
   draper
   factory_girl_rails (~> 4.7)

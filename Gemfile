@@ -31,6 +31,8 @@ gem "mongoid"
 
 gem 'city-state'
 
+gem 'coffee-script-source'
+
 gem "bson_ext"
 
 # Use jquery as the JavaScript library
