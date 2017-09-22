@@ -226,7 +226,7 @@
 
   <div class="filterByTypeWrapper">
     <section class="glassesShowCase">
-      <div class="container">
+      <div class="container productContainer">
         <div class="clearfix titleWrapper">
           <h3 class="pull-left"><%= @page_title %></h3>
           <span class="sortFilter pull-right">
@@ -253,9 +253,15 @@
                 <div class="ratingSocialWrap">
                   <%= text_field_tag product.id, product.rating, class: 'custum-star-rating' %>
                   <span class="socialWrap">
+
+                      <% if not @fav_list %>
+
                       <%= link_to favorites_product_path(product), method: :post, :remote => true do %>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                       <% end %>
+
+                      <% end %>
+
                         <%= link_to prescription_path(:product => product.id), method: :get do %>
                           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <% end %>
@@ -266,6 +272,7 @@
           <% end %>
         </div>
           </div>
+        <%= will_paginate @products %>
       </div>
     </section>
   </div>

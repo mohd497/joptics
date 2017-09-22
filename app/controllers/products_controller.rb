@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :get_current_order_search
+  require 'will_paginate/array'
 
   def index
 
@@ -29,13 +30,14 @@ class ProductsController < ApplicationController
     end
 
 
-    @products = @q.result(distinct: true)
+    @products = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 12)
     @fav_list = false
 
 
     respond_to do |format|
         format.html
         format.json
+        format.js { render 'products/paginate' }
     end
   end
 
@@ -86,7 +88,7 @@ class ProductsController < ApplicationController
   def favorites
     @page_title = """Your Wishlist"""
     @fav_list = true
-    @products = Product.find(session[:favorite_products] || [])
+    @products = Product.find(session[:favorite_products] || []).paginate(:page => params[:page], :per_page => 12)
     @q = Product.search(params[:q])
     render :index
   end

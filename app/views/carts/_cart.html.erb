@@ -10,7 +10,7 @@
       <% end %>
         <div class="row">
             <% if not @order.presciptions.empty? %>
-               <h3 class="page-title">Products</h3>
+               <h3 class="page-title">Cart</h3>
 
           <% for pre in @order.presciptions %>
 
@@ -160,8 +160,16 @@
         <% else %>
                 <div class="selectLensWrap cartTextWrap">
                   <h3>No Products in the cart</h3>
-                </div>
 
+                </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4 cart-goback" style="text-align: center; margin-top: 400px">
+
+                <a onclick="openPage_clear()"><i class="fa fa-reply reply-bottom" aria-hidden="true"></i> return to shop</a>
+              </div>
+              <div class="col-md-4">
+              </div>
         <% end %>
       </section>
     </div>

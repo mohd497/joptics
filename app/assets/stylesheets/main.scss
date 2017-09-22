@@ -563,6 +563,9 @@ input[type="select"]:focus,
   width: 100%;
   z-index: 10; }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
+
   .navbar .navbar-header {
     float: none;
     width: 100%;
@@ -848,7 +851,7 @@ footer .copyRightWrap {
   display: none; }
 .radioCheckWrap input[type=radio] + label, .radioCheckWrap input[type=checkbox] + label {
   position: relative;
-  font-weight: 400; }
+  font-weight: 400 !important; }
 .radioCheckWrap input[type=checkbox] + label:before, .radioCheckWrap input[type=radio] + label:before {
   content: "";
   display: inline-block;
@@ -1897,4 +1900,91 @@ footer .copyRightWrap {
 
 .shopping-img{
   padding-top: 10px;
+}
+
+.cart-goback{
+
+  font-family: 'NeueEinstellung',sans-serif !important;
+  font-size: 0.9125em;
+  font-weight: 700;
+  padding-top: 10px;
+  text-transform: uppercase;
+  color: #276fa3;
+
+}
+
+.cart-goback a{
+  color: #276fa3;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+.reply-bottom{
+}
+
+.cart-goback a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+
+
+.credit-card-box .panel-title {
+  display: inline;
+  font-weight: bold;
+}
+.credit-card-box .form-control.error {
+  border-color: red;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+  display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+  display: table;
+}
+.credit-card-box .display-tr {
+  display: table-row;
+}
+.credit-card-box .display-td {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.subscribe{
+  background-color: #419641 !important;
+}
+
+.subscribe:hover{
+  background-color: lighten(#419641, 3%) !important;
+}
+
+.button-width{
+  width: 100%;
+}
+
+@media only screen and (min-width: 767px) {
+  .sidebar-top{
+    margin-top: -276px;
+    margin-left: 7px;
+    margin-right: -15px;
+  }
 }

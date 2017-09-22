@@ -204,6 +204,18 @@
   }
 }
 
+.filterBtns{
+  text-align: right;
+  margin-top: 15px;
+  .btn{
+    min-width: 100px;
+    font-size: 15px;
+  }
+  @include Mq(MMD){
+    text-align: center;
+  }
+}
+
 .colorPallete{
   a{
     border-radius: 50%;

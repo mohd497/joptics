@@ -97,7 +97,35 @@ function warnBeforeRedirect(e) {
 }
 */
 
-$(document).ready(function () {
+$(document).on('ready', function () {
+
+    $('.pagination').hide();
+
+    var isLoading = false;
+        $(window).on('scroll', function() {
+            var more_posts_url = $('.pagination a.next_page').attr('href');
+            if (!isLoading && more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+                isLoading = true;
+
+                $.ajax({
+                    url: more_posts_url,
+                    type: 'GET',
+                    dataType: 'script',
+                    success: function(data){
+                        $('footer').hide();
+                    },
+                    error: function(){
+                    }
+
+                });
+
+                //$.getScript(more_posts_url).done(function (data,textStatus,jqxhr) {
+                //    isLoading = false;
+                //}).fail(function() {
+                //    isLoading = false;
+                //});
+            }
+        });
 
 
     jQuery.validator.addMethod("cdnPostal", function(postal, element) {

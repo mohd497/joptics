@@ -116,45 +116,94 @@
                   <h4>$<%= @order.total %></h4>
                 </li>
               </ul>
-              <div class="radioCheckWrap">
-                <input type="radio" id="at1" name="at1"/>
-                <label for="at1"><span>Credit Card</span> </label>
-              </div>
-              <form>
-                <div class="form-group">
-                  <label for="credit-card">Credit Card</label>
-                  <select name="" id="credit-card">
-                    <option value="0">Visa</option>
-                    <option value="1">Debit</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="card-holder">Card Holder Name</label>
-                  <input type="text" class="form-control" id="card-holder">
-                </div>
-                <div class="form-group">
-                  <label for="card-number">Card Number</label>
-                  <input type="number" class="form-control" id="card-number">
-                </div>
-                <div class="form-group">
-                  <label for="card-pin">Card Pin</label>
-                  <input type="number" class="form-control" id="card-pin">
-                </div>
-                <div class="form-group">
-                  <label for="amount">Amount</label>
-                  <input type="number" class="form-control" id="amount">
-                </div>
-              </form>
 
-              <div class="selectLensWrap">
-                <a class="btn btn-primary" href="javascript:">Confirm Order</a>
+
+
+              <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" style="width: 100%" >
+                  <div class="row display-tr" >
+                    <h3 class="panel-title display-td" >Payment Details</h3>
+                    <div class="display-td" >
+                      <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <label for="cardNumber">CARD NUMBER</label>
+                          <div class="input-group">
+                            <input
+                            type="tel"
+                            class="form-control"
+                            name="cardNumber"
+                            placeholder="Valid Card Number"
+                            autocomplete="cc-number"
+                            required autofocus
+                            />
+                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-7 col-md-7">
+                        <div class="form-group">
+                          <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                          <input
+                          type="tel"
+                          class="form-control"
+                          name="cardExpiry"
+                          placeholder="MM / YY"
+                          autocomplete="cc-exp"
+                          required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-xs-5 col-md-5 pull-right">
+                        <div class="form-group">
+                          <label for="cardCVC">CV CODE</label>
+                          <input
+                          type="tel"
+                          class="form-control"
+                          name="cardCVC"
+                          placeholder="CVC"
+                          autocomplete="cc-csc"
+                          required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <label for="couponCode">COUPON CODE</label>
+                          <input type="text" class="form-control" name="couponCode" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <button class="subscribe btn btn-success btn-lg btn-block" type="button"><i class="fa fa-lock" aria-hidden="true"></i>
+                          PLACE YOUR ORDER</button>
+                      </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                      <div class="col-xs-12">
+                        <p class="payment-errors"></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
 
 
 
           <div class="col-md-3">
-            <div class="productSidebar">
+            <div class="productSidebar sidebar-top">
               <div class="shippingInfoWrap">
                 <h2 class="clearfix">
                   Billing Address
@@ -193,6 +242,18 @@
             </div>
           </div>
           </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+
+
+            <!-- CREDIT CARD FORM STARTS HERE -->
+
+            <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+          </div>
+        </div>
         </section>
         </div>
     </div>

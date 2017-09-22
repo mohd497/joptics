@@ -1,0 +1,7 @@
+$('.productContainer').append('<%= j render 'products/show' %>');
+<% if @products.next_page %>
+$('.productContainer').replaceWith('<%= j will_paginate 'products/show' %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>

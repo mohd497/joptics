@@ -16,14 +16,14 @@
               <label for="typ">Type:</label>
               <%= f.select(:pre_type, options_for_select(@pre_type, id: "typ")) %>
 
-              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="What kind of eyeglasses do you need?">?</button>
             </div>
 
 
             <div class="prescDropWrap"  style="width: 250px;">
               <label for="qty">qty:</label>
               <%= f.select(:qty, options_for_select([[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10]])) %>
-              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+              <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Quantity of the product">?</button>
             </div>
 
           </section>
@@ -36,27 +36,29 @@
                   <label for="sph">SPH</label>
                   <%= f.select(:sphere, options_for_select(@len_one, id: "sph")) %>
 
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Sphere (SPH). is the amount of lens power, measured in diopters (D), prescribed to correct nearsightedness or farsightedness. If the number appearing under this heading has a minus sign (–), you are nearsighted; if the number has a plus sign (+) or is not preceded by a plus sign or a minus sign, you are farsighted. Make sure to select the correct sign (+/-) while ordering.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="cyl">cyl</label>
                   <%= f.select(:cylinder, options_for_select(@cyl_one, id: "cyl")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Cylinder (CYL). is the amount of lens power for astigmatism. If nothing appears in this column, you have no astigmatism and you can leave it blank. Make sure to select the correct sign (+/-) while ordering">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="axis">axis</label>
                   <%= f.select(:axis, options_for_select(@axis_one, id: "axis")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Axis describes the lens meridian that contains no cylinder power to correct astigmatism. The axis is defined with a number from 1 to 180. If an eyeglass prescription includes cylinder power, it also must include an axis value, which follows the cyl power and is preceded by an 'x' when written freehand.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="add">add</label>
                   <%= f.select(:add, options_for_select(@add_one, id: "add")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="ADD. is the added magnifying power applied to the bottom part of multifocal lenses to correct reading vision. The number appearing in this section of the prescription is always a 'plus' power, even if it is not preceded by a plus sign. Generally, it will range from +1.00 to +3.00.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="pd">pd</label>
                   <%= f.select(:pd, options_for_select(@pd_one, id: "pd")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="
+
+PD is the distance between your pupils. Usually,  it ranges from 57 to 65 mm. It is highly recommended to get your PD from your optometrist if you have a high power or if you are going to order bifocal, progressive or computer lenses.">?</button>
                 </div>
               </div>
               <div class="cusColFourth">
@@ -65,27 +67,27 @@
                   <label for="sph">SPH</label>
                   <%= f.select(:sphere_right, options_for_select(@len_one, id: "sph")) %>
 
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Sphere (SPH). is the amount of lens power, measured in diopters (D), prescribed to correct nearsightedness or farsightedness. If the number appearing under this heading has a minus sign (–), you are nearsighted; if the number has a plus sign (+) or is not preceded by a plus sign or a minus sign, you are farsighted. Make sure to select the correct sign (+/-) while ordering.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="cyl">cyl</label>
                   <%= f.select(:cylinder_right, options_for_select(@cyl_one, id: "cyl")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Cylinder (CYL). is the amount of lens power for astigmatism. If nothing appears in this column, you have no astigmatism and you can leave it blank. Make sure to select the correct sign (+/-) while ordering">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="axis">axis</label>
                   <%= f.select(:axis_right, options_for_select(@axis_one, id: "axis")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Axis describes the lens meridian that contains no cylinder power to correct astigmatism. The axis is defined with a number from 1 to 180. If an eyeglass prescription includes cylinder power, it also must include an axis value, which follows the cyl power and is preceded by an 'x' when written freehand.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="add">add</label>
                   <%= f.select(:add_right, options_for_select(@add_one, id: "add")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="ADD. is the added magnifying power applied to the bottom part of multifocal lenses to correct reading vision. The number appearing in this section of the prescription is always a 'plus' power, even if it is not preceded by a plus sign. Generally, it will range from +1.00 to +3.00.">?</button>
                 </div>
                 <div class="prescDropWrap">
                   <label for="pd">pd</label>
                   <%= f.select(:pd_right, options_for_select(@pd_one, id: "pd")) %>
-                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Help you need...">?</button>
+                  <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="PD is the distance between your pupils. Usually,  it ranges from 57 to 65 mm. It is highly recommended to get your PD from your optometrist if you have a high power or if you are going to order bifocal, progressive or computer lenses.">?</button>
                 </div>
               </div>
             </div>

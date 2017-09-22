@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('ready scroll', function () {
   $(".custum-star-rating").rating({ size: 'xs', step: 1, showClear: false, showCaption: false});
   $('.custum-star-rating').on('rating.change', function(event, value, caption) {
     console.log(value);

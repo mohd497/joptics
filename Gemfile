@@ -58,6 +58,10 @@ gem 'font-awesome-sass'
 
 gem 'jquery-validation-rails'
 
+gem 'will_paginate'
+
+gem 'will_paginate_infinite'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

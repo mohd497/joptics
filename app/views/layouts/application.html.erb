@@ -81,15 +81,31 @@
   <div class="topnav clearfix">
     <div class="container">
       <span class="tollNumber"></span>
-      <div style="margin-right: 15px" class="searchSignIn pull-right">
-        <div class="htSearchField">
-          <%= f.search_field :name_cont, class: "form-control" %>
+      <% if current_page?(card_path) %>
+          <div style="margin-right: 15px" class="searchSignIn pull-left">
+            <div class="htSearchField">
+              <i style="margin-right: 5px" class="fa fa-truck" aria-hidden="true"></i>
+              Free Shipping
+            </div>
+            <div class="htSearchField" style="margin-left: 15px">
+              <i style="margin-right: 5px" class="fa fa-undo" aria-hidden="true"></i>
+              100 Day Return
+            </div>
+            <!-- <span>Track Order</span> -->
+            <!-- <span>Sign in</span> -->
+          </div>
+      <% else %>
+          <div style="margin-right: 15px" class="searchSignIn pull-right">
+            <div class="htSearchField">
+              <%= f.search_field :name_cont, class: "form-control" %>
 
-          <span class="fa fa-search"></span>
-        </div>
-        <!-- <span>Track Order</span> -->
-        <!-- <span>Sign in</span> -->
-      </div>
+              <span class="fa fa-search"></span>
+            </div>
+            <!-- <span>Track Order</span> -->
+            <!-- <span>Sign in</span> -->
+          </div>
+      <% end %>
+
     </div>
   </div>
   <% end %>
@@ -110,7 +126,7 @@
           <h2>PakOptical</h2>
         </a>
       </div>
-
+      <% if not current_page?(card_path) %>
       <div class="collapse navbar-collapse" id="navigation">
         <div class="clearfix">
           <ul class="nav navbar-nav navbar-right">
@@ -154,7 +170,7 @@
           </ul>
         </div>
       </div>
-      <!--.nav-collapse -->
+      <% end %><!--.nav-collapse -->
     </div>
   </nav>
 
