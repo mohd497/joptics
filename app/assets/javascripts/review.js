@@ -27,4 +27,13 @@ $(document).on('ready scroll', function () {
         });
     }
 
+
+    $('[data-toggle="tooltip"]').tooltip();
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+
 });

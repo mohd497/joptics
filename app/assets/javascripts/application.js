@@ -16,5 +16,4 @@
 //= require jquery.validate.additional-methods
 //= require slick.min
 //= require turbolinks
-//= require will_paginate_infinite
 //= require_tree .

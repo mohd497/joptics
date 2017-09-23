@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'carrierwave', '~> 1.0'
-gem 'fog'
+gem 'fog-aws'
 
 gem 'ransack'
 

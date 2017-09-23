@@ -78,4 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.precompile += %w( slick.min.js )
+  config.assets.precompile += %w( nouislider.min.js )
 end

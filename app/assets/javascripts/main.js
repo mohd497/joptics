@@ -645,11 +645,5 @@ $(function () {
             responsive: true       // true if mlens has to be responsive (boolean)
         });
 
-    $('[data-toggle="tooltip"]').tooltip();
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
+
 });

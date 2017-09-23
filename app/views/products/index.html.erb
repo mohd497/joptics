@@ -246,7 +246,7 @@
                 <h4 class="list-group-item-heading"></h4>
                 <span class="price"><%= number_to_currency(product.price) %></span>
 
-                <%= link_to product,  { 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => product.name, 'data-method' => 'get' }  do %>
+                <%= link_to product,  { 'data-toggle' => "tooltip", 'data-placement' => "top", 'data-original-title' => product.name, 'data-method' => 'get' }  do %>
                   <%= image_tag(product.avatar, :class => "img-responsive") %>
                 <% end %>
 
