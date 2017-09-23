@@ -14,4 +14,8 @@ class HomeController < ApplicationController
     @products_popularbrand_kids = Product.where(:popularbrand => true, :category => "kids")
   end
 
+  def helpcenter
+
+  end
+
 end

@@ -1988,3 +1988,33 @@ footer .copyRightWrap {
     margin-right: -15px;
   }
 }
+
+.helpCenterWrapper{
+  h3{
+    font: 600 24px/55px "Novecentowidelight", sans-serif;
+    color: #434343;
+  }
+
+  h2{
+    font: 22px Arial, sans-serif;
+    color: #666666;
+  }
+
+  .helpbox{
+    border-left: 1px solid #D0D0D0;
+    margin-left: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    overflow: hidden;
+    zoom: 1;
+    width: 920px;
+  }
+  p{
+    font: 13px/20px Arial;
+    color: #666666;
+  }
+  ul li{
+    color: #666666;
+  } 
+
+}

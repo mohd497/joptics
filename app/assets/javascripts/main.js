@@ -52,6 +52,10 @@ function openPage_clear(){
     window.open("/products?commit=Search","_self")
 }
 
+function openPage_helpcenter(){
+    window.open("/help-center","_self")
+}
+
 function select_prev_check(id) {
     $("#" + id).prev().click();
 }

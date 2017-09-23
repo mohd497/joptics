@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+
   get 'review/index'
 
   get 'home/index'
@@ -12,7 +14,9 @@ Rails.application.routes.draw do
   devise_for :customers, :controllers => { registrations: 'registrations' }
 
   root 'home#index'
-  get 'test' => 'home#test'
+  get '/help-center' => 'home#helpcenter'
+
+
   resources :products, except: [:delete] do
     member do
       post 'favorites', to: 'products#add_to_favorites'
