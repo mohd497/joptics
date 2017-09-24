@@ -1,6 +1,10 @@
 class Order < ActiveRecord::Base
 
+
+
   enum status: [ :cart, :payment, :completed, :cancelled ]
+
+  scope :done_order, -> { where(:status => 1) }
 
   before_create :order_no, :order_date
 

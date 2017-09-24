@@ -12,6 +12,8 @@ ActiveAdmin.register Order do
 #   permitted
 # end
 
+  scope :done_order, default: true
+
   show do
     panel "Orders" do
 

@@ -18,6 +18,8 @@ class CheckoutsController < ApplicationController
       @address.order_id = session[:order_id]
       @address.save
       session[:address_id] = @address.id
+      @order = Order.find(current_order)
+      @order.update(:status => 1)
       redirect_to card_path
     else
       flash.now[:alert] = @address.errors.full_messages.to_sentence
@@ -28,6 +30,8 @@ class CheckoutsController < ApplicationController
   def update
     @address = ShippingAddress.find(session[:address_id])
     @address = @address.update(address_params)
+    @order = Order.find(current_order)
+    @order.update(:status => 1)
     redirect_to card_path
   end
 
