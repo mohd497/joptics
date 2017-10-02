@@ -30,7 +30,7 @@ class LensController < ApplicationController
     end
 
     @pd_one = []
-    (26..40).step(0.5) do |n|
+    (26..80).step(0.5) do |n|
       @pd_one << [n, n]
     end
 

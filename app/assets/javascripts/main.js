@@ -52,6 +52,10 @@ function openPage_clear(){
     window.open("/products?commit=Search","_self")
 }
 
+function openPage_shipping(){
+    window.open("/checkouts/new","_self")
+}
+
 function openPage_helpcenter(){
     window.open("/help-center","_self")
 }
@@ -102,6 +106,9 @@ function warnBeforeRedirect(e) {
 */
 
 $(document).on('ready', function () {
+
+
+
 
     $('.pagination').hide();
 
@@ -523,10 +530,10 @@ $(document).on('ready', function () {
         asNavFor: '.productDescWrap',
         centerMode: true,
         focusOnSelect: true,
-        responsive:[
+        responsive: [
             {
                 breakpoint: 767,
-                settings:{
+                settings: {
                     slidesToShow: 1
                 }
             }
@@ -595,6 +602,10 @@ $(document).on('ready', function () {
         }
         $(this).data("clicks", !clicks);
     });
+    jQuery('.panel-heading a').click(function() {
+        $('.panel-heading').removeClass('active');
+        $(this).parents('.panel-heading').addClass('active');
+    });
 });
 $(function () {
     $(document).scroll(function () {
@@ -645,5 +656,27 @@ $(function () {
             responsive: true       // true if mlens has to be responsive (boolean)
         });
 
+
+});
+
+
+$(document).ready(function(){
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 200) {
+
+            $('.scrolltop').fadeIn('slow');
+        } else {
+
+            $('.scrolltop').fadeOut('slow');
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrolltop').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        $('.scrolltop').fadeOut('slow');
+    });
 
 });

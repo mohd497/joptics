@@ -1,4 +1,4 @@
-<div class="mainWrapper">
+<!-- <div class="mainWrapper">
   <section class="internalBanner">
   </section>
   <div class="productDetailWrapper">
@@ -174,4 +174,164 @@
       </section>
     </div>
   </div>
+</div> -->
+
+
+<div class="mainWrapper">
+  <div class="productDetailWrapper">
+    <div class="container">
+      <% if not @order.presciptions.empty? %>
+          <section class="productInfoWrap">
+      <% else %>
+          <section class="productInfoWrap cartInfoWrap">
+      <% end %>
+      <% if not @order.presciptions.empty? %>
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="page-title">Cart</h3>
+          </div>
+          <div class="col-md-9">
+            <div class="cartMulitpleProd table-responsive">
+              <table class="table table-striped">
+                <thead class="mpHead">
+                <tr>
+                  <th>Type</th>
+                  <th></th>
+                  <th>Sph</th>
+                  <th>Cyl</th>
+                  <th>Axis</th>
+                  <th>Add</th>
+                </tr>
+                </thead>
+                <tbody class="mpInfo">
+                <% for pre in @order.presciptions %>
+                  <tr>
+                  <td style="font-size: 0">
+                    <h4><%= pre.product.name %></h4>
+                    <div class="glassWrap">
+                      <figure>
+                        <%= image_tag(pre.product.avatar, :class => "img-responsive") %>
+                        <div class="text-center">
+                          <a href="/prescription/destroy?id=<%= pre.id %>" data-toggle="tooltip" data-placement="left" title="Remove from cart" data-method="delete" class="inlineBlockMiddle">
+                            <%= image_tag('bin.png', :class => "img-responsive") %>
+                          </a>
+                          <a href="javascript" class="inlineBlockMiddle">
+                            <img class="img-responsive" src="images/fav.png" alt="">
+                          </a>
+                        </div>
+                      </figure>
+                    </div>
+                    <div class="spInfo">
+                      <div>
+                        <h6>Lens Type:</h6>
+                        <p><%= pre.lense_type %></p>
+                      </div>
+                      <div>
+                        <h6>Your Coatings:</h6>
+                        <p><% if pre.protective_coating or pre.anti_reflective_coating or pre.scratch_resistant_coating %>
+                              <%= "#{'UV Protective' if pre.protective_coating}" +
+                                      "#{' + '    if pre.protective_coating && pre.anti_reflective_coating}" +
+                                      "#{'Anti Flective Coating'  if pre.anti_reflective_coating}" +
+                                      "#{' + '    if (pre.anti_reflective_coating && pre.scratch_resistant_coating) || (pre.protective_coating && pre.scratch_resistant_coating)}" +
+                                      "#{'Scratch Resistant'   if pre.scratch_resistant_coating}"
+                              %>
+                          <% else %>
+                              None
+                          <% end %></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="leftText">OD (Right)</span>
+                    <span class="leftText">OD (Left)</span>
+                  </td>
+                  <td>
+                    <span class="blockInfo"><%= pre.sphere_right %></span>
+                    <span class="blockInfo"><%= pre.sphere %></span>
+                  </td>
+                  <td>
+                    <span class="blockInfo"><%= pre.cylinder_right %></span>
+                    <span class="blockInfo"><%= pre.cylinder %></span>
+                  </td>
+                  <td>
+                    <span class="blockInfo"><%= pre.axis_right %></span>
+                    <span class="blockInfo"><%= pre.axis %></span>
+                    <div class="priceInfo">
+                      <span style="color: #656565; font-size: 14px">Quantity:</span><br>
+                      <strong>Subtotal:</strong>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="blockInfo"><%= pre.add_right %></span>
+                    <span class="blockInfo"><%= pre.add %></span>
+                    <div class="priceInfo">
+                      <span style="color: #656565; font-size: 14px"><%= pre.qty %></span><br>
+                      <strong>$<%= pre.total_cost %></strong>
+                    </div>
+                  </td>
+                </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="cartFormWrap prodSumSidebar">
+              <ul class="cartCheckoutDetail">
+                <li>
+                  <span><strong>Subtotal</strong></span>
+                  <h4><strong>$<%= @order.total %></strong></h4>
+                </li>
+                <li>
+                  <span>Handling</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Shipping</span>
+                  <h4>free</h4>
+                </li>
+                <li>
+                  <span>Tax</span>
+                  <h4>$0.00</h4>
+                </li>
+                <li class="totalSum">
+                  <span>Total (CAD)</span>
+                  <h4>$<%= @order.total %></h4>
+                </li>
+              </ul>
+             <!-- <div class="radioCheckWrap">
+                <input type="checkbox" id="at1" name="at1"/>
+                <label for="at1"><span>I accept the terms of use. <a
+                href="javascript:">(read)</a></span> </label>
+              </div> -->
+              <div class="selectLensWrap">
+                <%= link_to "Checkout", new_checkouts_path, method: :get, class: "btn btn-primary" %>
+              </div>
+              <!-- <div class="sepWithTxt">
+                <span>OR</span>
+              </div>
+              <div class="selectLensWrap">
+                <a class="btn btn-paypal" href="javascript:">Continue checkout with <%= image_tag('paypal.png') %> </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <% else %>
+          <div class="selectLensWrap cartTextWrap">
+            <h3>No Products in the cart</h3>
+
+          </div>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4 cart-goback" style="text-align: center; margin-top: 530px">
+
+            <a onclick="openPage_clear()"><i class="fa fa-reply reply-bottom" aria-hidden="true"></i> return to shop</a>
+          </div>
+          <div class="col-md-4">
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
 </div>
+<!--home page end-->

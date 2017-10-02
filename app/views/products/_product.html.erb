@@ -118,10 +118,46 @@
                 </div>
               </div>
               <div id="share"></div>
-              <div class="selectLensWrap">
+
+              <% if @product.size == 'small' %>
+                  <div class="selectLensWrap2">
+                    <p>Sizes:</p>
+                    <a>S</a>
+                  </div>
+              <% end %>
+
+              <% if @product.size == 'medium' %>
+                  <div class="selectLensWrap2">
+                    <p>Sizes:</p>
+                    <a>M</a>
+                  </div>
+              <% end %>
+
+              <% if @product.size == 'large' %>
+                  <div class="selectLensWrap2">
+                    <p>Sizes:</p>
+                    <a>L</a>
+                  </div>
+              <% end %>
+
+
+              <div class="selectLensWrap" style="margin-top: 5px !important">
 
                 <%= link_to "Select Prescription", prescription_path(:product => @product.id), method: :get, class: "btn btn-primary button-width" %>
               </div>
+              <div class="helpCenterWrapper">
+                <div class="helpbox2">
+                  <p style="margin-top: 5px"><i class="fa fa-check" aria-hidden="true"></i>
+                    <b>Free Shipping</b> - ships within 5 to 10 days</p>
+                  <p><i class="fa fa-check" aria-hidden="true"></i> 24 months warranty</p>
+                  <p><i class="fa fa-check" aria-hidden="true"></i>
+                    <b>Lenses</b> - for all Eyewear needs</p>
+
+
+                </div>
+
+              </div>
+
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ class CheckoutsController < ApplicationController
   before_action :get_current_order_search, except: :cities
 
   def new
+   # qwert = OrderNotifier.send_order_email(current_order).deliver
     if current_order.shipping_address
       @address = current_order.shipping_address
     else
