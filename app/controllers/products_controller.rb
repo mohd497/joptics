@@ -97,7 +97,11 @@ class ProductsController < ApplicationController
   def favorites
     @page_title = """Your Wishlist"""
     @fav_list = true
-    @products = Product.find(session[:favorite_products] || []).paginate(:page => params[:page], :per_page => 12)
+    begin
+      @products = Product.find(session[:favorite_products] || []).paginate(:page => params[:page], :per_page => 12)
+    rescue
+      @products = []
+    end
     @q = Product.search(params[:q])
     render :index
   end
