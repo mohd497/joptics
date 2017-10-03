@@ -15,8 +15,11 @@ ActiveAdmin.register Product do
   scope :drafts do |products|
     products.where("created_at > ?", Date.today)
   end
+    show :name => :name
 
-  show :name => :name
+  action_item only: :show  do
+    link_to "product delete with prescription", product_path, method: :delete
+  end
 
   form do |f|
     f.input :name,:input_html => {:style => 'width: 10%; margin-bottom: 20px; margin-left: 20px;'}

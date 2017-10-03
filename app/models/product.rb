@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
 
   has_many :order_lines
   has_many :reviews
-  has_one :presciption
+  has_many :presciptions
 
   scope :is_enabled, -> { where(status: true) }
 

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/help-center' => 'home#helpcenter'
 
 
-  resources :products, except: [:delete] do
+  resources :products do
     member do
       post 'favorites', to: 'products#add_to_favorites'
     end

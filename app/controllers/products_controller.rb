@@ -80,6 +80,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.presciptions.each do |i|
+      i.destroy
+    end
+    Product.find(params[:id]).destroy
+    redirect_to admin_products_path
+  end
+
   def add_to_favorites
     (session[:favorite_products] ||= []) << params[:id]
     render json: {msg: 'successfully added to favorites'}

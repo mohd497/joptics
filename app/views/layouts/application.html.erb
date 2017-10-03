@@ -202,7 +202,7 @@
         <ul class="shopping-cart-items">
 
           <% for pre in @order.presciptions %>
-
+              <% if pre.product %>
               <li class="clearfix2">
                 <div>
                 <%= image_tag(pre.product.avatar, class: 'shopping-img') %>
@@ -213,7 +213,7 @@
                 <span class="item-quantity">Quantity: <%= pre.qty %></span>
                 </div>
               </li>
-
+              <% end %>
           <% end %>
         </ul>
         <%= link_to "Checkout", new_checkouts_path, method: :get, class: "button" %>
