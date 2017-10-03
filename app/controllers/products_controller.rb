@@ -100,7 +100,7 @@ class ProductsController < ApplicationController
     begin
       @products = Product.find(session[:favorite_products] || []).paginate(:page => params[:page], :per_page => 12)
     rescue
-      @products = []
+      @products = Product.find([]).paginate(:page => params[:page], :per_page => 12)
     end
     @q = Product.search(params[:q])
     render :index
