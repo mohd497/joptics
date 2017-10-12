@@ -1,3 +1,7 @@
+@import "variables";
+@import "mixins";
+@import "general";
+
 footer {
   background: $doveGray;
   border-top: 3px solid $marron;

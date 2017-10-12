@@ -1,3 +1,7 @@
+@import "variables";
+@import "mixins";
+@import "general";
+
 .slick-slider {
   &.slick-initialized .slick-slide {
     display: inline-block;

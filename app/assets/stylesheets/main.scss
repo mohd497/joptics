@@ -1,7 +1,11 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/general";
+
 @import url(vendor/bootstrap-theme.min.css);
 @import url(vendor/bootstrap.min.css);
 @import url(vendor/animate.css);
-@import url(vendor/nouislider.min.css);
+@import url(vendor/nouislider.min.scss);
 @font-face {
   font-family: 'Rockwell';
   src: font_url("Rockwell-Bold.eot");
