@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get '/help-center' => 'home#helpcenter'
+  get '/return-policy' => 'home#returnpolicy'
 
 
   resources :products do

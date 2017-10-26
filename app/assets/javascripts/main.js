@@ -60,9 +60,15 @@ function openPage_helpcenter(){
     window.open("/help-center","_self")
 }
 
+function openPage_return_policy(){
+    window.open("/return-policy","_self")
+}
+
 function select_prev_check(id) {
     $("#" + id).prev().click();
 }
+
+
 
 function pres_selection(e){
     if (!$('#lcp3').is(':checked') && !$('#lcp2').is(':checked') && !$('#lcp1').is(':checked')) {
