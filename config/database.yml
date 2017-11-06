@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: joptics_production
-  username: joptics
-  password: <%= ENV['JOPTICS_DATABASE_PASSWORD'] %>
+  username: qwerty
+  password: 4977097
