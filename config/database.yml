@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: joptics_production
-  username: qwerty
-  password: 4977097
+  username: kazmi
+  password: mohd49770977
