@@ -488,10 +488,12 @@ $(document).on('ready', function () {
     }
 
 
-    $('#na_men a').click(function (e) {
+    $('#myTab a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
     });
+
+    $('.tabbable .tab-pane a').unbind();
 
     $(".gscSlider").slick({
         dots: false,

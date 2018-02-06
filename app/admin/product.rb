@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 # See permitted parameters documentation:
-  permit_params :name, :description, :price, :status, :avatar, :secavatar,
+  permit_params :name, :description, :price, :status, :avatar, :secavatar, :amount,
                 :thirdavatar, :fourthavatar,
                 :fifthavatar, :sixthavatar,
                 :seventhavatar, :eighthavatar,
@@ -24,6 +24,7 @@ ActiveAdmin.register Product do
   form do |f|
     f.input :name,:input_html => {:style => 'width: 10%; margin-bottom: 20px; margin-left: 20px;'}
     f.input :brand,:input_html => {:style => 'width: 15%; margin-bottom: 20px;margin-left: 20px;'}
+    f.input :amount,:input_html => {:style => 'width: 10%; margin-bottom: 20px; margin-left: 20px;'}
     f.input :description,:input_html => {:style => 'width: 15%;margin-bottom: 20px;margin-left: 20px;'}
     f.input :price,:input_html => {:style => 'width: 10%; margin-bottom: 20px;margin-left: 20px;'}
     f.input :status,:input_html => {:style => 'margin-bottom: 20px;'}
